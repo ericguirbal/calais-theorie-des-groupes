@@ -1,0 +1,9 @@
+# C'est plus simple de tout ignorer par défaut
+*
+# et d'ajouter quelques exceptions
+!.gitignore
+!*/
+!*.tex
+!*.sty
+!.gitkeep
+!README.md
