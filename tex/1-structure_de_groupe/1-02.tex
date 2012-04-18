@@ -1,0 +1,36 @@
+La loi $*$ admet $0$ comme élément neutre. En effet, pour tout $a\in\Q$ on
+a $a*0 = a+0+a\times 0 = a$ et de même $0*a = a$. En revanche, on a $a*(-1) =
+a-1-a = -1\neq 0$, donc -1 n'est pas symétrisable. En conclusion, $(\Q,*)$
+n'est pas un groupe.
+
+\begin{remarque}
+Posons $A = \Q\backslash\{-1\}$. Nous allons montrer que $(A,*)$ est un groupe
+abélien.
+
+\begin{itemize}
+\item Soit $a,b\in A$. On a $1+a \neq 0$ et $1+b \neq 0$. En remarquant que
+$a*b = (1+a)(1+b) - 1$ on voit que $a*b \neq -1$ et donc que la restriction de
+$*$ à $A \times A$ définie bien une loi interne.
+
+\item On sait déjà que $0$ est l'élément neutre de la loi $*$.
+
+\item Soit $a,b,c\in A$, on a
+\begin{align*}
+a*(b*c)& = a+(b*c)+a(b*c)\\
+       & = a+b+c+bc+ab+ac+abc\\
+       & = (a+b+ab)+c+(a+b+ab)c\\
+       & = (a*b)+c+(a*b)c\\
+       & = (a*b)*c.
+\end{align*}
+donc la loi $*$ est associative.
+
+\item La loi $*$ est clairement commutative.
+
+\item Soit $a\in A$, on a
+\[ 
+  a*\left(-\frac{a}{1+a}\right) = a-\frac{a}{1+a}-\frac{a^2}{1+a} = 0.
+\]
+donc tout élément de $A$ est symétrisable.
+
+\end{itemize}
+\end{remarque}
