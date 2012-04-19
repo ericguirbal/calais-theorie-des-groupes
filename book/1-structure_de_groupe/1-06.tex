@@ -1,0 +1,11 @@
+L'application $f$ vérifie $f \circ f = \id_G$, c'est donc une permutation.
+
+Supposons que $G$ soit abélien. Alors pour tout $(x,y)\in G^2$, on a
+\[
+  f(xy) = (xy)^{-1} = y^{-1}x^{-1} = x^{-1}y^{-1} = f(x) f(y)
+\]
+donc $f$ est un automorphisme (Proposition 1.66).
+
+Réciproquement, si $f$ est un automorphisme, alors pour tout $(x,y)\in G^2$, on
+a $f(x^{-1}y^{-1}) = f(x^{-1})f(y^{-1})$ d'où $(x^{-1}y^{-1})^{-1} =
+(x^{-1})^{-1}(y^{-1})^{-1}$ puis $yx = xy$ donc $G$ est abélien.
