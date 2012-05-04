@@ -4,7 +4,6 @@ use warnings;
 use utf8;
 
 use File::Spec::Functions qw(catdir);
-use File::Basename ();
 use File::Find::Rule;
 use POSIX qw(strftime);
 use Template;
