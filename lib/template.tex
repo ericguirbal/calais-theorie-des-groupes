@@ -1,0 +1,111 @@
+\listfiles
+\documentclass[11pt,headsepline]{scrbook}
+\usepackage[a5paper,twoside=false,margin=5mm,includeheadfoot]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+%\usepackage{fourier}
+\usepackage[charter]{mathdesign}
+\usepackage{microtype}
+\usepackage{enumerate}
+\usepackage[x11names]{xcolor}
+\usepackage[
+  colorlinks=true,
+  linkcolor=red,
+  urlcolor=blue,
+  pdftitle={Éléments de théorie des groupes. Solutions des exercices.},
+  pdfauthor={Éric Guirbal},
+  pdfsubject={Mathématiques},
+  pdfkeywords={théorie des groupes, groupe monogène, groupe cyclique, groupe
+    diédral, groupe fini, theorèmes de Sylow, sous-groupe normal, action de
+    groupe, suite de composition, groupe abélien, groupe libre},
+  pdflang=fr-FR]{hyperref}
+
+%\pagecolor[RGB]{255,253,229}
+\pagecolor{[% page_color %]}
+\color{[% text_color %]}
+
+%%% Environnements
+\theoremstyle{definition}
+\newtheorem{solution}{Solution}
+\theoremstyle{remark}
+\newtheorem*{remarque}{Remarque}
+
+%%% Quelques macros utiles
+\newcommand{\field}[1]{\mathbb{#1}}
+\newcommand{\C}{\field{C}}
+\newcommand{\R}{\field{R}}
+\newcommand{\Q}{\field{Q}}
+\newcommand{\N}{\field{N}}
+\newcommand{\Z}{\field{Z}}
+\newcommand{\K}{\field{K}}
+\newcommand{\D}{\field{D}}
+
+\DeclareMathOperator{\Image}{Im\nolimits}
+\DeclareMathOperator{\Ker}{Ker\nolimits}
+\DeclareMathOperator{\rg}{rg\nolimits}
+\DeclareMathOperator{\ordre}{o}
+\DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\pgcd}{pgcd}
+\DeclareMathOperator{\ppcm}{ppcm}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\diag}{diag}
+
+\newcommand{\sym}[1]{\mathcal{S}_#1}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\divise}{\mid}
+\newcommand{\diff}{\mathop{}\mathopen{}\mathrm{d}}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\newcommand{\norme}[1]{\left\lVert#1\right\rVert}
+\newcommand{\cl}[1]{\overline{#1}}
+\newcommand{\intervalle}[4]{\mathopen{#1}#2
+  \mathclose{}\mathpunct{};#3
+  \mathclose{#4}}
+\newcommand{\intervalleff}[2]{\intervalle{[}{#1}{#2}{]}}
+\newcommand{\intervalleof}[2]{\intervalle{]}{#1}{#2}{]}}
+\newcommand{\intervallefo}[2]{\intervalle{[}{#1}{#2}{[}}
+\newcommand{\intervalleoo}[2]{\intervalle{]}{#1}{#2}{[}}
+\newcommand{\restreinta}{_\mathclose{}|\mathopen{}}
+
+\begin{document}
+\renewcommand{\contentsname}{Sommaire}
+
+\title{
+  Éléments de théorie des groupes\\
+  Solutions des exercices
+}
+
+\date{
+  \small\today\\
+  Commit:
+  \href{https://github.com/ericguirbal/calais-theorie-des-groupes/tree/[% commit %]}{[% commit %]}
+}
+\author{Éric Guirbal}
+
+\frontmatter
+
+\maketitle
+
+\tableofcontents
+
+\mainmatter
+
+[% FOREACH chapter IN chapters.keys.sort %]
+\chapter{[% chapters.$chapter.title %]}
+[% FOREACH solution IN chapters.$chapter.solutions.sort %]
+[% num = solution.match('\d+-(\d+)') %]
+\setcounter{solution}{[% num.0 - 1 %]}
+\begin{solution}
+  [% INCLUDE "$chapter/$solution" %]
+\end{solution}
+[% END %]
+[% END %]
+
+\backmatter
+
+\bibliographystyle{alpha}
+\bibliography{[% source_dir %]/bibliographie}
+\nocite{*}
+\end{document}
+

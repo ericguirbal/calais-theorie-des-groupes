@@ -6,5 +6,7 @@
 !*.tex
 !*.sty
 !*.bib
+!*.pl
 !.gitkeep
 !README.md
+!Makefile
