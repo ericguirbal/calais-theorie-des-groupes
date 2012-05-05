@@ -1,6 +1,6 @@
 -include Makefile.ini
 PREPROCESSOR = bin/makelatex.pl
-PERL       	?= perl
+PERL        ?= perl
 PDFLATEX   	?= pdflatex
 BIBTEX     	?= bibtex
 PDFVIEWER  	?= mupdf -r 112
@@ -28,7 +28,7 @@ ifeq ($(DEBUG),0)
 	LATEX_OPTS += -interaction batchmode
 endif
 
-.PHONY: pdf release view clean veryclean
+.PHONY: pdf release view clean distclean
 
 pdf: $(BUILD_DIR)/$(BOOK).pdf
 
