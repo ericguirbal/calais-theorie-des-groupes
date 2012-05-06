@@ -1,0 +1,29 @@
+Il est clair que la loi de composition ainsi définie est une loi interne.
+Montrons qu'elle est associative. Soit $f,g,h\in G^E$. Pour tout $x\in E$, on
+a:
+%
+\begin{align*}
+  (f(gh))(x) &= f(x)(gh)(x) \\
+             &= f(x)(g(x)h(x)) \\
+             &= (f(x)g(x))h(x) \\
+             &= (fg)(x)h(x) \\
+             &= ((fg)h)(x)
+\end{align*}
+%
+d'où $f(gh) = (fg)h$.
+
+Montrons l'existence d'un élément neutre.  Soit $j\in G^E$ définie pour tout
+$x\in E$ par $j(x)=e$. Alors pour tout $x\in E$, on a $(fj)(x) = f(x)j(x) =
+f(x) = j(x)f(x) = (jf)(x)$ d'où  $jf = f = fj$.
+
+Reste à montrer que toute $f\in G^E$ est inversible. On définit $g\in G^E$ par
+$g(x) = f(x)^{-1}$ pour tout $x\in E$. On a $(fg)(x) = f(x)g(x) = f(x)f(x)^{-1}
+= e = j(x)$ \textit{i.e.} $fg = j$. On montre de même que $gf = j$.
+
+Finalement, $G^E$ est un groupe.
+
+On suppose que $G$ est abélien. Soit $f,g\in G^E$. Pour tout $x\in E$, on a
+$f(x)g(x) = g(x)f(x)$ c'est-à-dire $fg = gf$; $G^E$ est abélien. Réciproquement,
+supposons que $G^E$ est abélien. Soit $a,b\in G$, et $f,g\in G^E$ deux
+applications constantes égales à $a$ et $b$ respectivement. Pour tout $x\in E$,
+nous avons $ab = f(x)g(x) = (fg)(x) = (gf)(x) = g(x)f(x) = ba$. 
