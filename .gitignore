@@ -7,6 +7,7 @@
 !*.sty
 !*.bib
 !*.pl
+!*.yml
 !.gitkeep
 !README.md
 !Makefile

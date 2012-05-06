@@ -1,0 +1,47 @@
+Soit $G_1$ et $G_2$ deux groupes isomorphes et $f\colon G_1\to G_2$ un
+isomorphisme.
+%
+\begin{enumerate}[a)]
+\item On définit un morphisme de groupes $f_\sharp\colon\Aut(G_1)\to\Aut(G_2)$
+en posant $f_\sharp(\psi) = f\circ\psi\circ f^{-1}$. En effet pour tout
+$\psi_1,\psi_2\in\Aut(G_1)$ on a:
+%
+\begin{align*}
+f_\sharp(\psi_1\circ\psi_2) &= f\circ(\psi_1\circ\psi_2)\circ f^{-1} \\
+  &= (f\circ\psi_1\circ f^{-1})\circ(f\circ\psi_2\circ f^{-1}) \\
+  &= f_\sharp(\psi_1)\circ f_\sharp(\psi_2)
+\end{align*}
+
+De plus si $\psi\in\Aut(G_1)$,
+%
+\begin{align*}
+f_\sharp(\psi) = \id_{G_2} 
+  &\iff f\circ\psi\circ f^{-1} = \id_{G_2} \\
+  &\iff \psi = f^{-1}\circ\id_{G_2}\circ f \\
+  &\iff \psi = \id_{G_2}
+\end{align*}
+%
+et si $\psi\in\Aut(G_2)$, on a $f^{-1}\circ\psi\circ f\in\Aut(G_1)$ et
+\[
+  f_\sharp(f^{-1}\circ\psi\circ f) = f\circ(f^{-1}\circ\psi\circ f)\circ
+  f^{-1} = \id_{G_2}\circ\psi\circ\id_{G_2} = \psi
+\]
+Donc $f_\sharp$ est un isomorphisme de groupes et $\Aut(G_1)\iso\Aut(G_2)$.
+
+\item Si $\sigma_g\in\Int(G_1)$, alors pour tout $x\in G_2$,
+%
+\begin{align*}
+[f_\sharp(\sigma_g)](x)& = (f\circ\sigma_g\circ f^{-1})(x) \\
+  & = f(gf^{-1}(x)g^{-1}) \\
+  & = f(g)xf(g)^{-1} \\
+  & = \sigma_{f(g)}(x)
+\end{align*}
+%
+c'est-à-dire $f_\sharp(\sigma_g) = \sigma_{f(g)}\in\Aut(G_2)$ ou encore
+$f_\sharp(\Int(G_1))\subset\Int(G_2)$. Ainsi on définit un homomorphisme de
+groupes $f_*\colon\Int(G_1)\to\Int(G_2)$ en posant 
+$f_* = f_\sharp\vert^{\Int(G_2)}_{\Int(G_1)}$. Il est injective (comme
+$f_\sharp$) et est aussi surjective, en effet si $\sigma_g\in\Int(G_2)$, alors
+$f_*(\sigma_{f^{-1}(g)}) = \sigma_{f(f^{-1}(g))} = \sigma_g$. Donc $f_*$ est
+un isomorphisme de groupes et $\Int(G_1)\iso\Int(G_2)$.
+\end{enumerate}
