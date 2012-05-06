@@ -11,12 +11,16 @@ use YAML;
 
 sub main {
     my $chapters = YAML::LoadFile('config.yml');
+    my %stats = ();
     for my $chapter (keys %{$chapters}) {
         my @solutions =
           File::Find::Rule->file()->relative->name('*.tex')
           ->in(catdir($ENV{SOURCE_DIR}, $chapter));
         $chapters->{$chapter}->{solutions} = \@solutions;
-        $chapters->{$chapter}->{done}      = scalar(@solutions);
+        $stats{$chapter}{exercices} = $chapters->{$chapter}->{exercices};
+        $stats{$chapter}{solved}    = scalar(@solutions);
+        $stats{total}{exercices}   += $chapters->{$chapter}->{exercices};
+        $stats{total}{solved}      += scalar(@solutions);
     }
 
     my $commit = `git log --pretty=format:'%H' -n 1`;
@@ -29,6 +33,7 @@ sub main {
     $template->process(
         'template.tex', {   
             chapters   => $chapters,
+            stats      => \%stats,
             commit     => $commit,
             source_dir => $ENV{SOURCE_DIR},
             page_color => $ENV{PAGE_COLOR},

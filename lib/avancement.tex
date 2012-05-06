@@ -1,0 +1,22 @@
+\chapter*{État d'avancement}
+
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+\textsc{Chapitre} & \textsc{Exercices} & \textsc{Résolus} \\
+\midrule
+[%- FOREACH chapter IN chapters.keys.sort %]
+  [% loop.index()+1 -%]. 
+  [%- FILTER truncate(56,'…') -%]
+    [%- chapters.$chapter.title -%]
+  [%- END %] & 
+  [%- stats.$chapter.exercices %] & 
+  [%- stats.$chapter.solved %] \\
+[%- END %]
+\midrule
+  \textbf{Total} & 
+  \textbf{[% stats.total.exercices %]} &
+  \textbf{[% stats.total.solved %]} \\
+\bottomrule
+\end{tabular}
+\end{center}
