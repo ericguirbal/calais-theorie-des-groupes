@@ -1,0 +1,20 @@
+Du fait que tout élément de $G$ est simplifiable à gauche et à droite, les
+applications translation à gauche et translation à droite sont injectives.
+Comme en plus $G$ est fini, elles sont bijectives. Autrement dit, pour tout
+$(a,b)\in G^2$, chacune des équations $ax = b$ et $xa = b$ d'inconnue $x$
+possède une unique solution.
+
+Montrons l'existence d'un élément neutre. Soit $a\in G$. Il existe $g\in G$ tel
+que $ga = a$. Vérifions que $g$ est un neutre à gauche. Soit $x\in G$. Il
+existe $h\in G$ tel que $x = ah$. On a alors $gx = g(ah) = (ga)h = ah = x$, ce
+qui prouve que $g$ est un neutre à gauche. De même, on montre l'existence
+d'un neutre à droite $g'$. Enfin on a $gg' = g'$ car $g$ est un neutre à
+gauche, et $gg' = g$ car $g'$ est un neutre à droite, d'où $g = g'$. Notons $e$
+l'élément neutre.
+
+Il reste à montrer que tout élément de $G$ est inversible. Soit $x\in G$. Il
+existe $y\in G$ tel que $xy = e$.  Donc $y(xy) = y$ soit $(yx)y = y$.
+Multiplions membre à membre par l'inverse à droite de $y$. Nous obtenons $yx =
+e$. Donc $x$ est inversible. 
+
+Finalement $(G,\cdot)$ est un groupe.
