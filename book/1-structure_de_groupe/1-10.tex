@@ -1,0 +1,24 @@
+\begin{enumerate}[a)]
+  \item $\Q_p$ est un sous-groupe de $(\Q,+)$, en effet pour tout
+    $(a,n)\in\Z\times\N$, on a
+    \[
+      \frac{a}{p^n}-\frac{b}{p^m} = \frac{ap^m-bp^n}{p^{n+m}}
+    \]
+    avec $ap^m-bp^n\in\Z$ et $n+m\in\N$ donc
+    $\dfrac{a}{p^n}-\dfrac{b}{p^m}\in\Q_p$.
+    
+    Ensuite
+    \[
+      \Q_p = \bigcup_{n\in\N} \left\{\frac{a}{p^n}; a\in\Z\right\} = 
+        \bigcup_{n\in\N} \,\langle\frac{1}{p^n}\rangle
+    \]
+
+  \item $\varphi$ est clairement injective, et de l'égalité
+    $\frac{a}{p^n} = p\frac{a}{p^{n+1}}$ on déduit qu'elle est également
+    surjective et donc que $\varphi$ est une permutation de $\Q_p$.
+
+    Pour tout $(x,y)\in\Q_p^2$, on a
+    $\varphi(x+y) = p(x+y) = px+py = \varphi(x)+\varphi(y)$. Or un homomorphisme
+    bijectif est un isomorphisme (Proposition 1.66) donc $\varphi$ est un
+    automorphisme du groupe $(\Q_p,+)$.
+\end{enumerate}
