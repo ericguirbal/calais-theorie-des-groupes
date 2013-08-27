@@ -14,8 +14,8 @@ BIBLIO       = $(SOURCE_DIR)/bibliographie.bib
 LATEX_OPTS   = -halt-on-error -output-directory $(BUILD_DIR)
 
 BOOK        ?= book
-PAGE_COLOR  ?= LightYellow1
-TEXT_COLOR  ?= Red4
+PAGE_COLOR  ?= White
+TEXT_COLOR  ?= Black
 
 SOURCE_FILES = $(shell find $(SOURCE_DIR)/ -type f -name '*.tex') 
 

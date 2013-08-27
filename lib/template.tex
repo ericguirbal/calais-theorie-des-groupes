@@ -1,20 +1,25 @@
 \listfiles
-\documentclass[11pt,headsepline]{scrbook}
-\usepackage[a5paper,twoside=false,margin=5mm,includeheadfoot]{geometry}
+\documentclass[11pt,twoside]{book}
+\usepackage[a5paper]{geometry}
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[francais]{babel}
-%\usepackage{fourier}
-\usepackage[charter]{mathdesign}
+\usepackage{lmodern}
+\usepackage[upright,widespace]{fourier}
 \usepackage{microtype}
 \usepackage{enumerate}
 \usepackage{booktabs}
 \usepackage[x11names]{xcolor}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{fancyhdr}
+
 \usepackage[
   colorlinks=true,
-  linkcolor=red,
-  urlcolor=blue,
+  linkcolor=Blue4,
+  urlcolor=Blue4,
+  linktocpage=true,
   pdftitle={Éléments de théorie des groupes. Solutions des exercices.},
   pdfauthor={Éric Guirbal},
   pdfsubject={Mathématiques},
@@ -23,18 +28,56 @@
     groupe, suite de composition, groupe abélien, groupe libre},
   pdflang=fr-FR]{hyperref}
 
-%\pagecolor[RGB]{255,253,229}
 \pagecolor{[% page_color %]}
 \color{[% text_color %]}
 
+%%% En-têtes
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\chaptermark}[1]{%
+  \markboth{\sffamily#1}{}}
+\fancyhead[RE]{\sffamily Éléments de théorie des groupes. Solutions des exercices}
+\fancyhead[LO]{\sffamily Chapitre \thechapter. \leftmark}
+\fancyhead[RO,LE]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+%%% Chapitres
+\titleformat{\chapter}[display]
+  {\filcenter}
+  {\textls[150]{\MakeUppercase{Chapitre\,\, \thechapter}}}
+  {0.5pc}
+  {\LARGE\itshape}
+  []
+\titlespacing{\chapter}
+  {0pt}
+  {0ex}
+  {10ex}
+
+\renewcommand{\thechapter}{%                                                    
+  \ifnum\value{chapter}=1
+    premier%
+  \else
+    \Roman{chapter}%
+  \fi
+} 
+
+%%% Sommaire
+\titlecontents{chapter}
+  [0pc] % left
+  {\addvspace{3pt}} % above
+  {{\scshape Chapitre \thecontentslabel} / \itshape} % before with label
+  {\scshape \thecontentslabel} % before without label
+  {\titlerule*[0.5pc]{.}\contentspage} % filler and page
+  [] % after
+
 %%% Environnements
 \theoremstyle{definition}
-\newtheorem{solution}{Solution}
+\newtheorem{solution}{}
 \theoremstyle{remark}
 \newtheorem*{remarque}{Remarque}
 
 %%% Quelques macros utiles
-\newcommand{\field}[1]{\mathbb{#1}}
+\newcommand{\field}[1]{\mathbf{#1}}
 \newcommand{\C}{\field{C}}
 \newcommand{\R}{\field{R}}
 \newcommand{\Q}{\field{Q}}
@@ -43,7 +86,6 @@
 \newcommand{\K}{\field{K}}
 \newcommand{\D}{\field{D}}
 \newcommand{\U}{\field{U}}
-
 
 \DeclareMathOperator{\Image}{Im}
 \DeclareMathOperator{\Ker}{Ker}
@@ -90,8 +132,9 @@
 \author{Éric Guirbal}
 
 \frontmatter
-
 \maketitle
+
+\pagestyle{fancy}
 
 %%% état d'avancement du projet
 [% INCLUDE avancement.tex %]
@@ -99,6 +142,7 @@
 \tableofcontents
 
 \mainmatter
+\pagestyle{fancy}
 
 [% FOREACH chapter IN chapters.keys.sort %]
 \chapter{[% chapters.$chapter.title %]}
