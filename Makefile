@@ -18,6 +18,7 @@ PAGE_COLOR  ?= White
 TEXT_COLOR  ?= Black
 
 SOURCE_FILES = $(shell find $(SOURCE_DIR)/ -type f -name '*.tex') 
+LATEX_FILES  = lib/maths.sty
 
 RERUN = "^LaTeX Warning: .* Rerun to get"
 
@@ -43,9 +44,10 @@ $(BUILD_DIR)/$(BOOK).pdf: $(BUILD_DIR)/$(BOOK).tex $(BIBLIO)
 
 tex: $(BUILD_DIR)/$(BOOK).tex  
 
-$(BUILD_DIR)/$(BOOK).tex: $(SOURCE_FILES) $(TEMPLATE) $(PREPROCESSOR)
+$(BUILD_DIR)/$(BOOK).tex: $(SOURCE_FILES) $(TEMPLATE) $(LATEX_FILES) $(PREPROCESSOR)
 	mkdir -p $(BUILD_DIR)
 	$(PERL) $(PREPROCESSOR) > $@
+	cp $(LATEX_FILES) $(BUILD_DIR)
 
 release: pdf
 	cp $(BUILD_DIR)/$(BOOK).pdf $(DIST_DIR)/$(BOOK)-$$(date +"%Y%m%d").pdf

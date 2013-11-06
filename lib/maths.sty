@@ -1,0 +1,130 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{maths}[2013/09/01 Collection de macros mathématiques]
+
+\RequirePackage{amsmath}
+
+%
+% Ensembles de nombres
+%
+\newcommand{\setofnumbers}[1]{\mathbf{#1}}
+\newcommand{\N}{\setofnumbers{N}}
+\newcommand{\Z}{\setofnumbers{Z}}
+\newcommand{\D}{\setofnumbers{D}}
+\newcommand{\Q}{\setofnumbers{Q}}
+\newcommand{\R}{\setofnumbers{R}}
+\newcommand{\C}{\setofnumbers{C}}
+\newcommand{\K}{\setofnumbers{K}}
+\newcommand{\U}{\setofnumbers{U}}
+
+%
+% Cardinal d'un ensemble
+%
+% notation: |E|
+\newcommand*{\card}[1]{\left\lvert#1\right\rvert}
+% notation: card(E)
+\DeclareMathOperator{\cardinal}{card}
+% Ordre d'un groupe ou d'un élément
+\DeclareMathOperator{\ordre}{o}
+
+%
+% Ensemble quotient 
+%
+% Relation d'équivalence à gauche modulo un sous-groupe
+\newcommand*{\Rg}[1]{\operatorname{_{#1}^{}\mathcal{R}}}
+% Relation d'équivalence à droite modulo un sous-groupe
+\newcommand*{\Rd}[1]{\operatorname{\mathcal{R}_{#1}^{}}}
+% Classe d'un élément
+\newcommand*{\cl}[1]{\overline{#1}}
+% Ensemble quotient des classes à gauche 
+\newcommand*{\clsg}[2]{\left(\grq{#1}{#2}\right)_\mathrm{g}}
+% Ensemble quotient des classes à droite
+\newcommand*{\clsd}[2]{\left(\grq{#1}{#2}\right)_\mathrm{d}}
+% Groupe quotient 
+\renewcommand*{\grq}[2]{\frac{#1}{#2}}
+% Groupe des entiers modulo n
+\newcommand*{\Zn}[1]{\grq{\Z}{(#1)}}
+
+%
+% Homomorphismes de groupes
+%
+% Ensemble d'homomorphismes
+\DeclareMathOperator{\Hom}{Hom}
+% Ensemble des endomorphismes
+\DeclareMathOperator{\End}{End}
+% Ensemble des automorphismes
+\DeclareMathOperator{\Aut}{Aut}
+% Ensemble des automorphismes intérieurs
+\DeclareMathOperator{\Int}{Int}
+
+% L'application identité
+\DeclareMathOperator{\id}{id}
+% Image d'un homomorphisme
+\DeclareMathOperator{\Image}{Im}
+% Noyau d'un homomorphisme
+\DeclareMathOperator{\Ker}{Ker}
+% Rang d'un homomorphisme
+\DeclareMathOperator{\rang}{rg}
+% Isomorphisme de groupes
+\newcommand{\iso}{\simeq}
+
+
+%
+% Groupes de matrices
+%
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\OO}{OO} 
+\DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\UU}{UU}
+\DeclareMathOperator{\SU}{SU}
+
+%
+% Groupes symétriques
+%
+% Groupe symétrique
+\newcommand{\sym}[1]{\operatorname{S}_{#1}}
+% Support d'une permutation
+\DeclareMathOperator{\supp}{supp}
+
+%
+% Arithmétique
+%
+\newcommand{\divise}{\mid}
+\DeclareMathOperator{\pgcd}{pgcd}
+\DeclareMathOperator{\ppcm}{ppcm}
+
+% Ensemble
+\newcommand*{\ens}[1]{\{#1\}}
+\newcommand*{\enstq}[2]{\left\{\,#1\mid#2\,\right\}}
+
+%
+% Matrices
+%
+% Matrice
+\newcommand{\mat}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+
+%
+% Intervalles
+%
+\newcommand{\interval}[4]{\mathopen{#1}#2\mathclose{}\mathpunct{};#3\mathclose{#4}}
+\newcommand{\Interval}[4]{\mathopen{}\mathclose{\left#1#2,#3\right#4}}
+\newcommand{\ivc}[2]{\interval{[}{#1}{#2}{]}}
+\newcommand{\ivoc}[2]{\interval{]}{#1}{#2}{]}}
+\newcommand{\ivco}[2]{\interval{[}{#1}{#2}{[}}
+\newcommand{\ivo}[2]{\interval{]}{#1}{#2}{[}}
+
+%
+% Divers
+%
+% Inverse
+\newcommand{\inv}[1]{#1^{-1}}
+% Valeur absolue
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+% Norme
+\newcommand{\norme}[1]{\left\lVert#1\right\rVert}
+% Inégalités
+\renewcommand{\geq}{\geqslant}
+\renewcommand{\leq}{\leqslant}
+
+

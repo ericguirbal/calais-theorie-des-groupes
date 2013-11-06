@@ -7,6 +7,7 @@
 \usepackage[francais]{babel}
 \usepackage{lmodern}
 \usepackage[upright,widespace]{fourier}
+\usepackage{maths}
 \usepackage{microtype}
 \usepackage{enumerate}
 \usepackage{booktabs}
@@ -75,46 +76,6 @@
 \newtheorem{solution}{}
 \theoremstyle{remark}
 \newtheorem*{remarque}{Remarque}
-
-%%% Quelques macros utiles
-\newcommand{\field}[1]{\mathbf{#1}}
-\newcommand{\C}{\field{C}}
-\newcommand{\R}{\field{R}}
-\newcommand{\Q}{\field{Q}}
-\newcommand{\N}{\field{N}}
-\newcommand{\Z}{\field{Z}}
-\newcommand{\K}{\field{K}}
-\newcommand{\D}{\field{D}}
-\newcommand{\U}{\field{U}}
-
-\DeclareMathOperator{\Image}{Im}
-\DeclareMathOperator{\Ker}{Ker}
-\DeclareMathOperator{\rg}{rg}
-\DeclareMathOperator{\ordre}{o}
-\DeclareMathOperator{\card}{card}
-\DeclareMathOperator{\pgcd}{pgcd}
-\DeclareMathOperator{\ppcm}{ppcm}
-\DeclareMathOperator{\supp}{supp}
-\DeclareMathOperator{\diag}{diag}
-
-\newcommand{\Aut}{\mathrm{Aut}}
-\newcommand{\Int}{\mathrm{Int}}
-\newcommand{\iso}{\simeq}
-\newcommand{\sym}[1]{\mathcal{S}_#1}
-\newcommand{\id}{\mathrm{id}}
-\newcommand{\divise}{\mid}
-\newcommand{\diff}{\mathop{}\mathopen{}\mathrm{d}}
-\newcommand{\abs}[1]{|#1|}
-\newcommand{\norme}[1]{\left\lVert#1\right\rVert}
-\newcommand{\cl}[1]{\overline{#1}}
-\newcommand{\intervalle}[4]{\mathopen{#1}#2
-  \mathclose{}\mathpunct{};#3
-  \mathclose{#4}}
-\newcommand{\intervalleff}[2]{\intervalle{[}{#1}{#2}{]}}
-\newcommand{\intervalleof}[2]{\intervalle{]}{#1}{#2}{]}}
-\newcommand{\intervallefo}[2]{\intervalle{[}{#1}{#2}{[}}
-\newcommand{\intervalleoo}[2]{\intervalle{]}{#1}{#2}{[}}
-\newcommand{\restreinta}{_\mathclose{}|\mathopen{}}
 
 \begin{document}
 \renewcommand{\contentsname}{Sommaire}
