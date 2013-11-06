@@ -9,7 +9,7 @@
 \usepackage[upright,widespace]{fourier}
 \usepackage{maths}
 \usepackage{microtype}
-\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
 \usepackage{booktabs}
 \usepackage[x11names]{xcolor}
 \usepackage{titlesec}
@@ -46,7 +46,7 @@
 \titleformat{\chapter}[display]
   {\filcenter}
   {\textls[150]{\MakeUppercase{Chapitre\,\, \thechapter}}}
-  {0.5pc}
+  {0.5pc}  
   {\LARGE\itshape}
   []
 \titlespacing{\chapter}
@@ -60,7 +60,7 @@
   \else
     \Roman{chapter}%
   \fi
-} 
+}
 
 %%% Sommaire
 \titlecontents{chapter}
@@ -70,6 +70,9 @@
   {\scshape \thecontentslabel} % before without label
   {\titlerule*[0.5pc]{.}\contentspage} % filler and page
   [] % after
+
+%%% Listes
+\setlist[enumerate]{label=\alph*),leftmargin=*,widest=a}
 
 %%% Environnements
 \theoremstyle{definition}
