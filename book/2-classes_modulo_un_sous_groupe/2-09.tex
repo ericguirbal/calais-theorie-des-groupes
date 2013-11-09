@@ -1,0 +1,34 @@
+Suivons l'indication de l'énoncé et considérons la correspondance
+%
+\begin{align*}
+  \varphi\colon\clsd{G}{H} &\longrightarrow\clsd{G}{H} \\
+                        Kx &\longmapsto K'gx.
+\end{align*}
+%
+\begin{itemize}
+  \item 
+    Montrons que $\varphi$ est une application. Supposons $Kx = Kx'$,
+    c'est-à-dire $xx'^{-1}\in K$. Alors 
+    $gx(gx')^{-1} = gxx'^{-1}g^{-1} \in gKg^{-1} = K'$ donc $K'gx=K'gx'$,
+    c'est-à-dire $\varphi(Kx)=\varphi(Kx')$. 
+
+  \item
+    $\varphi$ est injective. En effet,
+    %
+    \begin{align*} 
+      \varphi(Kx) = \varphi(Kx')
+        &\iff K'gx = K'gx'\\ 
+        &\iff (gx)(gx')^{-1} \in K'\\ 
+        &\iff gxx'^{-1}g^{-1} \in K'\\ 
+        &\iff xx'^{-1} \in g^{-1}K'g = K\\ 
+        &\iff Kx = Kx' 
+    \end{align*} 
+    %
+  \item 
+    $\varphi$ est surjective. En effet, quel que soit
+    $K'x' \in \clsd{G}{K'}$, on peut écrire 
+    $\varphi(Kg^{-1}x') = K'g(g^{-1}x') = K'x'$.
+\end{itemize}
+
+Nous avons démontré que $\clsd{G}{K}$ et $\clsd{G}{K'}$ sont équipotents, d'où
+l'égalité $[G:K]=[G:K']$.
