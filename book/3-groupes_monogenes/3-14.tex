@@ -1,0 +1,37 @@
+\begin{enumerate}[a)]
+\item 
+  Comme $x$ et $y$ permutent, on a $(xy)^{mn} = (x^m)^n(y^n)^m = e$, donc l'ordre de 
+  $xy$ est fini.
+
+\item 
+  Notons $\omega$ l'ordre de $xy$. De a) , on déduit que 
+  $\omega$ divise $mn$. De plus  
+  $e =(xy)^{\omega m} = (x^m)^\omega y^{m\omega} = e y^{m\omega} = y^{m\omega}$ 
+  implique que $n$ divise $m\omega$. Comme $m$ et $n$ sont premiers entre eux,
+  d'après le théorème de Gauss $n$ divise $\omega$. De même, on montre que
+  $m$ divise $\omega$. Comme $m$ et $n$ sont premiers entre eux, $mn$ divise
+  $\omega$, ce qui achève la démontration de $\omega = mn$.  
+
+\item 
+  Comme $l$ est un multiple de $m$ et $n$, il vient $(xy)^l = x^l y^l = e$, donc
+  $\omega$ divise $l$. De plus $x^\omega y^\omega = (xy)^\omega = e$  donc
+  $x^\omega = y^{-\omega}\in<x>\cap<y> = \set{e}$ c'est-à-dire $x^\omega =
+  y^\omega = e$. Il s'ensuit que $\omega$ est un multiple de $m$ et $n$, donc
+  $\omega$ est un multiple de $l$.  En fin de compte $l = \omega$.
+  
+  Si $\langle x \rangle\cap\langle y \rangle\neq\set{e}$,
+  on ne peut faire mieux que $\ordre(xy)\divise l$ comme le prouve l'exemple
+  suivant. Soit $G = \langle x \rangle$ le groupe cyclique d'ordre $9$. On a
+  $\langle x^3\rangle\cap\langle x^6\rangle = \langle x^3\rangle\neq\set{e}$,
+  $\ordre(x^3) = 9/(3,9) = 3$ et $\ordre(x^6) = 9/(6,9) = 3$ mais
+  $\ordre(x^3 x^6)=\ordre(e) = 1 < 3 = \ppcm(3,6)$.
+
+\item 
+  Les cycles $(\gamma_i)_{1\leq i\leq 9}$ sont à supports disjoints
+  donc ils commutent deux à deux. De plus si $\gamma$ est l'un de ces cycles,
+  pour tout $n\in\Z^*$, $\supp(\gamma^n)\subseteq\supp(\gamma)$, donc pour tout
+  $i\neq j$, $\langle\gamma_i\rangle\cap\langle\gamma_j\rangle=\set{e}$. Donc
+  d'après b) et c), nous trouvons que l'ordre de $\sigma$ est le PPCM des
+  longueurs (des ordres) des cycles $(\gamma_i)_{1\leq i\leq 9}$.
+\end{enumerate}
+
