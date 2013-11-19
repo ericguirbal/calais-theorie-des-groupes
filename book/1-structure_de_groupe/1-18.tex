@@ -1,0 +1,14 @@
+Pour toute partie non vide $S$ du groupe $G$, on note $\mathcal{H}_S$ l'ensemble
+des sous-groupes de $G$ contenant $S$. Nous savons que
+\[
+  H = \bigcap_{L\in\mathcal{H}_{A\cup B\cup C}} L
+  \quad\text{et}\quad
+  K = \bigcap_{L\in\mathcal{H}_{H\cup C}} L.
+\]
+Montrons que $\mathcal{H}_{A\cup B\cup C} = \mathcal{H}_{H\cup C}$.
+Soit $L\in\mathcal{H}_{A\cup B\cup C}$. Comme $A\cup B\subseteq L$, nécessairement
+$H\subseteq L$ donc $L\in\mathcal{H}_{H\cup C}$. Réciproquement, soit
+$L\in\mathcal{H}_{H\cup C}$. On a $A\cup B\subseteq H\subseteq L$, donc
+$L\in\mathcal{H}_{A\cup B\cup C}$. Nous avons montré que $\mathcal{H}_{A\cup
+B\cup C} = \mathcal{H}_{H\cup C}$, ce qui nous permet de conclure que
+$K = \Gr{H,C}$.
