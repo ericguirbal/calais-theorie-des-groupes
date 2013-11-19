@@ -1,0 +1,34 @@
+Quel que soit $x\in\R^*$, notons $M_x$ la matrice $\mat{x & x \\ 0 & 0}$.
+La multiplication des matrices s'écrit
+\[
+  M_xM_y = M_{xy}.
+\]
+pour tout $(x,y)\in\R^{*2}$. Il s'ensuit que la multiplication des matrices
+définit une loi commutative interne sur l'ensemble $\Gamma$. Nous savons déjà
+que cette loi est associative.  Elle admet pour élément neutre la matrice $M_1$,
+de plus toute matrice $M_x$ est inversible d'inverse $M_{x^{-1}}$, en effet $M_x
+M_{x^{-1}} = M_{x x^{-1}} = M_1$.  L'ensemble $\Gamma$ muni de la
+multiplication des matrices est donc un groupe abélien.
+
+Le groupe $\Gamma$ n'est pas un sous-groupe de $\GL(2,\R)$; en effet, les
+matrices $M_x$ ont un déterminant nul et donc ne sont pas inversibles dans
+$\GL(2,\R)$.
+
+Soit l'application $\varphi\colon\Gamma\rightarrow\R^*$ définie par
+$\varphi(M_x) = x$. 
+
+L'application $\varphi$ est un morphisme de groupes. En effet, pour tout 
+$(M_x,M_y)\in\Gamma^2$, on a
+\[
+  \varphi(M_x M_y) = \varphi(M_{xy}) = xy = \varphi(M_x)\varphi(M_y).
+\]
+
+Le morphisme $\varphi$ est injectif, car $\varphi(M_x) = 1$ implique $x=1$
+c'est-à-dire $M_x = M_1$. 
+
+Enfin, le morphisme $\varphi$ est surjectif, car pour tout $x\in\R^*$, on a
+$\varphi(M_x) = x$.
+
+On conclut que $\varphi$ est un isomorphisme de groupes, donc que les groupes
+$\Gamma$ et $\R^*$ sont isomorphes.
+
