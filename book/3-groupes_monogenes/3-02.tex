@@ -1,0 +1,29 @@
+\begin{enumerate}
+  \item 
+    $(\Rightarrow)$: il existe $x\in\Z$ tel que $x\equiv 0\pmod{m}$ et 
+    $x\equiv 1\pmod{n}$. Nous en déduisons l'existence de deux entiers $k$ et
+    $l$ tel que $x = km$ et $x - 1 = ln$. Ces deux entiers vérifient la relation
+    $km - ln = 1$. D'après le théorème de Bézout, $m$ et $n$ sont premiers entre
+    eux.
+
+    $(\Leftarrow)$: d'après le théorème de Bézout, il existe deux entiers $k$ et
+    $l$ tel que $km + ln = 1$. Posons $x = bkm + aln$. 
+    De $bkm \equiv 0 \pmod{m}$ et $ln \equiv 1\pmod{m}$ nous déduisons
+    \[
+      x\equiv a\pmod{m}.
+    \]
+    De la même façon, $aln \equiv 0 \pmod{n}$ et $km\equiv 1\pmod{n}$ impliquent
+    que
+    \[
+      x\equiv b\pmod{n}.
+    \]
+
+  \item
+    L'application $f$ est surjective si et seulement si, pour tout
+    $(\cl{a},\cl{b})\in\Zn{m}\times\Zn{n}$, il existe $x\in\Z$ tel que 
+    $\sigma(x)=\cl{a}$ et $\pi(x)=\cl{b}$, c'est-à-dire si et seulement si pour
+    tout $(a,b)\in\Z^2$, il existe $x\in\Z$ tel que $x\equiv a\pmod{m}$ et
+    $x\equiv b\pmod{n}$. Le résultat de la question précédente permet de
+    conclure que $f$ est surjective si et seulement si $m$ et $n$ sont premiers
+    entre eux.
+\end{enumerate}
