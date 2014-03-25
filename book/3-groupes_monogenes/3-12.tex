@@ -1,0 +1,119 @@
+\begin{enumerate}
+  \item 
+    Soit 
+    \[
+      M = \matrice{a & b \\ 0 & c}
+      \quad\text{et}\quad 
+      N = \matrice{a' & b' \\ 0 & c'}
+    \]
+    deux matrices de $G$. On trouve
+    \[
+      MN^ {-1} = \matrice{a & b \\ 0 & c} 
+                  \dfrac{1}{a'c'} \matrice{ c' & -b' \\ 0 & a'}
+               = \matrice{ac' & -ab'+ba' \\ 0 & a'c}
+    \]
+    avec $(ac')(a'c) = (ac)(a'c')\neq 0$, donc $MN^{-1}\in G$
+    et $G$ est un sous-groupe de $\GL(2,\R)$.
+
+    L'application 
+    \[
+      \R\to G,\quad a\mapsto\matrice{a & 0 \\ 0 & a}
+    \]
+    est injective, donc le groupe $G$ est infini.
+   
+    Les matrices 
+    \[
+      A = \matrice{1 & -1 \\ 0 & 2}
+      \quad\text{et}\quad 
+      B = \matrice{1 & 2 \\ 0 & 1}
+    \]
+    sont des éléments de $G$ tels que
+    \begin{gather*}
+      AB = \matrice{1 & 1 \\ 0 & 2} 
+      \quad\text{et}\quad
+      BA = \matrice{1 & 3 \\ 0 & 2},
+    \end{gather*}
+    donc le groupe $G$ n'est pas abélien.
+
+  \item
+    L'application $\varphi\from \R \to G$ définie par 
+    \[
+      \varphi(x) = \matrice{1 & x \\ 0 & 1}
+    \]
+    est un homomorphisme de groupes; en effet, pour tout $(x,x')\in\R^2$,
+    \[
+      \varphi(x+x') 
+      = \matrice{1 & x+x' \\ 0 & 1} 
+      = \matrice{1 & x \\ 0 & 1}\matrice{1 & x' \\ 0 & 1} 
+      = \varphi(x)\varphi(x').
+    \]
+    Son image est $H$, donc $H$ est un sous-groupe de $G$.  De plus,
+    l'homomorphisme $\varphi$ est injectif, donc d'après le 1\up{er} théorème
+    d'isomorphisme, nous en déduisons que le groupe $(\R,+)$ est isomorphe au
+    groupe $H$.
+
+    \item 
+      Les éléments d'ordre $2$ du groupe $G$ sont les matrices
+      $\matrice{a & b \\ 0 & c}$ telles que
+      \[
+        \matrice{a & b \\ 0 & c}^2 
+        = \matrice{a^2 & ab+bc \\ 0 & c^2} 
+        = \matrice{1 & 0 \\ 0 & 1}
+        \quad\text{et}\quad
+        \matrice{a & b \\ 0 & c}\neq\matrice{1 & 0 \\ 0 & 1},
+      \]
+    donc les coefficients $a$, $b$ et $c$ sont les solutions du système
+    \[
+        \begin{cases}
+          a \in\{\pm 1\}\\
+          c \in\{\pm 1\}\\
+          b(a+c) = 0\\
+          (a,b,c) \neq (1,0,1)
+        \end{cases}
+    \]
+    soit
+    \[
+      \begin{cases}
+        a = 1\\
+        b = -1\\
+        b \in \R
+      \end{cases}
+      \text{ou}\quad
+      \begin{cases}
+        a = -1\\
+        c = 1\\
+        b \in \R
+      \end{cases}
+      \text{ou}\quad
+      \begin{cases}
+        a = -1\\
+        c = -1\\
+        b = 0
+      \end{cases}
+    \]
+    Les éléments d'ordre 2 de $G$ sont les matrices
+    \[
+      \matrice{-1 & 0 \\ 0 & -1}
+      \quad\text{et}\quad
+      \setm{\matrice{1 & b \\ 0 & -1}, \matrice{-1 & b\\ 0 & 1}}{b\in\R}.
+    \]
+    Les matrices 
+    \[
+      \matrice{1 & 2 \\ 0 & -1}
+      \quad\text{et}\quad 
+      \matrice{1 & 3 \\ 0 & -1}
+    \]
+    sont des éléments d'ordre 2, mais leur produit
+    \[
+      \matrice{1 & 2 \\ 0 & -1} \matrice{1 & 3 \\ 0 & -1} 
+      = \matrice{1 & 1 \\ 0 & 1}
+    \]
+    est un élément d'ordre infini; en effet, on démontre par récurrence que
+    pour tout entier $n>0$,
+    \[
+      \matrice{1 & 1 \\ 0 & 1}^n = 
+        \matrice{1 & n \\ 0 & 1} \neq \matrice{1 & 0 \\ 0 & 1}.
+    \]
+\end{enumerate}
+
+
