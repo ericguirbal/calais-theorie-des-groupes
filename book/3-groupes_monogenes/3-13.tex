@@ -1,0 +1,19 @@
+Soit $C_n=\langle x \rangle$ un groupe cyclique d'ordre $n>1$, et $k$ un entier
+tel que $1\leqslant k\leqslant n-1$. Soit $d = \pgcd(k,n)$. Nous avons les
+équivalences
+%
+\begin{align*}
+  (x^k)^l = e
+  &\iff x^{kl} = e \\
+  &\iff n \divise kl && \text{(corollaire 3.7)} \\
+  &\iff \frac{n}{d} \divise \frac{k}{d}l
+    && \text{où $\pgcd\Bigl(\frac{n}{d},\frac{k}{d}\Bigr) = 1$}\\
+  &\iff \frac{n}{d} \divise l && \text{(lemme de Gauss).}
+\end{align*}
+%
+Ainsi l'ordre de $x^k$ est égal à $\dfrac{n}{d}$.
+
+\begin{remarque}
+  Une conséquence immédiate est que $x^k$ $(0\leq k<n)$ est un générateur du
+  groupe $C_n$ si et seulement si $k$ et $n$ sont premiers entre eux.
+\end{remarque}
