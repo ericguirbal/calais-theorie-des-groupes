@@ -1,0 +1,48 @@
+\begin{enumerate}
+  \item
+    Le groupe multiplicatif des éléments inversibles de $\grq{\Z}{15\Z}$ est
+    (théorème 3.18 et proposition 3.24)
+    \[
+      G_{15} 
+        = \setm{\cl{k}}{1\leq k\leq 14, \pgcd(k,15)=1}
+        = \set{
+            \cl{1},\cl{2},\cl{4},\cl{7},\cl{8},\cl{11},\cl{13},\cl{14}
+          }.
+    \]
+  \item
+    Soit les deux sous-groupes de $G_{15}$,
+    \[
+      \langle\cl{2}\rangle = \set{\cl{1},\cl{2},\cl{4},\cl{8}}
+      \quad\text{et}\quad
+      \langle\cl{11}\rangle = \set{\cl{1},\cl{11}}.
+    \]
+    Nous avons:
+
+    \begin{enumerate}[1)]
+      \item
+        $\langle\cl{2}\rangle \iso C_4$ et $\langle\cl{11}\rangle \iso C_2$.
+      \item
+        Pour tout $h\in\langle\cl{2}\rangle$ et $k\in\langle\cl{11}\rangle$, on
+        a $hk = kh$ ($G_{15}$ est un groupe abélien).
+      \item
+        $G_{15} = \langle\cl{2}\rangle \langle\cl{11}\rangle$ comme le montre la
+        table de multiplication suivante
+        
+        \begin{center}
+          \begin{tabular}{c|cccc}
+            $\times$  & $\cl{1}$  & $\cl{2}$ & $\cl{4}$  & $\cl{8}$ \\
+            \midrule
+            $\cl{1}$  & $\cl{1}$  & $\cl{2}$ & $\cl{4}$  & $\cl{8}$ \\
+            $\cl{11}$ & $\cl{11}$ & $\cl{7}$ & $\cl{14}$ & $\cl{13}$
+          \end{tabular}
+        \end{center}
+
+      \item
+        $\langle\cl{2}\rangle \cap \langle\cl{11}\rangle = (\cl{1})$.
+    \end{enumerate}
+    
+    Donc, d'après la proposition 1.85, nous avons l'isomorphisme
+    \[
+      G_{15} \iso C_2 \times C_4.
+    \]
+\end{enumerate}
