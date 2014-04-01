@@ -1,0 +1,103 @@
+\begin{enumerate}
+  \item
+    \begin{itemize}
+      \item   
+        $\Rd{H,K}$ est reflexive:
+        Pour tout $x\in G$, on a $x = exe$, donc $x \Rd{H,K} x$.
+
+      \item
+        $\Rd{H,K}$ est symétrique:
+        Soit $(x,y)\in G^2$ tel que $x \Rd{H,K} y$. Il existe $(h,k)\in
+        H\times K$ tel que $y = hxk$. On en déduit que $x = h^{-1}yk^{-1}$ où
+        $(h^{-1},k^{-1})\in H\times K$, donc $y \Rd{H,K} x$.
+
+      \item
+        $\Rd{H,K}$ est transitive:
+        Soit $(x,y,z)\in G^3$ tel que $x \Rd{H,K} y$ et $y \Rd{H,K} z$. Il
+        existe $(h_1,k_1)\in H\times K$ et $(h_2,k_2)\in H\times K$ tels que
+        $y = h_1xk_1$ et $z = h_2yk_2$. On en déduit que $z = h_2h_1xk_1k_2$ où
+        $(h_2h_1,k_1k_2)\in H\times K$, donc $x \Rd{H,K} z$.
+    \end{itemize}
+
+    Nous avons montré que la relation binaire $\Rd{H,K}$ est une relation
+    d'équivalence sur $G$. La classe d'équivalence de tout $x\in G$ est
+    \[
+      \cl{x} = \setm{hxk}{(h,k)\in H\times K} = HxK.
+    \]
+
+  \item
+    \begin{itemize}
+      \item
+        $\lambda$ est injective; en effet, supposons
+        $\lambda(hxk) = \lambda(h'xk')$, c'est-à-dire
+        $x^{-1}hxk = x^{-1}h'xk'$. On a alors $hxk = h'xk'$. 
+
+      \item
+        $\lambda$ est surjective; il n'y a rien à faire.
+    \end{itemize}
+
+    En conclusion, $\lambda$ est une bijection.
+
+  \item
+    \begin{enumerate}
+      \item[$\alpha$)]
+        À la question précédente, nous avons montré que les ensembles 
+        $Hx_iK$ et $x_i^{-1}Hx_iK$ sont équipotents, donc 
+        $\card{Hx_iK} = \card{x_i^{-1}Hx_iK}$.
+
+      \item[$\beta$)]
+        $x_i^{-1}Hx_i$ est l'image du sous-groupe $H$ de $G$ par l'automorphisme
+        intérieur $G\to G$, $g\mapsto x_i^{-1}gx_i$, il s'ensuit que
+        $x_i^{-1}Hx_i$ est un sous-groupe de $G$ et que
+        $\ordre{x_i^{-1}Hx_i}=\ordre{H}$.
+
+      \item[$\gamma$)]
+        Pour tout $i$ $(1\leq i\leq r)$, $x_i^{-1}Hx_i$ et $K$ sont deux
+        sous-groupes finis. Appliquons leurs la formule de l'exercice 3.
+        Il vient
+        \[
+          \card{x_i^{-1}Hx_iK} 
+          = \frac{\ordre{x_i^{-1}Hx_i}\ordre{K}}
+                 {\ordre{x_i^{-1}Hx_i\cap K}},
+        \]
+        puis, en utilisant les propriétés $\alpha$) et $\beta$),
+        \[
+          \card{Hx_iK} = \frac{\ordre{H}\ordre{K}}{\ordre{x_i^{-1}Hx_i\cap K}}.
+        \]
+    \end{enumerate}
+      
+    Les classes doubles de $G$ modulo $H$ et $K$ constituent une
+    partition du groupe $G$, donc
+    \[ 
+      \ordre{G} = \sum_{i=1}^r \card{Hx_iK}.
+    \]
+    D'après propriété $\gamma)$, cette égalité devient
+    \[
+      \ordre{G} = \ordre{H}\ordre{K}\sum_{i=1}^r d_i^{-1}
+      \quad\text{où}\quad d_i = \ordre{x_i^{-1}Hx_i\cap K}.
+    \]
+
+  \item
+    Soit $H=\Gr{\tau_1} = \set{e,\tau_1}$ et $K=\Gr{\tau_2} = \set{e,\tau_2}$.
+    Déterminons les classes doubles de $\Sym{3}$ modulo $H$ et $K$. Nous nous
+    aiderons de la table de Cayley de $\Sym{3}$ (exemple 1.18). On
+    trouve deux classes:
+    \[
+      HeK = \set{e, \tau_1, \tau_2, \sigma_1}
+      \quad\text{et}\quad
+      H\tau_3 K = \set{\tau_3,\sigma_2}.
+    \]
+    Cet exemple montre que deux classes doubles distinctes ne sont pas, en
+    général, équipotentes.
+
+    Déterminons, à présent, les classes doubles modulo $K$ et $H$. On trouve
+    encore deux classes:
+    \[
+      KeH = \set{e, \tau_1, \tau_2, \sigma_2}
+      \quad\text{et}\quad
+      K\tau_3 H = \set{\tau_3,\sigma_1}.
+    \]
+    On remarque que $\set{KeH, H\tau_3K} \neq \set{HeK, K\tau_3 H}$, ce qui
+    montre, qu'en général, dans un groupe non abélien, $\Rd{H,K}\neq
+    \Rd{K,H}$.
+\end{enumerate}
