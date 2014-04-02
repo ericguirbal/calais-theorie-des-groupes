@@ -83,7 +83,8 @@
 % Groupes symétriques
 %
 % Groupe symétrique
-\newcommand{\sym}[1]{\operatorname{S}_{#1}}
+\newcommand*{\Sym}[1]{\operatorname{S}_{#1}}
+\let\sym\Sym
 % Support d'une permutation
 \DeclareMathOperator{\supp}{supp}
 
@@ -102,32 +103,44 @@
 % Matrices
 %
 % Matrice
-\newcommand{\mat}[1]{\begin{pmatrix} #1 \end{pmatrix}}
-
+\newcommand*{\dmatrice}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+\let\dmat\dmatrice
+\newcommand*{\tmatrice}[1]{%
+  \bigl(
+    \begin{smallmatrix}
+      #1
+    \end{smallmatrix}
+  \bigr)
+}
+\let\tmat\tmatrice
+\newcommand*{\matrice}[1]{\if@display\dmatrice{#1}\else\tmatrice{#1}\fi}
+\let\mat\matrice        
 %
 % Intervalles
 %
-\newcommand{\interval}[4]{\mathopen{#1}#2\mathclose{}\mathpunct{};#3\mathclose{#4}}
-\newcommand{\Interval}[4]{\mathopen{}\mathclose{\left#1#2,#3\right#4}}
-\newcommand{\ivc}[2]{\interval{[}{#1}{#2}{]}}
-\newcommand{\ivoc}[2]{\interval{]}{#1}{#2}{]}}
-\newcommand{\ivco}[2]{\interval{[}{#1}{#2}{[}}
-\newcommand{\ivo}[2]{\interval{]}{#1}{#2}{[}}
+\newcommand*{\interval}[4]{\mathopen{#1}#2\mathclose{}\mathpunct{};#3\mathclose{#4}}
+\newcommand*{\Interval}[4]{\mathopen{}\mathclose{\left#1#2,#3\right#4}}
+\newcommand*{\ivc}[2]{\interval{[}{#1}{#2}{]}}
+\newcommand*{\ivoc}[2]{\interval{]}{#1}{#2}{]}}
+\newcommand*{\ivco}[2]{\interval{[}{#1}{#2}{[}}
+\newcommand*{\ivo}[2]{\interval{]}{#1}{#2}{[}}
 
 %
 % Divers
 %
 % Groupe engendré par un ensemble
-\newcommand{\Gr}[1]{\left\langle#1\right\rangle}
+\newcommand*{\Gr}[1]{\left\langle#1\right\rangle}
 % Inverse
-\newcommand{\inv}[1]{#1^{-1}}
+\newcommand*{\inv}[1]{#1^{-1}}
 % Valeur absolue
-\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\newcommand*{\abs}[1]{\left\lvert#1\right\rvert}
 % Norme
-\newcommand{\norme}[1]{\left\lVert#1\right\rVert}
+\newcommand*{\norme}[1]{\left\lVert#1\right\rVert}
 % Inégalités
 \renewcommand{\geq}{\geqslant}
 \renewcommand{\leq}{\leqslant}
+% From: f\from A\to B
+\newcommand{\from}{\colon}
 
 %
 % Constantes
