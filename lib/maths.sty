@@ -59,9 +59,10 @@
 % L'application identité
 \DeclareMathOperator{\id}{id}
 % Image d'un homomorphisme
-\DeclareMathOperator{\Image}{Im}
+\DeclareMathOperator{\im}{Im}
 % Noyau d'un homomorphisme
-\DeclareMathOperator{\Ker}{Ker}
+\renewcommand{\ker}{\operatorname{Ker}}
+\let\Ker\ker
 % Rang d'un homomorphisme
 \DeclareMathOperator{\rang}{rg}
 % Isomorphisme de groupes
@@ -70,6 +71,8 @@
 
 % Sous-groupe normal
 \newcommand{\normal}{\lhd}
+% Centre d'un groupe
+\newcommand{\ZG}{\mathrm{Z}}
 
 %
 % Groupes de matrices
