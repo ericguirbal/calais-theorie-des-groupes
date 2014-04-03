@@ -1,0 +1,58 @@
+Pour tout $(a,b,c)\in\K^3$, on note $M_{a,b,c}$ la matrice
+\[
+  \matrice{1 & a & b \\ 0 & 1 & c \\ 0 & 0 & 1}.
+\]
+En développant le déterminant par rapport à la première colonne, on trouve
+immédiatement $\det(M_{a,b,c}) = 1$, donc $\Gamma\subset\GL_3(\K)$.
+
+Soit $M_{a,b,c}\in\Gamma$ et $M_{a',b',c'}\in\Gamma$. On a
+\[
+  M_{a,b,c}M_{a',b',c'} = M_{a+a',b+ac'+b',c+c'}
+\]
+et
+\[
+  M_{a,b,c}^{-1} = M_{-a,ac-b,-c},
+\]
+donc $\Gamma$ est un sous-groupe de $\GL_3(K)$. 
+
+D'après l'une des formules ci-dessus,
+\[
+  M_{a,b,c}\in\ZG(\Gamma) \iff \forall (a',b',c')\in\K^2,\quad ac' = a'c.
+\]
+On trouve $a=0$ et $c=0$. Ainsi 
+\[
+  \ZG(\Gamma) 
+  = \setm{M_{0,b,0}}{b \in \K}.
+\]
+L'application $\varphi\from\K\to\ZG(K)$ définie par
+%
+\[
+  \varphi(x) = M_{0,x,0}
+\]
+%
+est un homomorphisme. Il est clairement bijectif, donc $\ZG(\Gamma) \iso \K$.
+
+Soit l'application $\psi\from\Gamma\to\K\times\K$ définie par
+%
+\[
+  \psi(M_{a,b,c}) = (a,c).
+\]
+%
+$\psi$ est un homomorphisme de groupes. En effet, pour tout
+$(M_{a,b,c},M_{a',b',c'})\in\Gamma^2$,
+%
+\begin{align*}
+  \psi(M_{a,b,c}M_{a',b',c'}) 
+  &= \psi(M_{a+a',b+ac'+b',c+c'}) \\
+  &= (a+a',c+c') \\
+  &= (a,c)+(a',c') \\
+  &= \psi(M_{a,b,c})+\psi(M_{a',b',c'}).
+\end{align*}
+%
+Il est surjectif et 
+$\ker\psi = \ZG(\Gamma)$. Le 1\up{er} théorème d'isomorphisme permet 
+de conclure: 
+\[
+  \frac{\Gamma}{\ZG(\Gamma)}\iso \K\times\K.
+\]
+
