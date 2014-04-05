@@ -1,0 +1,35 @@
+Soit $h = (h_1,h_2)\in H_1\times H_2$. 
+Pour tout $g = (g_1,g_2)\in G_1\times G_2$, on a
+%
+\begin{align*}
+  ghg^{-1} 
+    &= (g_1,g_2)(h_1,h_2)(g_1,g_2)^{-1} \\
+    &= (g_1,g_2)(h_1,h_2)(g_1^{-1},g_2^{-1}) \\
+    &= (g_1 h_1 g_1^{-1},g_2 h_2 g_2^{-1})\in H_1\times H_2
+    && \text{( car $H_1\normal G_1$ et $H_2\normal G_2$)},
+\end{align*}
+%
+donc 
+\[
+  H_1\times H_2\lhd G_1\times G_2.
+\]
+
+Soit $\pi_i\from G_i\to G_i/H_i$ $(i = 1,2)$ les épimorphismes canoniques. On
+construit l'homomorphisme
+%
+\begin{align*}
+  \pi=\pi_1\times\pi_2\from G_1\times G_2 &\to (G_1/H_1)\times(G_2/H_2)\\
+  (g_1,g_2) &\mapsto (\pi_1(g_1),\pi_2(g_2))
+\end{align*}
+%
+La surjectivité de $\pi$ résulte immédiatement de sa définition. Soit
+$(g_1,g_2)\in G_1\times G_2$. On a 
+\[
+  (g_1,g_2)\in\ker\pi 
+  \iff (g_1,g_2)\in\ker\pi_1\times\ker\pi_2 = H_1\times H_2.
+\]
+Le 1\up{er} théorème d'isomorphisme permet de conclure:
+\[
+  \grq{G_1\times G_2}{H_1\times H_2}\iso\grq{G_1}{H_1}\times\grq{G_2}{H_2}.
+\]
+
