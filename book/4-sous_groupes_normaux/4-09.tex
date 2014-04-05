@@ -1,0 +1,54 @@
+\emph{$H$ est un sous-groupe de $\Sym{4}$:} 
+Son unique élément $\neq e$ est un produit de deux transpositions à supports
+disjoints donc est d'ordre $2$. Il s'ensuit que $H$ est stable pour l'inverse et
+le produit, donc $H<\Sym{4}$.
+
+\emph{$K$ est un sous-groupe de $\Sym{4}$:}
+Les éléments $\neq e$ de $K$ sont des transpositions à supports disjoints, donc
+ils sont d'ordre $2$ Il s'ensuit que $K$ est stable pour l'inverse. Reste à
+vérifier la stabilité du produit. Sachant que dans un groupe, si deux éléments
+ainsi que leur produit sont d'ordre $2$ alors ils commutent (exercice 5,
+chapitre I), il suffit
+d'effectuer les produits suivants:
+%
+\begin{align*}
+  (1,2)(3,4)(1,3)(2,4) &= (1,4)(2,3) \\
+  (1,2)(3,4)(1,4)(2,3) &= (1,3)(2,4) \\
+  (1,3)(2,4)(1,4)(2,3) &= (1,2)(3,4).
+\end{align*}
+%
+On a bien $K<\Sym{4}$.
+
+\emph{$K$ est un sous-groupe normal de $\Sym{4}$:}
+Soit $\sigma\in\Sym{4}$ et $(i,j)(k,l)$ un produit de transpositions à supports
+disjoints. On a
+%
+\begin{align*}
+  \sigma\circ(i,j)\circ(k,l)\circ\sigma^{-1}
+  &= \sigma\circ(i,j)\sigma^{-1}\sigma\circ{k,l}\circ\sigma^{-1} \\
+  &= (\sigma(i),\sigma(j))\circ(\sigma(k),\sigma(l)).
+\end{align*}
+%
+Les deux transpositions $(\sigma(i),\sigma(j))$ et $(\sigma(k),\sigma(l))$ sont
+disjointes, et $K$ contient toutes les permutations qui sont le produit de deux
+transpositions à supports disjoints, donc
+\[
+  \sigma\circ(i,j)\circ(k,l)\circ\sigma^{-1}\in K.
+\]
+
+\emph{$H$ est normal dans $K$:}
+Le sous-groupe $H$ est inclus dans le sous-groupe abélien $K$ donc $H\normal K$.
+
+\emph{$H$ n'est pas normal dans $\Sym{4}$:}
+%
+Soit $\sigma = (2,3)$. Alors
+%
+\begin{align*}
+  \sigma(12)(34)\sigma^{-1} 
+  &= \sigma(12)\sigma^{-1}\sigma(34)\sigma^{-1} \\
+  &= (\sigma(1)\sigma(2))(\sigma(3)\sigma(4))  \\
+  &= (13)(24)\notin H,
+\end{align*}
+%
+Donc $H\notnormal\Sym{4}$.
+
