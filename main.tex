@@ -4,7 +4,15 @@
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[francais]{babel}
+\usepackage[french]{babel}
+\frenchbsetup{
+  og=«, fg=»,
+  ThinColonSpace=true
+}
+\addto\captionsfrench{%
+  \renewcommand{\contentsname}{Sommaire}%
+}
+
 \usepackage{lmodern}
 \usepackage[upright,widespace]{fourier}
 \usepackage{maths}
@@ -94,7 +102,6 @@
 }
 
 \begin{document}
-\renewcommand{\contentsname}{Sommaire}
 
 \title{
   Éléments de théorie des groupes\\
