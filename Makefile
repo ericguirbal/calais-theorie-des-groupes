@@ -17,7 +17,7 @@ a5: $(BOOK)-a5.pdf
 
 a4: $(BOOK)-a4.pdf
 
-$(BOOK)-%.pdf: $(BOOK)-%.tex main.tex opt-%.tex $(BIBLIO) maths.sty
+$(BOOK)-%.pdf: $(BOOK)-%.tex main.tex opt-%.tex $(BIBLIO) maths.sty copyright.tex
 	@$(PDFLATEX) $(LATEX_OPTS) $<
 	@$(BIBTEX) $(basename $@)
 	@$(PDFLATEX) $(LATEX_OPTS) $<
