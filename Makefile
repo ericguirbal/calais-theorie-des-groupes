@@ -1,63 +1,47 @@
 -include Makefile.ini
-PREPROCESSOR = bin/makelatex.pl
-PERL        ?= perl
 PDFLATEX   	?= pdflatex
 BIBTEX     	?= bibtex
 PDFVIEWER  	?= mupdf -r 112
 
 DIST_DIR     = dist
-BUILD_DIR    = build
 SOURCE_DIR   = book
-TEMPLATE     = lib/template.tex
 BIBLIO       = $(SOURCE_DIR)/bibliographie.bib
 
-LATEX_OPTS   = -halt-on-error -output-directory $(BUILD_DIR)
-
-BOOK        ?= book
-PAGE_COLOR  ?= White
-TEXT_COLOR  ?= Black
+BOOK         = book
+MASTER       = main
 
 SOURCE_FILES = $(shell find $(SOURCE_DIR)/ -type f -name '*.tex') 
 LATEX_FILES  = lib/maths.sty
+
+LATEX_OPTS   = -halt-on-error -jobname $(BOOK)
 
 RERUN = "^LaTeX Warning: .* Rerun to get"
 
 export SOURCE_DIR PAGE_COLOR TEXT_COLOR
 
-DEBUG ?= 0
-ifeq ($(DEBUG),0)
-	LATEX_OPTS += -interaction batchmode
-endif
-
 .PHONY: pdf release view clean distclean
 
-pdf: $(BUILD_DIR)/$(BOOK).pdf
+pdf: $(BOOK).pdf
 
-$(BUILD_DIR)/$(BOOK).pdf: $(BUILD_DIR)/$(BOOK).tex $(BIBLIO)
+$(BOOK).pdf: $(MASTER).tex $(BIBLIO)
 	@$(PDFLATEX) $(LATEX_OPTS) $<
-	@$(BIBTEX) $(basename $<)
+	@$(BIBTEX) $(basename $@)
 	@$(PDFLATEX) $(LATEX_OPTS) $<
 	@(while grep -q $(RERUN) $(basename $@).log; \
 	do \
 		$(PDFLATEX) $(LATEX_OPTS) $<; \
 	done)
 
-tex: $(BUILD_DIR)/$(BOOK).tex  
-
-$(BUILD_DIR)/$(BOOK).tex: $(SOURCE_FILES) $(TEMPLATE) $(LATEX_FILES) $(PREPROCESSOR)
-	mkdir -p $(BUILD_DIR)
-	$(PERL) $(PREPROCESSOR) > $@
-	cp $(LATEX_FILES) $(BUILD_DIR)
-
 release: pdf
-	cp $(BUILD_DIR)/$(BOOK).pdf $(DIST_DIR)/$(BOOK)-$$(date +"%Y%m%d").pdf
+	cp $(BOOK).pdf $(DIST_DIR)/$(BOOK)-$$(date +"%Y%m%d").pdf
 
 view: pdf
-	$(PDFVIEWER) $(BUILD_DIR)/$(BOOK).pdf &
+	$(PDFVIEWER) $(BOOK).pdf &
 
 clean:
-	rm -fr $(BUILD_DIR)
+	rm -f *.aux *.log *.toc *.bbl *.blg *.out
 
 distclean: clean
-	rm -fr $(DIST_DIR)/*
+	rm -f $(BOOK).pdf
+	rm -f $(DIST_DIR)/*
 

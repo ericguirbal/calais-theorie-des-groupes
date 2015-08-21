@@ -11,6 +11,7 @@
 \usepackage{microtype}
 \usepackage[shortlabels]{enumitem}
 \usepackage{booktabs}
+\usepackage{pgffor}
 \usepackage[x11names]{xcolor}
 \usepackage{titlesec}
 \usepackage{titletoc}
@@ -28,9 +29,6 @@
     diédral, groupe fini, theorèmes de Sylow, sous-groupe normal, action de
     groupe, suite de composition, groupe abélien, groupe libre},
   pdflang=fr-FR]{hyperref}
-
-\pagecolor{[% page_color %]}
-\color{[% text_color %]}
 
 %%% En-têtes
 \pagestyle{fancy}
@@ -80,6 +78,21 @@
 \theoremstyle{remark}
 \newtheorem*{remarque}{Remarque}
 
+%%% Pour chacun des chapitres, le nombre d'exercices
+%%% et le dossier dans lequel sont leurs solutions.
+\newcommand\thebook{%
+  % dossier/chapitre/nombre d'exercices
+  1-structure_de_groupe/Structure de groupe/33,
+  2-classes_modulo_un_sous_groupe/Classes modulo un sous-groupe/10,
+  3-groupes_monogenes/{Groupes monogènes, symétriques et diédraux}/33,
+  4-sous-groupes_normaux/Sous-groupes normaux/38,
+  5-groupe_operant_sur_un_ensemble/Groupe opérant sur un ensemble/27,
+  6-groupes_finis/Groupes finis. Théorèmes de Sylow/26,
+  7-suites_de_composition/Suites de composition/35,
+  8-groupes_abeliens/Groupes abéliens/23,
+  9-groupes_libres/Groupes libres. Générateurs et relations. Produit libre de groupes/12
+}
+
 \begin{document}
 \renewcommand{\contentsname}{Sommaire}
 
@@ -89,40 +102,40 @@
 }
 
 \date{
-  \small\today\\
-  Commit:
-  \href{https://github.com/ericguirbal/calais-theorie-des-groupes/tree/[% commit %]}{[% commit %]}
+  \today
 }
 \author{Éric Guirbal}
 
 \frontmatter
 \maketitle
 
-\pagestyle{fancy}
-
-%%% état d'avancement du projet
-[% INCLUDE avancement.tex %]
-
 \tableofcontents
 
 \mainmatter
-\pagestyle{fancy}
 
-[% FOREACH chapter IN chapters.keys.sort %]
-\chapter{[% chapters.$chapter.title %]}
-[% FOREACH solution IN chapters.$chapter.solutions.sort %]
-[% num = solution.match('\d+-(\d+)') %]
-\setcounter{solution}{[% num.0 - 1 %]}
-\begin{solution}
-  [% INCLUDE "$chapter/$solution" %]
-\end{solution}
-[% END %]
-[% END %]
+\foreach \dir / \chaptertitle / \numberofexercises [count=\chapternum] in \thebook {
+  \chapter{\chaptertitle}
+  \foreach \sol in {1,...,\numberofexercises} {%
+    \edef\solutionfilename{
+      \ifnum \sol < 10
+        book/\dir/\chapternum-0\sol.tex
+      \else
+        book/\dir/\chapternum-\sol.tex
+      \fi
+    }
+    \IfFileExists{\solutionfilename}{%
+      \setcounter{solution}{\numexpr\sol-1\relax}
+      \begin{solution}
+        \input{\solutionfilename}
+      \end{solution}
+    }{}
+  }
+}
 
 \backmatter
 
 \bibliographystyle{alpha}
-\bibliography{[% source_dir %]/bibliographie}
+\bibliography{book/bibliographie}
 \nocite{*}
 \end{document}
 
