@@ -87,6 +87,27 @@
 \theoremstyle{remark}
 \newtheorem*{remarque}{Remarque}
 
+%%% Pour que les fausses pages vides (de fin de chapitre par exemple)
+%%% soient complètement vides (sans en-tête, pied de page ou folio)
+\makeatletter
+\renewcommand*\cleardoublepage{
+  \clearpage
+  \if@twoside
+    \ifodd
+      \c@page
+    \else
+      \hbox{}
+      \thispagestyle{empty}
+      \newpage
+      \if@twocolumn
+        \hbox{}
+        \newpage
+      \fi
+    \fi
+  \fi
+}
+\makeatother
+
 %%% Pour chacun des chapitres, le nombre d'exercices
 %%% et le dossier dans lequel sont leurs solutions.
 \newcommand\thebook{%
@@ -103,7 +124,6 @@
 }
 
 \begin{document}
-
 \title{
   Éléments de théorie des groupes\\
   Solutions des exercices
