@@ -106,9 +106,12 @@
 }
 \makeatother
 
+%%% Le dossier contenant les solutions
+\newcommand*{\solutionsdir}{solutions}
+
 %%% Pour chacun des chapitres, le nombre d'exercices
 %%% et le dossier dans lequel sont leurs solutions.
-\newcommand\thebook{%
+\newcommand*{\thebook}{%
   % dossier/chapitre/nombre d'exercices
   1-structure_de_groupe/Structure de groupe/33,
   2-classes_modulo_un_sous_groupe/Classes modulo un sous-groupe/10,
@@ -145,9 +148,9 @@
   \foreach \sol in {1,...,\numberofexercises} {%
     \edef\solutionfilename{
       \ifnum \sol < 10
-        book/\dir/\chapternum-0\sol.tex
+        \solutionsdir/\dir/\chapternum-0\sol.tex
       \else
-        book/\dir/\chapternum-\sol.tex
+        \solutionsdir/\dir/\chapternum-\sol.tex
       \fi
     }
     \IfFileExists{\solutionfilename}{%
@@ -162,7 +165,7 @@
 \backmatter
 
 \bibliographystyle{alpha}
-\bibliography{book/bibliographie}
+\bibliography{bibliographie}
 \nocite{*}
 \end{document}
 
