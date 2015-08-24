@@ -16,7 +16,10 @@ ifeq ($(SILENT),1)
 	LATEXMK_OPTS += -silent
 endif
 
-.PHONY: all a5 a4 clean cleanall help FORCE
+# Version
+VERSION = $(shell git describe --always --long --dirty)
+
+.PHONY: all a5 a4 clean cleanall help version.tex
 
 help:
 	@echo "Usage: make [options] [cibles]"
@@ -39,12 +42,17 @@ a5: $(BOOK_FILE)-a5.pdf
 
 a4: $(BOOK_FILE)-a4.pdf
 
-$(BOOK_FILE)-%.pdf: $(BOOK_FILE)-%.tex FORCE
-	@latexmk $(LATEXMK_OPTS) $<
+$(BOOK_FILE)-%.pdf: version.tex
+	@latexmk $(LATEXMK_OPTS) $(basename $@).tex
 	@echo "\033[92mFichier $@ créée avec succès.\033[0m"
 
+version.tex:
+	@/bin/echo -n '\newcommand{\OPTversion}{' > version.tex
+	@/bin/echo -n '$(VERSION)' >> version.tex
+	@/bin/echo -n '}' >> version.tex
+
 clean:
-	@rm -fv *.aux *.log *.toc *.bbl *.blg *.out *.fls *.fdb_latexmk
+	@rm -fv *.aux *.log *.toc *.bbl *.blg *.out *.fls *.fdb_latexmk version.tex
 
 cleanall: clean
 	@rm -fv $(BOOK_FILE)-*.pdf
