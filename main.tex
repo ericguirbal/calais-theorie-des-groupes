@@ -17,9 +17,9 @@
 \usepackage{microtype}
 \usepackage[shortlabels]{enumitem}
 \usepackage{booktabs}
-\usepackage{pgffor}
-\usepackage{graphicx}
 \usepackage[x11names]{xcolor}
+\usepackage{tikz}
+\usepackage{graphicx}
 \usepackage{titlesec}
 \usepackage{titletoc}
 \usepackage{fancyhdr}
@@ -121,7 +121,71 @@
   6-groupes_finis/Groupes finis. Théorèmes de Sylow/26,
   7-suites_de_composition/Suites de composition/35,
   8-groupes_abeliens/Groupes abéliens/23,
-  9-groupes_libres/Groupes libres. Générateurs et relations. Produit libre de groupes/12
+  9-groupes_libres/Groupes libres. Générateurs et relations. Produit libre de groupes/12%
+}
+%%% Détermine les nombres des solutions pour chacun des chapitres
+%%% ansi que les nombres totaux des exercices et solutions.
+%%% Ces nombres sont sauvegardés dans des compteurs.
+\newcommand*{\calculatewhathasbeendone}{
+  \newcounter{totalexercises}
+  \newcounter{totalsolutions}
+  \foreach \dir/\chaptertitle/\numberofexercises [count=\chapternum] in \thebook {%
+    \newcounter{solutionsforchapter\chapternum}%
+    \foreach \sol in {1,...,\numberofexercises} {%
+      \edef\solutionfilename{%
+        \ifnum \sol < 10%
+          \solutionsdir/\dir/\chapternum-0\sol.tex%
+        \else%
+          \solutionsdir/\dir/\chapternum-\sol.tex%
+        \fi%
+      }%
+      \IfFileExists{\solutionfilename}{%
+        \stepcounter{solutionsforchapter\chapternum}%
+      }{}%
+    }%
+    \addtocounter{totalexercises}{\numberofexercises}%
+    \addtocounter{totalsolutions}{\value{solutionsforchapter\chapternum}}%
+  }
+}
+%%% Représente un pourcentage par un donut
+\newcommand*{\donut}[8]{%
+  \begin{tikzpicture}
+    \pgfmathtruncatemacro{\smallquantity}{#1}
+    \pgfmathtruncatemacro{\largequantity}{#2}
+    \pgfmathsetmacro{\radint}{#3} % rayon intérieur
+    \pgfmathsetmacro{\radext}{#4} % rayon extérieur
+    \def\colorint{#5}             % couleur du disque intérieur
+    \def\colorext{#6}             % couleur du donut
+    \def\colorbrd{#7}             % couleur des bords du donut
+    \def\colordonut{#8}           % couleur de la part du donut qui représente p.100
+    \pgfmathtruncatemacro{\percent}{round(100*\smallquantity/\largequantity}
+
+    \fill[\colorint] circle(\radint);
+    \filldraw[even odd rule,fill=\colorext,draw=\colorbrd] 
+      circle(\radext) circle(\radint) 
+      node[\colordonut,scale=4] {$\percent\,\%$} 
+      node[\colordonut,yshift=-0.85cm,scale=1.2] {$\smallquantity/\largequantity$};
+    
+    \pgfmathsetmacro{\angle}{3.6*\percent};
+    \fill[\colordonut] (0,\radint) arc (90:90-\angle:\radint) 
+      -- (90-\angle:\radext) arc (90-\angle:90:\radext) 
+      -- cycle;
+  \end{tikzpicture}
+}
+%%% Représente un pourcentage
+\newcommand*{\pie}[6]{%
+  \begin{tikzpicture}[baseline=-#3cm/2.5]
+    \pgfmathsetmacro{\smallquantity}{#1}
+    \pgfmathsetmacro{\largequantity}{#2}
+    \pgfmathsetmacro{\radius}{#3}
+    \def\colorpie{#4}   % couleur de la part représentant le p.100
+    \def\colorbg{#5}    % couleur de fond
+    \def\colorbd{#6}    % couleur du bord
+    \pgfmathsetmacro{\angle}{360*\smallquantity/\largequantity};
+    
+    \filldraw[fill=\colorbg,draw=\colorbd] circle(\radius);
+    \fill[\colorpie] (0,\radius) arc (90:90-\angle:\radius) -- (0,0) -- cycle;
+  \end{tikzpicture}%
 }
 
 \begin{document}
@@ -140,6 +204,8 @@
 \include{copyright}
 
 \tableofcontents
+
+\include{avancement}
 
 \mainmatter
 

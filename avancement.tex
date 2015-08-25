@@ -1,0 +1,43 @@
+\chapter{État d'avancement du projet}
+
+\calculatewhathasbeendone
+
+\vfill
+
+%%% Pourcentage des exercices qui ont une solution
+\begin{center}
+  \donut
+    {\value{totalsolutions}}
+    {\value{totalexercises}}
+    {2}         % rayon intérieur (en cm)
+    {2.5}       % rayon extérieur (en cm)
+    {white}     % couleur du disque intérieur
+    {black!15}  % couleur du donut
+    {black!5}   % couleur des bords du donut
+    {black}     % couleur de la part du donut qui représente le p.100
+\end{center}
+
+\bigskip
+
+%%% Pourcentage des exercices qui ont une solution pour chacun des chapitres
+{ 
+  \footnotesize
+  \begin{enumerate}[I.]
+    \foreach \dir / \chaptertitle / \numberofexercises [count=\chapternum] in \thebook {%
+      \item
+        \begin{minipage}[t]{0.84\linewidth}
+          \chaptertitle~~\titlerule*[0.5pc]{.}
+        \end{minipage}%
+        \hfill\arabic{solutionsforchapter\chapternum}/\numberofexercises\hspace{0.2cm}
+        \pie
+          {\value{solutionsforchapter\chapternum}}
+          {\numberofexercises}
+          {0.2}     % rayon (en cm)
+          {black}   % couleur de la part
+          {white}   % couleur de fond
+          {black}   % couleur du bord
+       }%
+  \end{enumerate}
+}
+
+\vfill\vfill
