@@ -1,0 +1,29 @@
+\begin{enumerate}
+  \item 
+    L'ensemble $\U$ est une partie de $\Q^*$. 
+    De plus, si $x\in\U$ et $y\in\U$, on a $xy\in\U$ et $x^{-1} = x\in\U$, donc $(\U,\times)$ est un sous-groupe de $(\Q^*,\times)$.
+
+  \item
+    L'application $\varphi\from\U\to\Zn{2}$ définie par $\varphi(1) = \cl{0}$ et $\varphi(-1) = \cl{1}$ est un homomorphisme de groupes; en effet,
+    %
+    \begin{align*}
+      \varphi(1\times 1)
+        &= \varphi(1)
+         = \cl{0}
+         = \cl{0} + \cl{0}
+         = \varphi(1) + \varphi(1), \\
+      \varphi(1\times (-1)) 
+        &= \varphi(-1) 
+         = \cl{1} 
+         = \cl{0} + \cl{1} 
+         = \varphi(1) + \varphi(-1) 
+      \shortintertext{et}
+      \varphi((-1)\times (-1))
+        &= \varphi(1)
+         = \cl{0}
+         = \cl{1} + \cl{1}
+         = \varphi(-1) + \varphi(-1).
+    \end{align*}
+    %
+    De plus, l'application $\varphi$ est clairement bijective, donc les groupes $(\U,\times)$ et $\bigl(\Zn{2},+\bigr)$ sont isomorphes.
+\end{enumerate}
