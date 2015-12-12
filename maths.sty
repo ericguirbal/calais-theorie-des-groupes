@@ -2,6 +2,7 @@
 \ProvidesPackage{maths}[2013/09/01 Collection de macros mathématiques]
 
 \RequirePackage{amsmath}
+\RequirePackage{mathtools}
 
 %
 % Ensembles de nombres
@@ -106,10 +107,9 @@
 \DeclareMathOperator{\pgcd}{pgcd}
 \DeclareMathOperator{\ppcm}{ppcm}
 
-% Ensemble
-\newcommand*{\set}[1]{\{\,#1\,\}}
-\newcommand*{\setm}[2]{\left\{\,#1; #2\,\right\}}
-
+% Définition d'un ensemble
+\providecommand\given{\nonscript\:{;}\allowbreak\nonscript\:\mathopen{}}
+\DeclarePairedDelimiterX\set[1]{\lbrace}{\rbrace}{\,#1\,}
 %
 % Matrices
 %
