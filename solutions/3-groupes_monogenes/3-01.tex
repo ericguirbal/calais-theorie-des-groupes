@@ -1,0 +1,27 @@
+\begin{enumerate}[1)]
+  \item 
+    \begin{enumerate}
+      \item 
+        On a
+        %
+        \begin{align*}
+          \set[\big]{k\in\Z \given (a,b)^k = (e,e)}
+            &= \set[\big]{k\in\Z \given a^k = e} \cap \set[\big]{k\in\Z \given b^k = e} \\
+            &= r\Z \cap s\Z \\
+            &= l\Z,
+        \end{align*}
+        %
+        où $l$ est le plus petit commun multiple de $r$ et $s$, donc l'ordre de $(a,b)$ dans $C_m\times C_n$ est $l$.
+
+      \item
+        Supposons que $m$ et $n$ soient premiers entre eux,  $C_m = \Gr{a}$ et $C_n = \Gr{b}$.
+        On a $\card{C_m\times C_n} = mn$ et, d'après le résultat obtenu à la question précédente, $\ordre((a,b)) = mn$, donc le groupe $C_m\times C_n$ est cyclique.
+
+        Réciproquement, supposons que $C_m\times C_n$ soit cyclique.
+        Soit $(a,b)$ un générateur du groupe $C_m\times C_n$.
+        Alors $\ordre((a,b)) = mn$.
+        D'après le résultat de la question précédente, $\ppcm(\ordre(a),\ordre(b)) = mn$.
+        De plus $a$ et $b$ sont respectivement des générateurs des groupes $C_m$ et $C_n$, donc $\ppcm(m,n) = mn$.
+        Il s'ensuit que $m$ et $n$ sont premiers entre eux.
+    \end{enumerate}
+\end{enumerate}
