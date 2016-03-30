@@ -1,0 +1,41 @@
+\begin{enumerate}
+  \item
+    \emph{Existence.} 
+    Elle résulte immédiatement de l'exercice~5 et de l'égalité $x^n = x^k$ pour tout $n\in\Z$ où $k\in\set{0,1}$ tel que $n\equiv k\pmod{2}$.
+    
+    \emph{Unicité.}
+    Supposons qu'il n'y a pas unicité. 
+    Il existe donc deux $r$-uplets distincts $(k_1,k_2,\dots,k_r)\in\set{0,1}^r$ et $(l_1,l_2,\dots,l_r)\in\set{0,1}^r$ tels que
+    \[
+      a_1^{k_1} a_2^{k_2} \dots a_r^{k_r} = a_1^{l_1} a_2^{l_2} \dots a_r^{l_r}.
+    \]
+    Soit $j\in\set{1,2,\dots,r}$ tel que $k_j\neq l_j$. 
+    On a donc
+    \[
+      a_j = 
+        \begin{dcases}
+          \prod_{i=1,i\neq j}^r a_i^{l_i - k_i} & \text{si $k_j - l_j = 1$} \\
+          \prod_{i=1,i\neq j}^r a_i^{k_i - l_i} & \text{si $k_j - l_j = -1$}.
+        \end{dcases}
+    \]
+    Nous en déduisons que $\set{a_1,a_2,\dots,a_r}\setminus\set{a_j}$ est une famille génératrice de $G$ ce qui contredit la minimalité de $\set{a_1,a_2,\dots,a_r}$.
+  
+  \item
+     L'application $\varphi\from\Gr{a_1}\times\Gr{a_2}\times\dots\times\Gr{a_r}\to G$ définie par 
+     \[
+       \varphi(x_1,x_2,\dots,x_r) = x_1x_2\dots x_r
+     \]
+     est un homomorphisme de groupes; en effet, pour tout $(x_1,x_2,\dots,x_r)\in\Gr{a_1}\times\Gr{a_2}\times\dots\times\Gr{a_r}$ et $(y_1,y_2,\dots,y_r)\in\Gr{a_1}\times\Gr{a_2}\times\dots\times\Gr{a_r}$, on a
+     %
+     \begin{align*}
+       \varphi((x_1,x_2,\dots,x_r)(y_1,y_2,\dots,y_r))
+       &= \varphi(x_1y_1,x_2y_2,\dots,x_ry_r) \\
+       &= x_1y_1x_2y_2\dots x_ry_r \\
+       &= (x_1x_2\dots x_r)(y_1y_2\dots y_r) \\
+       &= \varphi(x_1,x_2,\dots,x_r)\varphi(y_1,y_2,\dots,y_r).
+     \end{align*}
+     %
+     Cette homomorphisme est bijective d'après la question précédente. 
+     De plus, la minimalité de $\set{a_1,a_2,\dots,a_r}$ implique que $a_i \neq e$ pour tout $i$, donc chaque élément $a_i$ est d'ordre~2, c'est-à-dire $\Gr{a_i}\iso C_2$.
+     Nous en déduisons que $G$ est isomorphe à $C_2^r$ et concluons que le groupe $G$ est d'ordre $2^r$.
+\end{enumerate}
