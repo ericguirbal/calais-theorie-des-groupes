@@ -1,0 +1,56 @@
+Déterminons l'ordre des matrices suivantes:
+%
+\begin{align*}
+  A &= \matrice{1 & 0 \\ 0 & -\I}, & B &= \matrice{1 & 1 \\ 0 & 1}, & C &= \matrice{-\I & 0 \\ 0 & \I}, \\
+  D &= \matrice{2 & -3\I \\ 1 & \I}, & E &= \matrice{2 & -2\I \\ -3 & 2\I}, & F &=\matrice{1 & 2 \\ 1 & 1}.
+\end{align*}
+%
+On note $I$ la matrice identité.
+
+Pour toute matrice $M\in\GL(2,\C)$ et tout entier $n$, on a $\det(M^n) = (\det(M))^n$, d'où nous déduisons que si $M$ est une matrice d'ordre fini, alors son déterminant est une racine de l'unité.
+
+\emph{Ordre de $A$.}
+Son déterminant est $-1$, donc l'ordre de $A$, s'il est fini, est nécessairement pair.
+On calcule successivement $A^2 = \matrice{1 & 0 \\ 0 & -1}$, $A^4 = I$.
+La matrice $A$ est d'ordre $4$.
+  
+\emph{Ordre de $B$.}
+En écrivons $B = I + \matrice{0 & 1 \\ 0 & 0}$ et calculons $B^n$ à l'aide de la formule de Newton:
+\[
+  B^n = \sum_{k = 0}^n \binom{n}{k} \matrice{0 & 1 \\ 0 & 0}^k.
+\]
+Or $\matrice{0 & 1 \\ 0 & 0}^2 = \matrice{0 & 0 \\ 0 & 0}$, donc pour tout entier $k>1$, on a $\matrice{0 & 1 \\ 0 & 0}^k = \matrice{0 & 0 \\ 0 & 0}$.
+Il s'ensuit que
+\[
+  B^n = I + n\matrice{0 & 1 \\ 0 & 0} = \matrice{1 & n \\ 0 & 1},
+\]
+ce qui montre que $B$ est une matrice d'ordre infini.
+
+\emph{Ordre de $C$.}
+De $C^2 = -I$, nous déduisons que $C$ est d'ordre $4$.
+
+\emph{Ordre de $D$.}
+Son déterminant $5\I$ n'est pas une racine de l'unité, donc $D$ est d'ordre infini.
+
+\emph{Ordre de $E$.}
+Son déterminant $-2\I$ n'est pas une racine de l'unité, donc $E$ est d'ordre infini.
+
+\emph{Ordre de $F$.}
+Comme $\det(F) = -1$, l'ordre de la matrice $F$, s'il est fini, est nécessairement pair.
+Écrivons $F = I + G$ où $G = \matrice{0 & 2 \\ 1 & 0}$. 
+Soit $n\geq 1$ un entier.
+La formule du binôme de Newton donne
+%
+\[
+  F^{2n}
+    = \sum_{k=0}^{2n} \binom{2n}{k} G^k
+    = \sum_{k=0}^n \binom{2n}{2k} G^{2k} + \sum_{k=0}^{n-1} \binom{2n}{2k+1} G^{2k+1}.
+\]
+On démontre facilement par récurrence que pour tout entier naturel~$p$, on a
+\[
+  G^{2p} = \matrice{2^p & 0 \\ 0 & 2^p}
+  \qquad\text{et}\qquad
+  G^{2p+1} = \matrice{0 & 2^{p+1} \\ 2^p & 0},
+\]
+donc le coefficient d'indice $(1,1)$ de $F^{2n}$ est $\sum_{k=0}^n \binom{2n}{2k} 2^k \neq 1$, par conséquent $F^{2n} \neq I$.
+Nous en déduisons que la matrice $F$ est d'ordre infini.
