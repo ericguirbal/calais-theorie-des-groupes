@@ -1,0 +1,31 @@
+\begin{enumerate}
+  \item 
+    Nous avons montré que le groupe $\Sym{3}$ est isomorphe au sous-groupe $\Gamma$ de $\GL(2,\R)$. 
+    Soit $\varphi$ un isomorphisme entre $\Sym{3}$ et $\Gamma$.
+    L'application $\rho\from\Sym{3}\to\GL(2,\R)$ définie par $\rho(x) = \varphi(x)$ pour tout $x\in\Sym{3}$ est une représentation matricielle fidèle de $\Sym{3}$ de degré $2$ sur $\R$.
+
+    De même, les groupes $\Gamma_2$, $\Gamma_3$ et $K_2$ admettent chacun une représentation matricielle fidèle de degré $2$ sur $\R$. 
+  
+  \item
+    Puisque que pour tout $a+\I b\in\C^*$, la matrice $\matrice{a & -b \\ b & a}$ a un déterminant $a^2+b^2$ non nul, l'application $\rho\from\C^*\to\GL(2,\R)$ telle que
+    \[
+      \rho(a+\I b) = \matrice{a & -b \\ b & a}
+    \]
+    est donc bien définie. 
+    Cette application est un homomorphisme de groupe; en effet, pour tous nombres complexes non nuls $z = a+\I b$ et $w = c+\I d$, nous avons
+    %
+    \begin{align*}
+      \rho(zw) 
+        &= \rho(ac-db + \I (ad + bc))
+         = \matrice{ac-db & -ad-bc \\ ad + bc & ac - bd} \\
+      \intertext{et}
+      \rho(z)\rho(w)
+        &= \matrice{a & -b \\ b & a}\matrice{c & -d \\ d & c}
+         = \matrice{ac-bd & -ad -bc \\ bc + ad & -db + ac}.
+    \end{align*}
+    %
+    De plus, il est immédiat que $\Ker \rho = \set{0}$.
+
+    Nous en déduisons que $\rho$ est une représentation matricielle fidèle de degré $2$ sur $\R$  du groupe multiplicatif $\C^*$.
+\end{enumerate}
+
