@@ -1,0 +1,58 @@
+\begin{enumerate}
+  \item 
+    L'application $\varphi\from G_1\times G_2\to G_2\times G_1$ définie par $\varphi(g_1,g_2) = (g_2,g_1)$ est:
+    \begin{itemize}
+      \item 
+        \textit{un homomorphisme:}
+        en effet, pour tous éléments $(g_1,g_2)$ et $(h_1,h_2)$ de $G_1\times G_2$, on a
+        %
+        \begin{align*}
+          \varphi((g_1,g_2)(h_1,h_2))
+            &= \varphi(g_1h_1, g_2h_2) \\
+            &= (g_2h_2, g_1h_1) \\
+            &= (g_2,g_1)(h_2,h_1) \\
+            &= \varphi(g_1,g_2)\varphi(h_1,h_2).
+        \end{align*}
+        %
+
+      \item
+        \textit{une bijection:}
+        pour tout élément $(g_2,g_1)$ de $G_2\times G_1$, on a $\varphi(g_1,g_2) = (g_2,g_1)$.
+    \end{itemize}
+
+    D'après la proposition 1.66, les groupes $G_1\times G_2$ et $G_2\times G_1$ sont isomorphes.
+
+  \item
+    Soient $\varphi_i\from\Gamma_i\to G_i$ $(i = 1,2)$ des isomorphismes et
+    \[
+      \varphi\from\Gamma_1\times\Gamma_2\to G_1\times G_2
+    \]
+    l'application définie par $\varphi(g_1,g_2) = (\varphi_1(g_1),\varphi_2(g_2))$.
+    
+    \begin{itemize}
+      \item 
+        \textit{$\varphi$ est un homomorphisme:}
+        pour tous éléments $(g_1,g_2)$ et $(h_1,h_2)$ de $\Gamma_1\times\Gamma_2$, on a
+        %
+        \begin{align*}
+          \varphi((g_1,g_2)(h_1,h_2))
+            &= \varphi(g_1h_1,g_2h_2) \\
+            &= (\varphi_1(g_1h_1),\varphi_2(g_2h_2)) \\
+            &= (\varphi_1(g_1)\varphi_1(h_1),\varphi_2(g_2)\varphi_2(h_2)) \\
+            &= (\varphi_1(g_1),\varphi_2(g_2))(\varphi_1(h_1),\varphi_2(h_2)) \\
+            &= \varphi(g_1,g_2)\varphi(g_2,h_2).
+        \end{align*}
+
+      \item
+        \textit{$\varphi$ est bijective:}
+        c'est une conséquence de $\im \varphi = \im \varphi_1 \times \im \varphi_2$ et $\ker \varphi = \ker \varphi_1 \times \ker \varphi_2$.
+    \end{itemize}
+
+    Conclusion: les groupes $\Gamma_1\times \Gamma_2$ et $G_1\times G_2$ sont isomorphes.
+
+  \item
+    Contrairement à ce qu'affirme l'énoncé, tout sous-groupe d'un produit direct $G_1\times G_2$ n'est pas de la forme $H_1\times H_2$ où $H_i$ $(i=1,2)$ est un sous-groupe de $G_i$.
+    Par exemple, considérons le groupe de Klein $\Zn{2}\times \Zn{2}$.
+    Les seuls sous-groupes de $\Zn{2}$ sont $\set{\cl{0}}$ et $\Zn{2}$.
+    On voit donc que le sous-groupe $\set{(\cl{0},\cl{0}), (\cl{1},\cl{1})}$ de $\Zn{2}\times\Zn{2}$ n'est pas le produit direct de deux sous-groupes de $\Zn{2}$.
+\end{enumerate}
