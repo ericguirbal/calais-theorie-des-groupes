@@ -125,7 +125,11 @@
 }
 \let\tmat\tmatrice
 \newcommand*{\matrice}[1]{\if@display\dmatrice{#1}\else\tmatrice{#1}\fi}
-\let\mat\matrice        
+\let\mat\matrice
+
+% Par défaut, l'environnement pmatrix a au plus 10 colonnes,
+% ce qui est insuffisant pour la saisie de certaines permutations.
+\setcounter{MaxMatrixCols}{12}
 %
 % Intervalles
 %
