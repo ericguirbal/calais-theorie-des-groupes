@@ -1,0 +1,65 @@
+\textit{Permutation $\sigma_1$.}
+Les $\sigma_1$-orbites non pontuelles sont $\Omega_{\sigma_1}(1)=(1,3,4,6)$ et $\Omega_{\sigma_1}(2)=(2,5)$. 
+Nous en déduisons la décomposition canonique de $\sigma_1$ en produit de cycles disjoints:
+\[
+  \sigma_1 = (1,3,4,6)(2,5).
+\]
+Les cycles de la décomposition ont pour longueurs $2$ et $4$, donc (théorème~3.59) l'ordre de $\sigma_1$ est $\ppcm(2,4)=4$.
+D'après le théorème~3.70 et la remarque~3.66, on a $\varepsilon(\sigma_1) = (-1)^3\times (-1) = 1$. 
+Une décomposition en produit de transpositions nous est fourni dans la démonstration du théorème~3.60: 
+\[
+  \sigma_1 = (1,3)(3,4)(4,6)(2,5).
+\]
+Étant donné que $\sigma_1$ est d'ordre $4$ et que $50 \equiv 2 \pmod{4}$, on a $\sigma_1^{50} = \sigma_1^2$, donc
+\[
+  \sigma_1^{50} = \matrice{1 & 2 & 3 & 4 & 5 & 6 \\ 4 & 2 & 6 & 1 & 5 & 3}.
+\]
+
+\textit{Permutation $\sigma_2$.} 
+La permutation $\sigma_2$ possède $3$ orbites non ponctuelles: $\Omega_{\sigma_2}(1) = (1,4,7,8)$, $\Omega_{\sigma_2}(2) = (2,6,5)$ et $\Omega_{\sigma_2}(3) = (3,9)$.
+Nous en déduisons sa décomposition canonique en produit de cycles disjoints
+\[
+  \sigma_2 = (1,4,7,9)(2,6,5)(3,9),
+\]
+son ordre $\ppcm(4,3,2) = 12$, sa signature $\varepsilon(\sigma_2) = (-1)^3\times(-1)^2\times(-1) = 1$ et une décomposition en produit de transpositions
+\[
+  \sigma_2 = (1,4)(4,7)(7,9)(2,6)(6,5)(3,9).
+\]
+Les cycles de la décomposition canonique commutent, donc
+\[
+  \sigma_2^{100} = (1,4,7,9)^{100} (2,6,5)^{100} (3,9)^{100}.
+\]
+Le cycle $(1,4,7,9)$ est d'ordre $4$ et $100\equiv 0 \pmod{4}$, le cycle $(2,6,5)$ est d'ordre $3$ et $100\equiv 1\pmod{3}$, le cycle $(3,9)$ est d'ordre $2$ et $100\equiv 0\pmod{2}$, donc
+\[
+  \sigma_2^{100} = (1,4,7,9)^0 (2,6,5)^1 (3,9)^0 = (2,6,5)
+\]
+ou encore
+\[
+  \sigma_2^{100} 
+  = \matrice{
+      1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\ 
+      1 & 6 & 3 & 4 & 2 & 5 & 7 & 8 & 9
+  }.
+\]
+
+\textit{Permutation $\sigma_3$.}
+Sa décomposition en produit de cycle disjoints est
+\[
+  \sigma_3 = (1,3,2,4)(5,8,11)(6,7,9,12).
+\]
+Son ordre est $\ppcm(4,3,4) = 12$, sa signature est $\varepsilon(\sigma_3) = (-1)^3\times (-1)^2 \times (-1)^3 = 1$, une décomposition en produit de transpositions est
+\[
+  \sigma_3 = (1,3)(3,2)(2,4)(5,8)(8,11)(6,7)(7,9)(9,12),
+\]
+et
+\[
+  \sigma_3^{10} = (1,3,2,4)^2 (5,8,11) (6,7,9,12)^2,
+\]
+soit
+\[
+  \sigma_3^{10} 
+    = \matrice{
+         1 & 2 & 3 & 4 & 5 & 6 &  7 &  8 & 9 & 10 & 11 & 12 \\
+         2 & 1 & 4 & 3 & 8 & 9 & 12 & 11 & 6 & 10 &  5 &  7
+    }.
+\]
