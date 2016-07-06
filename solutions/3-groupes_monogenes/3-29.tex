@@ -1,0 +1,55 @@
+\begin{enumerate}
+  \item  % a)
+    La commutativité de $\pi$ avec $\sigma$ résulte de la commutativité de deux cycles disjoints.
+    On montre que
+    \[
+      \pi\circ\tau = \matrice{
+        1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+        5 & 6 & 4 & 8 & 9 & 7 & 2 & 3 & 1
+      } = \tau\circ\pi.
+    \]
+
+  \item % b)
+    Les permutations $\pi$, $\sigma$ et $\tau$ sont d'ordre $3$.
+    Décomposons $\sigma\circ\tau$ en produit de cycles disjoints:
+    %
+    \begin{align*}
+      \sigma\circ\tau 
+        &= \matrice{
+            1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+            5 & 6 & 4 & 8 & 9 & 7 & 1 & 2 & 3
+        } \\
+        &= (1,5,9,3,4,8,2,6,7).
+    \end{align*}
+    %
+    Nous en déduisons que la permutation $\sigma\circ\tau$ est d'ordre $9$.
+
+  \item % c)
+    On a
+    %
+    \begin{align*}
+      \tau\circ\sigma\circ\tau^{-1}
+        &= (1,4,7)(2,5,8)(3,6,9)(4,5,6)(7,8,9)(1,7,4)(2,8,5)(3,9,6) \\
+        &= \matrice{
+            1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+            2 & 3 & 1 & 4 & 5 & 6 & 8 & 9 & 7 
+        } \\
+        &= (1,2,3)(7,8,9),
+    \end{align*}
+    %
+    et
+    %
+    \begin{align*}
+      \tau^{-1}\circ\sigma\circ\tau
+        &= (1,7,4)(2,8,5)(3,9,6)(4,5,6)(7,8,9)(1,4,7)(2,5,8)(3,6,9) \\
+        &= \matrice{
+            1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+            2 & 3 & 1 & 5 & 6 & 4 & 7 & 8 & 9
+        } \\
+        &= (1,2,3)(4,5,6).
+    \end{align*}
+    %
+    Enfin, s'il existe un entier $k$ tel que $\pi = (\sigma\circ \tau)^k$, on peut prendre $k\in\set{1,\dots,8}$ et
+    d'après l'exercice III.13, $9/(9,k) = 3$, d'où $k = 3$ ou $k = 6$.
+    On vérifie immédiatement que $k = 6$ convient.
+\end{enumerate}
