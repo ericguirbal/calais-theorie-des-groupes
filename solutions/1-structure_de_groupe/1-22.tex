@@ -1,0 +1,114 @@
+\textit{L'ensemble $\Gamma$ est un sous-groupe de $\GL(2,\R)$.}
+Soient $I$ la matrice identité de dimension~2 et $A$ la matrice
+\[
+  \matrice{-1 & -1 \\ 1 & 0}.
+\]
+Notons $A_x$ la matrice obtenue en permutant les colonnes de $A$, $A_y$ la matrice obtenue en permutant les lignes de $A$ et $A_{xy}$ la matrice obtenue en permutant les colonnes et les lignes de $A$, ainsi
+\[
+  \Gamma = \set*{I, A, I_x, A_x, A_y, A_{xy}}.
+\]
+Comme $\det(A) \neq 0$, et que permuter les lignes ou les colonnes d'une matrice conserve le déterminant au signe près, nous en déduisons que $\Gamma\subset \GL(2,\R)$. 
+Posons $H = \Gr{A} = \set{I, A, A_{xy}}$ et $K = \Gr{A_y} = \set{I, A_y}$. 
+Ce sont deux sous-groupes de $\GL(2,\R)$.
+On vérifie que $A A_y = I_x$, $A_y A = A_x$, $A_{xy} A_y = A_x$ et $A_y A_{xy} = I_x$, d'où $HK = KH = \Gamma$.
+La proposition~1.47 nous permet alors de conclure que $\Gamma$ est un sous-groupe de $\GL(2,\R)$.
+
+\textit{Les groupes $\Gamma$ et $\GL\bigl(2,\Zn{2}\bigr)$ sont isomorphes.}
+Pour toute matrice $M = \matrice{a & b \\ c & d}\in\Gamma$, notons $\cl{M}$ la matrice $\matrice{\cl{a} & \cl{b} \\ \cl{c} & \cl{d}}$.
+On vérifie que
+\[
+  \det(\cl{M}) 
+    = \cl{a}\;\cl{d} - \cl{b}\;\cl{d} 
+    = \cl{ad - bc} 
+    = \cl{\det(M)} 
+    = \cl{1}
+    \neq \cl{0},
+\]
+nous pouvons donc définir l'application
+%
+\begin{align*}
+  \varphi\from\Gamma &\to \GL\left(2,\Zn{2}\right) \\
+                   M &\mapsto \cl{M}.
+\end{align*}
+%
+
+L'application $\varphi$ est un homomorphisme de groupes: soient
+\[
+  M = \matrice{a & b \\ c & d}
+  \quad\text{et}\quad
+  N = \matrice{e & f \\ g & h},
+\]
+alors
+%
+\begin{align*}
+  \varphi(MN)
+  &= \varphi\left(\matrice{ae + bg & af + bh \\ ce + dg & cf + dh}\right) \\
+  &= \matrice{\cl{ae + bg} & \cl{af + bh} \\ \cl{ce + dg} & \cl{cf + dh}} \\
+  &= \matrice{
+      \cl{a}\;\cl{e} + \cl{b}\;\cl{g} & \cl{a}\;\cl{f} + \cl{b}\;\cl{h} \\
+      \cl{c}\;\cl{e} + \cl{d}\;\cl{g} & \cl{c}\;\cl{f} + \cl{d}\;\cl{h}
+     } \\
+  &= \matrice{\cl{a} & \cl{b} \\ \cl{c} & \cl{d}}
+      \matrice{\cl{e} & \cl{f} \\ \cl{g} & \cl{h}} \\
+  &= \varphi(M) \varphi(N).
+\end{align*}
+%
+
+L'application $\varphi$ est injective:
+soit $M = \matrice{a & b \\ c & d}\in\Gamma$, alors $M\in\Ker(\varphi)$ si et seulement si $a\in\set{-1,1}$, $b = 0$, $c = 0$ et $d\in\set{-1,1}$, d'où $\Ker(\varphi) = I$.
+
+L'application $\varphi$ est surjective:
+les matrices de $\GL\left(2,\Zn{2}\right)$ sont celles dont les vecteurs colonnes sont $\Zn{2}$-linéairement indépendants.
+Nous trouvons 
+\[ 
+  \GL\left(2,\Zn{2}\right) = \set*{ \matrice{\cl{1} & \cl{0} \\ \cl{0} & \cl{1}},
+    \matrice{\cl{0} & \cl{1} \\ \cl{1} & \cl{0}},
+    \matrice{\cl{0} & \cl{1} \\ \cl{1} & \cl{1}},
+    \matrice{\cl{1} & \cl{0} \\ \cl{1} & \cl{1}},
+    \matrice{\cl{1} & \cl{1} \\ \cl{0} & \cl{1}},
+    \matrice{\cl{1} & \cl{1} \\ \cl{1} & \cl{0}}
+  }.
+\]
+L'application $\varphi$ est une injection entre deux groupes de  même cardinal, donc elle est bijective.
+
+À l'aide de la proposition~1.66 nous concluons que $\varphi$ est un isomorphisme.
+
+
+\textit{Les groupes $\Gamma$ et $\Sym{3}$ sont isomorphes.}
+Les tables de multiplication des groupes $\Gamma$ et $\Sym{3}$ sont écrites ci-dessous:
+%
+\begin{center}
+  \begin{tabular}{c|cccccc}
+    $\times$    &      $I$ &      $A$ & $A_{xy}$ &    $A_x$ &    $I_x$ &    $A_y$ \\
+    \midrule                                                
+            $I$ &      $I$ &      $A$ & $A_{xy}$ &    $A_x$ &    $I_x$ &    $A_y$ \\
+            $A$ &      $A$ & $A_{xy}$ &      $I$ &    $A_y$ &    $A_x$ &    $I_x$ \\
+       $A_{xy}$ & $A_{xy}$ &      $I$ &      $A$ &    $I_x$ &    $A_y$ &    $A_x$ \\
+          $A_x$ &    $A_x$ &    $I_x$ &    $A_y$ &      $I$ &      $A$ & $A_{xy}$ \\
+          $I_x$ &    $I_x$ &    $A_y$ &    $A_x$ & $A_{xy}$ &      $I$ &      $A$ \\
+          $A_y$ &    $A_y$ &    $A_x$ &    $I_x$ &      $A$ & $A_{xy}$ &      $I$ \\
+  \end{tabular}
+\end{center}
+%
+
+\begin{center}
+  \begin{tabular}{c|cccccc}
+    $\times$   &        $e$ & $\sigma_1$ & $\sigma_2$ &   $\tau_1$ &   $\tau_2$ &   $\tau_3$ \\
+    \midrule
+           $e$ &        $e$ & $\sigma_1$ & $\sigma_2$ &   $\tau_1$ &   $\tau_2$ &   $\tau_3$ \\
+    $\sigma_1$ & $\sigma_1$ & $\sigma_2$ &        $e$ &   $\tau_3$ &   $\tau_1$ &   $\tau_2$ \\
+    $\sigma_2$ & $\sigma_2$ &        $e$ & $\sigma_1$ &   $\tau_2$ &   $\tau_3$ &   $\tau_1$ \\
+      $\tau_1$ &   $\tau_1$ &   $\tau_2$ &   $\tau_3$ &        $e$ & $\sigma_1$ & $\sigma_2$ \\
+      $\tau_2$ &   $\tau_2$ &   $\tau_3$ &   $\tau_1$ & $\sigma_2$ &        $e$ & $\sigma_1$ \\
+      $\tau_3$ &   $\tau_3$ &   $\tau_1$ &   $\tau_2$ & $\sigma_1$ & $\sigma_2$ &        $e$ \\
+  \end{tabular}
+\end{center}
+
+Soit $g\from\Gamma\to\Sym{3}$ la bijection définie par
+%
+\begin{align*}
+  g(I)   &= e,      & g(A)   &= \sigma_1, & g(A_{xy}) &= \sigma_2, \\
+  g(A_x) &= \tau_1, & g(I_x) &= \tau_2,   &g(A_y) &= \tau_3.
+\end{align*}
+%
+Si nous identifions chaque élement de $\Gamma$ avec son image dans $\Sym{3}$ par l'application $g$, alors nous constatons que les tables de multiplication des groupes $\Gamma$ et $\Sym{3}$ sont identiques; cela signifie que les groupes $\Gamma$ et $\Sym{3}$ sont isomorphes.
