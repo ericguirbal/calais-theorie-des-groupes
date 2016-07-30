@@ -1,0 +1,81 @@
+Pour tous nombres réels $a$, $b$ et $c$, notons $M(a,b,c)$ la matrice 
+\[
+  \matrice{a & b \\ 0 & c},
+\]
+de sorte que
+\[
+  G = \set[\big]{M(a,b,c) \given ac\neq 0}.
+\]
+On a $\det(M(a,b,c)) = ac$, donc $G\subseteq GL(2,\R)$.
+L'ensemble $G$ est non vide, car il contient la matrice identité $I = M(1,0,1)$.
+Soient $M(a,b,c)$ et $M(a',b',c')$ deux matrices de $G$.
+Alors
+\[
+  M(a,b,c)^{-1} 
+    = \frac{1}{ac}\matrice{c & -b \\ 0 & a}
+    = M\Bigl( \frac{1}{a}, -\frac{b}{ac}, \frac{1}{c} \Bigr)
+    \in G
+\]
+et
+\[
+  M(a,b,c) M(a',b',c') 
+    = \matrice{aa' & ab' + bc' \\ 0 & cc'} 
+    = M(aa', ab'+bc', cc')
+    \in G
+\]
+donc $G$ est un sous-groupe de $\GL(2,\R)$.
+
+L'application
+%
+\begin{align*}
+     G\times\R \to \R, \quad \bigl(M(a,b,c),x\bigr) \mapsto M(a,b,c) \cdot x =  \frac{ax+b}{c}
+\end{align*}
+%
+définit une action de $G$ sur $\R$ car elle vérifie les deux conditions suivantes:
+%
+\begin{itemize}
+  \item pour tout $x\in\R$, on a $I\cdot x = x$;
+  \item pour toutes matrices $M(a,b,c)$ et $M(a',b',c')$ de $G$, on a
+    %
+    \begin{align*}
+      M(a,b,c) \cdot \bigl( M(a',b',c') \cdot x \bigr)
+        &= M(a,b,c) \cdot \frac{a'x + b'}{c'} \\
+        &= \frac{a\frac{a'x + b'}{c'}  + b}{c} \\
+        &= \frac{aa'x + ab' + bc'}{cc'} \\
+        &= M(aa', ab'+bc', cc') \cdot x \\
+        &= \bigl( M(a,b,c)M(a',b',c') \bigr) \cdot x.
+    \end{align*}
+\end{itemize}
+
+Le noyau de cette action est le sous-groupe
+%
+\[
+  \begin{split}
+    \bigl\{\, M(a,b,c)\in &G\:;\:M(a,b,c) \cdot x = x \text{ pour tout $x\in\R$} \,\bigr\} \\
+    &= \set[\big]{M(a,b,c)\in G \given (ax + b)/c = x \text{ pour tout $x\in\R$}} \\
+    &= \set[\big]{M(a,b,c)\in G \given (a - c)x = -b \text{ pour tout $x\in\R$}} \\
+    &= \set[\big]{M(a,b,c)\in G \given a = c \text{ et $b = 0$}} \\
+    &= \set[\big]{aI \given a\in\R^*}.
+  \end{split}
+\]
+
+Le stabilisateur de 0 est le sous-groupe 
+%
+\begin{align*}
+  G_0 
+    &= \set[\big]{M(a,b,c)\in G \given M(a,b,c) \cdot 0 = 0 } \\
+    &= \set[\big]{M(a,b,c)\in G \given b/c = 0 } \\
+    &= \set[\big]{M(a,0,c)\in G},
+\end{align*}
+%
+c'est-à-dire le sous-groupe de $G$ des matrices diagonales.
+
+L'orbite de $0$ est l'ensemble
+%
+\begin{align*}
+  \Omega_0
+    &= \set[\big]{ M(a,b,c) \cdot 0 \given M(a,b,c)\in G } \\
+    &= \set[\big]{ b/c \given (b,c)\in\R\times\R^*} \\
+    &= \R.
+\end{align*}
+
