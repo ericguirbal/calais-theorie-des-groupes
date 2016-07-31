@@ -1,0 +1,29 @@
+\begin{enumerate}
+  \item 
+
+    Soient $(x,y)\in\N_n^2$.
+    Étant donné que $G$ opère transitivement sur $\N_n$, il existe une permutation $\pi\in G$ telle que $\pi(x) = y$.
+    Soit $\sigma\in H_x$.
+    Comme $H\normal G$, on a $\pi\circ\sigma\circ\pi^{-1}\in H$.
+    De plus, $(\pi\circ\sigma\circ\pi^{-1})(y) = (\pi\circ\sigma)(x) = \pi(x) = y$, donc $\pi\circ\sigma\circ\pi^{-1}\in H_y$.
+    Il s'ensuit que $\pi H_x \pi^{-1} \subseteq H_y$, d'où $\ordre(H_x) \leq \ordre(H_y)$.
+    Par symétrie, l'inégalité opposée est également vraie, donc $\ordre(H_y) = \ordre(H_x)$.
+    La conclusion vient du théorème~5.19 et de la proposition~2.15:
+    \[
+      \card{\Omega_x} 
+        = \ordre(H)/\ordre(H_x) 
+        = \ordre(H)/\ordre(H_y)
+        = \card{\Omega_y}.
+    \]
+
+  \item
+
+    Supposons que $H = (e)$, ce que l'énoncé n'exclut pas.
+    Les $H$-orbites de $N_n$ sont donc toutes ponctuelles.
+    Puisque $n\geq 2$, nous en déduisons que $H$ n'est pas transitif sur $\N_n$.
+
+    Supposons maintenant que $H \neq (e)$.
+    Puisque les $H$-orbites forment une partition de $\N_n$, le nombre d'orbites $r$, leur cardinal $m$ ainsi que $n$ sont liés par la relation $rm = n$.
+    Étant donné que $n$ est premier, on a $r = 1$.
+    Autrement dit, le groupe $H$ opère transitivement sur $N_n$.
+\end{enumerate}
