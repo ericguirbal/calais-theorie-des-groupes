@@ -1,0 +1,99 @@
+\begin{enumerate}
+  \item % a)
+    \emph{L'application $\varphi$ est un homomorphisme.}
+    En effet, pour tous $(x,y)\in\Z^2$ et $(x',y')\in\Z^2$, on a
+    %
+    \begin{align*}
+      \varphi \bigl((x,y)+(x',y')\bigr) 
+      &= \varphi(x+x',y+y')  \\
+      &= a(x+x')+b(y+y') \\
+      &= ax + by + ax' + by' \\
+      &= \varphi(x,y) + \varphi(x',y').
+    \end{align*}
+    %
+    \emph{Noyau de $\varphi$.}
+    Le couple $(x,y)\in\Z^2$ appartient au noyau $\Ker \varphi$ si et seulement si il est solution de l'équation diophantienne de degré $1$,
+    \[
+      ax + by = 0.
+    \]
+    Étant donné que $d = \pgcd(a,b)$, l'équation précédente est équivalente à l'équation diophantienne
+    \[
+      \frac{a}{d}x + \frac{b}{d}y = 0,
+    \]
+    dont les coefficients $a/d$ et $b/d$ sont premiers entre eux.
+    Cette dernière équation implique que $b/d$ divise $(a/d)x$; d'après le théorème de Gauss, il existe un entier relatif $k$ tel que $x = (b/d) k$, d'où nous déduisons que $y = -(a/d)k$.
+    Il s'ensuit que 
+    \[
+      \Ker \varphi \subseteq \set*{\left(\frac{b}{d}k, -\frac{a}{d}k\right) \given k\in\Z}.
+    \]
+    L'inclusion opposée est immédiate.
+
+    \emph{Image de $\varphi$.}
+    Soit $z\in\im\varphi$. 
+    Il existe donc $(x,y)\in\Z^2$ tel que $ax + by = z$.
+    Puisque $d$ divise $a$ et $b$, il s'ensuit que $d$ divise également $z$.
+
+    Réciproquement, supposons que $z$ soit un multiple de $d$.
+    Comme $a/d$ et $b/d$ sont premiers entre eux, le théorème de Bézout assure l'existence de $(x,y)\in\Z^2$ tel que
+    \[
+      \frac{a}{d} x + \frac{b}{d} y = 1,
+    \]
+    d'où
+    \[
+      a\times  \frac{xz}{d} + b\times \frac{yz}{d} = z.
+    \]
+    Comme $(xz/d,yz/d)\in\Z^2$, nous en déduisons que $z\in\im\varphi$. 
+    
+    En conclusion, $\im\varphi = d\Z$.
+
+  \item % b)
+    Montrons que la correspondance
+    %
+    \begin{align*}
+      \mathbin{\cl{*}}\from \Zn{n}\times\Zn{n} & \to\Zn{n} \\
+                     (\cl{x},\cl{y}) &\mapsto \cl{ax + by}
+    \end{align*}
+    %
+    est une application. 
+    Soient $x$, $x'$, $y$, $y'$ dans $\Z$ tels que $\cl{x} = \cl{x'}$ et $\cl{y} = \cl{y'}$. 
+    On a $(ax + by) - (ax' + by') = a(x - x') + b(y - y')$ et $n$ divise $x - x'$ et $y - y'$, par conséquent $\cl{ax + by} = \cl{ax' + by'}$, autrement dit $\cl{x * y} = \cl{x' * y'}$, donc $*$ induit sur $\Z/\!n\Z$ une loi de composition $\mathbin{\cl{*}}$ définie par $\cl{x}\mathbin{\cl{*}}\cl{y} = \cl{x*y}$.
+
+\item % c)
+    La loi $\cl{*}$ est associative si et seulement si pour tout $(x,y,z)\in\Z^3$, on a
+    \begin{gather*}
+        \cl{x}\mathbin{\cl{*}}(\cl{y}\mathbin{\cl{*}}\cl{z}) = (\cl{x}\mathbin{\cl{*}}\cl{y})\mathbin{\cl{*}}\cl{z}, \\
+      \intertext{c'est-à-dire}
+      \cl{ax+b(ay+bz)} = \cl{a(ax+by)+bz}, \\
+      \intertext{ou encore}
+      ax(a-1) + bz(b-1) \in n\Z.
+    \end{gather*}
+
+    Nous en déduisons que si $n$ divise $a(a - 1)$ et $b(b - 1)$, alors la loi $\cl{*}$ est associative. 
+    Réciproquement, si la loi $\cl{*}$ est associative, alors en posant  $x = 0$ et $z = 1$, puis $x = 1$ et $z = 0$ on démontre que $n$ divise $a(a - 1)$ et $b(b - 1)$.
+
+    La loi $\cl{*}$ est commutative si et seulement si pour tout $(x,y)\in\Z^2$, on a $\cl{x}\mathbin{\cl{*}}\cl{y} = \cl{y}\mathbin{\cl{*}}\cl{x}$, c'est-à-dire si et seulement si $\cl{ax + by} = \cl{ay + bx}$, ou encore $(a-b)(x-y)\in n\Z$.
+    Nous en déduisons que si $n$ divise $a - b$, alors  $\cl{*}$ est commutative.
+    La réciproque se démontre en posant $x = 1$ et $y = 0$.
+
+  \item % d)
+    Supposons que $n$ divise $a - 1$ et $b - 1$.
+    Alors $n$ divise $a(a - 1)$, $b(b -1)$ et $(a - 1) - (b - 1) = a - b$, donc d'après la question précédente, la loi $\cl{*}$ est associative et commutative.
+    
+    La loi $*$ admet $\cl{0}$ pour élément neutre; en effet, pour tout $x\in\Z$, on a $ax - x = (a - 1)x \in n\Z$, donc $\cl{x}\mathbin{\cl{*}}\cl{0} = \cl{x}$.
+    De plus la loi étant commutative, on a également $\cl{0}\mathbin{\cl{*}}\cl{x} = \cl{x}$.
+
+    Tout élément $\cl{x}$ a pour symétrique $\cl{-x}$; en effet,
+    \[
+      \cl{x}\mathbin{\cl{*}}\cl{-x} = \cl{(a - b)x} = \cl{0}
+    \]
+    car $n$ divise $a - b$.
+    
+    Nous avons montré que $(\Z/\!n\Z,\cl{*})$ est un groupe abélien.
+
+    Réciproquement, supposons que $(\Z/\!n\Z,\cl{*})$ soit un groupe.
+    Notons $\cl{e}$ son élément neutre.
+    On a $\cl{0}\mathbin{*}\cl{e} = \cl{0} = \cl{e}\mathbin{*}\cl{0}$, donc $ae\in n\Z$ et $be\in n\Z$.
+    On a également $\cl{1}\mathbin{*}\cl{e} = \cl{1} = \cl{e}\mathbin{*}\cl{1}$, donc $a + be - 1\in n\Z$ et $ae + b - 1\in n\Z$, d'où nous déduisons que $a - 1\in n\Z$ et $b - 1\in n\Z$.
+
+
+\end{enumerate}
