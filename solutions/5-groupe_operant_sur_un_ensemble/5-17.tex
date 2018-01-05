@@ -1,0 +1,75 @@
+\begin{enumerate}
+  \item 
+    Il est clair que pour tout $(a,a')\in X^2$ tel que $a\neq a'$, on a $S(a,\cdot) \cap S(a',\cdot) = \emptyset$.
+    Par construction, $S(a,\cdot) \subseteq S$ pour tout $a\in X$, d'où l'inclusion $\cup_{a\in X} S(a,\cdot) \subseteq S$.
+    Comme $(a,b)\in S(a,\cdot)$ pour tout $(a,b)\in S$, nous avons l'inclusion réciproque, d'où l'égalité $S = \cup_{a\in X} S(a,\cdot)$.
+    Il s'ensuit que la famille $\set{S(a,\cdot) \given a\in X}$ est une partition de $S$.
+    Il en est de même de la famille $\set{S(\cdot,b) \given b\in Y}$.
+    Nous en déduisons que
+    \[
+      \card{S} = \sum_{a\in X} \card{S(a,\cdot)} = \sum_{b\in Y} \card{S(\cdot,b)}.
+    \]
+
+  \item
+    \begin{itemize}
+      \item 
+        Soit $(g,x)\in G\times E$.
+        On a 
+        \begin{align*}
+          S(g,\cdot) &= \set{(g,x)\in S} \\
+                     &= \set{(g,x)\in G\times E \given gx = x} \\ 
+                     &= \set{(g,x)\in G\times E \given x\in F(g) } \\
+                     &= \set{g}\times F(g)
+        \end{align*}
+        et
+        \begin{align*}
+          S(\cdot,x) &= \set{(g,x)\in S} \\
+                     &= \set{(g,x)\in G\times E \given gx = x} \\
+                     &= \set{(g,x)\in G\times E \given g\in G_x } \\
+                     &= G_x\times\set{x}.
+        \end{align*}
+
+        Par conséquent,
+        \[
+          \sum_{g\in G} \card{S(g,\cdot)} 
+            = \sum_{g\in G} \card{\set{g}\times F(g)} 
+            = \sum_{g\in G} \card{F(g)}
+        \]
+        et
+        \[
+          \sum_{x\in E} \card{S(\cdot,x)}
+            = \sum_{x\in E} \card{G_x\times\set{x}}
+            = \sum_{x\in E} \card{G_x}.
+        \]
+        D'après l'égalité établie à la question précédente, nous avons donc
+        \[
+          \sum_{g\in G} \card{F(g)} = \sum_{x\in E} \card{G_x}.
+        \]
+        Comme les $G$-orbites de $E$ forment une partition de $E$, on a
+        \[
+          \sum_{x\in E} \card{G_x} = \sum_{i = 1}^t \sum_{x\in\Omega_{x_i}} \card{G_x},
+        \]
+        si bien que
+        \[
+          \sum_{g\in G} \card{F(g)} = \sum_{i = 1}^t \sum_{x\in\Omega_{x_i}} \card{G_x}.
+        \]
+
+      \item
+        Pour tout $x\in\Omega_{x_i}$, les sous-groupes $G_x$ et $G_{x_i}$ sont conjugués (théorème~5.18), d'où $\card{G_x} = \card{G_{x_i}}$.
+        La formule précédente peut donc s'écrire
+        \[
+          \sum_{g\in G} \card{F(g)} = \sum_{i = 1}^t \card{\Omega_{x_i}} \card{G_{x_i}}.
+        \]
+        Or $\card{\Omega_{x_i}} = [G:G_{x_i}]$ (théorème~5.19) et $\card{G} = \card{G_{x_i}} [G:G_{x_i}]$ (proposition~2.15), d'où la formule de Burnside :
+        \[
+          \sum_{g\in G} \card{F(g)} = t \card{G}.
+        \]
+    \end{itemize}
+  
+  \item
+    Si $G$ opère transitivement sur $E$, alors il n'y a qu'une seule $G$-orbite ($t = 1$). 
+    La formule de Burnside devient alors
+    \[
+      \sum_{g\in G} \card{F(g)} = \card{G}.
+    \]
+\end{enumerate}
