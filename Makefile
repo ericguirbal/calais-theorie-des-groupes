@@ -16,6 +16,13 @@ ifeq ($(SILENT),1)
 	LATEXMK_OPTS += -silent
 endif
 
+# PVC=1 ou 0 selon que l'on souhaite ou pas une mise à jour
+# automatique du PDF lorsqu'un fichier source est modfifié.
+PVC ?=0
+ifeq ($(PVC),1)
+	LATEXMK_OPTS += -pvc
+endif
+
 # Version
 VERSION = $(shell git describe --always --long --dirty)
 
@@ -32,7 +39,8 @@ help:
 	@echo "    cleanall : Comme clean et supprime les fichiers cibles"
 	@echo "        help : Affiche cette aide"
 	@echo
-	@echo "Option disponible :"
+	@echo "Options disponibles :"
+	@echo "     PVC=0|1 : Active la prévisualisation en continue du PDF si PVC=1 (défaut : PVC=0)"
 	@echo "  SILENT=0|1 : Pour une sortie détaillée ou pas de la compilation."
 	@echo "               Par défaut SILENT=1."
 
