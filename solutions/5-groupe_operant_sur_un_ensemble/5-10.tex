@@ -1,0 +1,29 @@
+\begin{enumerate}
+  \item
+    \begin{itemize}
+      \item
+        Remarquons que $G_X = \bigcap_{x\in X} G_x$ et que pour tout $x\in X$, on a $G_{gx} = gG_x g^{-1}$ (théorème~5.18).
+        Il s'ensuit que
+        \[
+          G_{gX} = \bigcap_{x\in X} G_{gx} 
+                 = \bigcap_{x\in X} gG_xg^{-1} 
+                 = g\Biggl(\bigcap_{x\in X} G_x\Biggr)g^{-1} 
+                 = gG_X g^{-1}.
+        \]
+      \item
+        L'action de $G$ sur $E$ induit une action de $G$ sur $\mathcal{P}(E)$ par l'application $G\times \mathcal{P}(E)\to\mathcal{P}(E)$, $(g,X)\mapsto gX$.
+        Les ensembles $G^*_X$ et $\smash{G^*_{gX}}$ sont alors les stabilisateurs de $X$ et $gX$ pour cette action.
+        L'égalité $G^*_{gX} = gG^*_X g^{-1}$ résulte alors du théorème~5.18.
+    \end{itemize}
+  \item
+    Bien entendu, $G_X$, égal à l'intersection des sous-groupes $\set{G_x\given x\in X}$, est un sous-groupe de $G$.
+    De même, $G^*_X$ est un sous-groupe puisque c'est le stabilisateur pour l'action de $G$ sur $\mathcal{P}(E)$ décrite à la question précédente.
+
+    Enfin, pour tout $g\in G^*_X$, on a $gG_X g^{-1} = G_{gX} = G_X$, donc $G_X\normal G^*_X$. 
+  \item
+    Pour tout $g\in G$, on a $gX = X$, d'où $G^*_X = G$.
+    D'après la question précédente, on a $G_X \normal G$.
+    Soit l'homorphisme $G\mapsto \Sym{X}$ associée à l'action de $G$ sur $X$.
+    Son noyau est $\set{x\in X\given gx = x \text{ pour tout $g\in G$}} = G_X$.
+    Nous en déduisons, d'après le 1\ier{}~théorème d'isomorphisme, que $\grq{G}{G_X}$ est isomorphe à un sous-groupe de $\Sym{X}$.
+\end{enumerate}
