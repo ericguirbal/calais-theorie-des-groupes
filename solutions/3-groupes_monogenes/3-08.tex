@@ -1,0 +1,28 @@
+\begin{enumerate}
+  \item 
+    Supposons que le groupe $(\Q,+)$ soit monogène.
+    Alors il existe $(m,n)\in\Z^*\times\N^*$ tel que $\Q = \Gr{\frac{m}{n}}$.
+    Comme $\frac{1}{2n}\in\Q$, il existe un entier $k$ tel que $\frac{1}{2n} = k\frac{m}{n}$.
+    Il s'ensuit que $k = \frac{1}{2m}\notin\Z$ : contradiction.
+    Nous en déduisons que le groupe $(\Q,+)$ n'est pas monogène.
+
+    Si le groupe $(\R,+)$ était monogène, alors le sous-groupe $(\Q,+)$ de $(\R,+)$ serait également monogène (théorème~3.10).
+    Il s'ensuit que le groupe $(\R,+)$ n'est pas monogène.
+  \item
+    Pour tout $(m,n)\in\Z\times\N^*$, on a 
+    \[
+      \frac{m}{n} = m(n - 1)!\times\frac{1}{n!}
+    \]
+    avec $m(n - 1)!\in Z$, ce qui prouve que l'ensemble $\set*{\frac{1}{n!}\given n\in\N}$ engendre le groupe $(\Q,+)$.
+  \item
+    Soit $H$ un sous-groupe monogène non nul de $(\Q,+)$.
+    Il existe donc $x\in\Q^*$ tel que $H = \Gr{x}$.
+    Si $k$ est un entier tel que $kx = 0$, alors $k = 0$.
+    Par conséquent, $x$ est d'ordre infini, donc $H$ est un sous-groupe monogène infini.
+  \item
+    Soit $H$ un sous-groupe non nul de $(\Q,+)$ engendré par la famille fini de nombres rationnels $\set{p_i/\!q_i}_{1\leq i\leq r}$ avec $r\in\N^*$. 
+    Posons $q = q_1q_2\dots q_r$.
+    Alors $qH$ est un sous-groupe non nul de $\Z$.
+    Il existe donc un entier $a > 0$ tel que $qH = a\Z$, d'où $H = (a/\!q)\Z$.
+    Nous en déduisons que le sous-groupe $H$ est isomorphe au groupe $\Z$.
+\end{enumerate}
