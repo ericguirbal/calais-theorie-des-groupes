@@ -1,0 +1,37 @@
+\begin{enumerate}
+  \item % a) 
+    \emph{$H$ est un sous-groupe de $\Sym{5}$.}
+    L'ensemble $H$ est non vide, puisque $e\in H$.
+    Soient $\sigma$ et $\tau$ deux permutations de $H$.
+    Alors $\sigma\circ\tau^{-1}$ est une permutation de $\Sym{5}$ telle que $\sigma\circ\tau^{-1}(1) = \sigma(1) = 1$, donc $\sigma\circ\tau^{-1}\in H$.
+    Par conséquent, $H$ est un sous-groupe de $\Sym{5}$.
+
+    \emph{Ordre de $H$.}
+    L'application $H\to\Sym{\N_5\setminus\set{1}}$, $\sigma\mapsto \left.\sigma\right\|_{\N_5\setminus\set{1}}$ est une bijection. 
+    De plus, les ensembles $\N_5\setminus\set{1}$ et $\N_4$ sont équipotents, donc $H$ est un sous-groupe d'ordre $4! = 24$.
+
+  \item % b)
+    Les transpositions $\sigma = (2,3)$ et $\tau = (1,2)$ sont deux éléments de $K$ telles que $(\sigma\circ\tau^{-1})(1) = \sigma(2) = 3$, donc $K$ n'est pas un sous-groupe de $\Sym{5}$.
+
+  \item % c)
+    \emph{$F$ est un sous-groupe de $\Sym{n}$.}
+    L'ensemble $F$ est non vide car $e\in F$.
+    De plus, toute application injective d'un ensemble fini dans lui-même étant bijective, on a $F = \set{\sigma\in\Sym{n} \given \left.\sigma\right\|_{\N_r}\in\Sym{\N_r}}$.
+    Ainsi, si $\sigma$ et $\tau$ sont deux permutations de $F$ alors $(\sigma\circ\tau^{-1})(\N_r) = \N_r$.
+    Par conséquent, $F$ est un sous-groupe de $\Sym{n}$.
+
+    \emph{Ordre de $F$.}
+    Soit $\varphi\from\N_n\!\setminus\N_r\to\N_{n-r}$ une bijection.
+    Elle induit une bijection $\Sym{\N_n\!\setminus\N_r}\to\Sym{\N_{n-r}}$, $\sigma\mapsto\varphi\circ\sigma\circ\varphi^{-1}$.
+    Alors l'application
+    %
+    \begin{align*}
+      \psi\from F &\to\Sym{\N_r}\times\Sym{\N_{n-r}} \\
+      \sigma &\mapsto (\left.\sigma\right\|_{\N_r},\varphi\circ\sigma\circ\varphi^{-1}).
+    \end{align*}
+    %
+    est bijective, d'où nous déduisons que l'ordre du sous-groupe $F$ est égal à
+    \[
+      \card{\Sym{\N_r}}\times\card{\Sym{\N_{n-r}}} = r!\,(n-r)!.
+    \]
+\end{enumerate}
