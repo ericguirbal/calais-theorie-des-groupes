@@ -1,0 +1,22 @@
+%%% Exercice 5-13
+Faisons une démonstration par l'absurde.
+Supposons que $\ZG(G) = (e)$.
+Soient $\set{x_1,\dots,x_{k - 1}}$ une famille de représentants des classes de conjuguaison distinctes et non ponctuelles de $G$.
+D'après l'équation aux classes, nous avons
+\[
+  \ordre(G) = 1 + \sum_{i = 1}^{k - 1} \card{\Omega_{x_i}}.
+\]
+Comme $\card{\Omega_{x_i}}$ divise $\ordre(G)$ pour tout $i\in\set{1,\dots,k - 1}$, on a $\card{\Omega_{x_i}} \geq p$.
+Par conséquent,
+$
+  \ordre(G) \geq 1 + (k - 1)p.
+$
+On a l'inégalité $\ordre(G) / p < k$ et $p$ divise l'ordre de $G$, d'où $\ordre(G) / p \leq k - 1$, puis 
+$
+  \ordre(G) \leq (k - 1)p.
+$
+L'encadrement 
+\[
+  1 + (k - 1)p \leq \ordre(G) \leq (k - 1)p,
+\]
+entraînant $1 \leq 0$, nous en déduisons que $\ZG(G) \neq (e)$.
