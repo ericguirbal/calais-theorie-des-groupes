@@ -1,0 +1,65 @@
+\begin{enumerate}
+  \item % a)
+    Soient $\sigma$ et $\tau$ deux permutations de l'ensemble $E$.
+    \begin{enumerate}[1)]
+      \item % a)  1)
+        Pour tout $x\in E$, on a $\sigma(x)\neq x$ si et seulement si $x\neq \sigma^{-1}(x)$, d'où $s(\sigma) = s(\sigma^{-1})$.
+
+      \item % a) 2)
+        Soit $x\in s(\sigma\circ\tau)$. Si $x\notin s(\tau)$, alors $(\sigma\circ\tau)(x) \neq x$ devient $\sigma(x)\neq x$, donc $x\in s(\sigma)$. 
+        Par conséquent, $s(\sigma\circ\tau)\subseteq s(\sigma)\cup s(\tau)$.
+
+      \item % a) 3)
+        Soit $x\in E$.
+        On a $(\sigma\circ\tau\circ\sigma^{-1})(x) \neq x$ si et seulement si $\tau(\sigma^{-1}(x)) \neq \sigma^{-1}(x)$, d'où $s(\sigma\circ\tau\circ\sigma^{-1}) = \sigma(s(\tau))$.
+
+      \item % a) 4)
+        Soit $x\in E$. 
+        Si $x\notin s(\sigma)\cup s(\tau)$, alors $(\sigma\circ\tau)(x) = \sigma(x) = x$ et $(\tau\circ\sigma)(x) = \tau(x) = x$.
+        Si $x\in s(\sigma)$ alors $x\notin s(\tau)$ d'où $(\sigma\circ\tau)(x) = \sigma(x)$.
+        Remarquons que $\sigma(x)\in s(\sigma)$ car $\sigma(\sigma(x)) \neq \sigma(x)$, donc $(\tau\circ\sigma)(x) = \sigma(x)$.
+        De même, si $x\in s(\tau)$ on a $(\tau\circ\sigma)(x) = (\sigma\circ\tau)(x)$.  
+        Nous concluons que $\sigma\circ\tau = \tau\circ\sigma$.
+    \end{enumerate}
+
+  \item % b)
+    \emph{$S_{(E)}$ est un sous-groupe normal de $S_E$.}
+    L'ensemble $S_{(E)}$ est non vide ; en effet, $\mathrm{id_E}\in S_{(E)}$.
+    Soient $\sigma$ et $\tau$ deux permutations de $E$ à support fini.
+    D'après les propriétés~1 et~2, on a $s(\sigma\circ\tau^{-1})\subseteq s(\sigma)\cup s(\tau^{-1})=s(\sigma)\cup s(\tau)$. 
+    Nous en déduisons que $\card{s(\sigma\circ\tau^{-1})}\leq \card{s(\sigma)} + \card{s(\tau)} < \infty$, donc $S_{(E)}$ est un sous-groupe de $S_E$.  
+    
+    De plus, d'après la propriété~3, pour tout $\sigma\in S_{(E)}$ et $\tau\in S_E$, on a $\card{s(\tau\circ\sigma\circ\tau^{-1})} = \card{\tau(s(\sigma))} = \card{s(\sigma)} < \infty$, donc $S_{(E)}\normal S_E$.
+
+    \emph{Les groupes $S_E$ et $S_{(E)}$ sont égaux si et seulement si $E$ est fini.}
+    Quel que soit l'ensemble $E$, on a toujours $S_{(E)} \subseteq S_E$.
+    Si $E$ est fini, il est clair que $S_E \subseteq S_{(E)}$, donc $S_E = S_{(E)}$.
+    Si $E$ est infini, considérons une suite injective $(x_n)_{n\geq 0}$ d'éléménts de $E$.
+    Alors la permutation $\sigma$ définie par
+    \[
+      \begin{cases}
+        \sigma(x_{2i}) = x_{2i + 1} \\
+        \sigma(x_{2i + 1}) = x_{2i}
+      \end{cases}
+    \]
+    est à support infini, ce qui montre que $S_{(E)}$ est un sous-groupe propre de $S_E$.
+    Par conséquent, si $S_{(E)} = S_E$, alors $E$ est fini.
+
+    \emph{Si $E$ est un ensemble infini, alors $S_{(E)}$ est un groupe infini dont tout élément est d'ordre fini et $S_E/S_{(E)}$ est un groupe infini.}
+    Soit $(x_n)_{n\geq 0}$ une suite d'éléments de $E$.
+    Alors $\set{(x_0, x_k) \given k\in\N^*}$ est une famille infinie de transpositions de $S_{(E)}$, donc $S_{(E)}$ est un groupe infini.
+
+    Soit $\sigma\in S_{(E)}$.
+    Alors $\sigma\|_{s(\sigma)}\in\Sym{s(\sigma)}$.
+    Notons $n$ l'ordre de $\sigma\|_{s(\sigma)}$.
+    Il est clair que $\sigma^n = e$, donc $\sigma$ est d'ordre fini.
+    Ainsi, tout élément de $S_{(E)}$ est d'ordre fini.
+
+    Puisque $S_{(E)}$ est un sous-groupe normal de $S_E$, l'ensemble $S_E/S_{(E)}$ est un groupe.
+    Si ce groupe est fini, alors pour toute permutation $\sigma\in S_E$, il existe un entier $n > 0$ tel que $\sigma^n\in S_{(E)}$.
+    Comme $S_{(E)}$ est fini, cela implique que $\sigma$ est d'ordre fini.
+    Soit $(x_n)_{n\in\Z}$ une suite injective d'éléments de $E$.
+    Alors le cycle $\gamma = (\dots, x_2, x_{-1}, x_0, x_1, x_2, \dots)$ défini par $\gamma(x_i) = x_{i + 1}$ pour tout $i\in\Z$, est d'ordre infini.
+    Il s'ensuit que le groupe $S_E/S_{(E)}$ est d'ordre infini.
+\end{enumerate}
+
