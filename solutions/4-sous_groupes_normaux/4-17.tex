@@ -1,0 +1,107 @@
+\begin{enumerate}
+  \item % a)
+    Soient $\sigma$ et $\tau$ deux permutations de l'ensemble $E$.
+    \begin{enumerate}[1)]
+      \item % a)  1)
+        Pour tout $x\in E$, on a $\sigma(x)\neq x$ si et seulement si $x\neq \sigma^{-1}(x)$, d'où $s(\sigma) = s(\sigma^{-1})$.
+
+      \item % a) 2)
+        Soit $x\in s(\sigma\circ\tau)$. Si $x\notin s(\tau)$, alors $(\sigma\circ\tau)(x) \neq x$ devient $\sigma(x)\neq x$, donc $x\in s(\sigma)$. 
+        Par conséquent, $s(\sigma\circ\tau)\subseteq s(\sigma)\cup s(\tau)$.
+
+      \item % a) 3)
+        Soit $x\in E$.
+        On a $(\sigma\circ\tau\circ\sigma^{-1})(x) \neq x$ si et seulement si $\tau(\sigma^{-1}(x)) \neq \sigma^{-1}(x)$, d'où $s(\sigma\circ\tau\circ\sigma^{-1}) = \sigma(s(\tau))$.
+
+      \item % a) 4)
+        Soit $x\in E$. 
+        Si $x\notin s(\sigma)\cup s(\tau)$, alors $(\sigma\circ\tau)(x) = \sigma(x) = x$ et $(\tau\circ\sigma)(x) = \tau(x) = x$.
+        Si $x\in s(\sigma)$ alors $x\notin s(\tau)$ d'où $(\sigma\circ\tau)(x) = \sigma(x)$.
+        Remarquons que $\sigma(x)\in s(\sigma)$ car $\sigma(\sigma(x)) \neq \sigma(x)$, donc $(\tau\circ\sigma)(x) = \sigma(x)$.
+        De même, si $x\in s(\tau)$ on a $(\tau\circ\sigma)(x) = (\sigma\circ\tau)(x)$.  
+        Nous concluons que $\sigma\circ\tau = \tau\circ\sigma$.
+    \end{enumerate}
+
+  \item % b)
+    \emph{$S_{(E)}$ est un sous-groupe normal de $S_E$.}
+    L'ensemble $S_{(E)}$ est non vide ; en effet, $\mathrm{id_E}\in S_{(E)}$.
+    Soient $\sigma$ et $\tau$ deux permutations de $E$ à support fini.
+    D'après les propriétés~1 et~2, on a $s(\sigma\circ\tau^{-1})\subseteq s(\sigma)\cup s(\tau^{-1})=s(\sigma)\cup s(\tau)$. 
+    Nous en déduisons que $\card{s(\sigma\circ\tau^{-1})}\leq \card{s(\sigma)}+\card{s(\tau)} < \infty$, donc $S_{(E)}$ est un sous-groupe de $S_E$.  
+    
+    De plus, d'après la propriété~3, pour tout $\sigma\in S_{(E)}$ et $\tau\in S_E$, on a $\card{s(\tau\circ\sigma\circ\tau^{-1})} = \card{\tau(s(\sigma))} = \card{s(\sigma)} < \infty$, donc $S_{(E)}\normal S_E$.
+
+    \emph{Les groupes $S_E$ et $S_{(E)}$ sont égaux si et seulement si $E$ est fini.}
+    Supposons $E$ fini. Pour tout $\sigma\in S_E$, on a $\card{s(\sigma)}\leq \card{E} < \infty$,  si bien que $\sigma\in S_{(E)}$, donc $S_E = S_{(E)}$.
+
+    Réciproquement, supposons $E$ infini. 
+    Il existe alors une injection $\varphi\from\N\to E$. On définit une permutation $\sigma\in S_\N$ de support $\N$ en posant $\sigma(2i)=2i+1$ et $\sigma(2i+1)=2i$ pour tout $i\in\N$.
+    Alors $\sigma' = (\varphi\circ\sigma\circ\varphi^{-1})|_{\varphi(\N)}$ est une permutation de $\varphi(\N)$. 
+    On la prolonge en une permutation $\overline{\sigma}$ de $E$ en posant
+    \[
+      \overline{\sigma}(x) = 
+      \begin{cases} 
+        \sigma'(x) & \text{ si } x\in\varphi(\N), \\ 
+        x          & \text{ si } x\notin\varphi(\N). 
+      \end{cases}
+    \]
+    D'après la propriété~3, $s(\sigma') = \varphi(s(\sigma)) = \varphi(\N)$, donc $s(\overline{\sigma}) = \varphi(\N)$ est infini, ainsi $\overline{\sigma}\notin S_{(E)}$. 
+    Nous en déduisons que si $S_{(E)} = S_E$, alors  $E$ est fini.
+
+    \emph{Si $E$ est un ensemble infini alors $S_{(E)}$ est un groupe infini dont tout élément est d'ordre fini et $S_E/S_{(E)}$ est un groupe infini.}
+    Soient $\varphi\from\N\to E$ une injection et $\sigma\in S_{(\N)}$.
+    Posons $\sigma'= (\varphi\circ\sigma\circ\varphi^{-1})|_{\varphi(\N)}$.
+    Alors $\sigma'$ est une permutation de $\varphi(\N)$ dont le support est fini; en effet $\card{s(\sigma')} = \card{\varphi(s(\sigma))} = \card{s(\sigma)} <\infty$.  
+    On prolonge $\sigma'$ en une permutation $\overline{\sigma}$ de $E$ en posant
+    \[
+      \overline{\sigma}(x) = 
+      \begin{cases}
+        \sigma'(x) & \text{ si } x\in\varphi(\N), \\ 
+        x          & \text{ si } x\notin\varphi(\N). 
+      \end{cases}
+    \]
+    Il est clair que $s(\overline{\sigma}) = s(\sigma')$.
+    Nous venons donc de construire une application $f\colon S_{(\N)}\rightarrow S_{(E)},\,\sigma\mapsto\overline{\sigma}$.
+    Montrons qu'elle est injective.
+    Soit $(\gamma, \tau)\in S_{\N}^2$ tel que $\gamma\neq\tau$. 
+    Il existe $i_0\in\N$ tel que $\gamma(i_0)\neq\tau(i_0)$. 
+    Par conséquent, si on pose $x_0 = \varphi(i_0)$, on a
+    %
+    \begin{align*}
+      \overline{\gamma}(x_0) 
+      &= \varphi\circ\gamma\circ\varphi^{-1}(x_0) \\
+      &= \varphi\circ\gamma(i_0) \\
+      &\neq \varphi\circ\tau(i_0) && \text{(car $\varphi$ est injective)} \\
+      &= \varphi\circ\varphi^{-1}(x_0) \\
+      &= \overline{\tau}(x_0),
+    \end{align*}
+    % 
+    donc $f(\gamma) \neq f(\tau)$.
+    De l'injectivité de $f$, nous déduisons que $\card{S_{(\N)}}\leqslant \card{S_{(E)}}$. 
+    Or $S_{(\N)}$ est infini puisque $\{(0,i);\,i\in\N^*\}\subseteq S_{(\N)}$, par conséquent $S_{(E)}$ est un groupe infini.
+    Soit $\gamma\in S_{(E)}$. 
+    Alors $\gamma_{|s(\gamma)|}\in S_{s(\gamma)}$ avec $|s(\gamma)|<\infty$, donc $\gamma$, qui est de même ordre que $\gamma_{|s(\gamma)|}$, est d'ordre fini.
+
+    Supposons que $S_E/S_{(E)}$ soit un groupe d'ordre fini.
+    Notons $n$ son ordre.
+    Alors pour tout $\sigma\in S_E$, on a $\sigma^n\in S_{(E)}$, donc $\sigma$ est d'ordre fini.
+    Pour montrer que $S_E/S_{(E)}$ est d'ordre infini, il nous suffit donc de construire une permutation de $E$ d'ordre infini.
+    Soit l'application $\gamma\colon\Z\to\Z$ définie par
+    \[
+      \begin{cases}
+        \gamma(2i) = 2i + 2 \\
+        \gamma(2i + 1) = 2i + 1.
+      \end{cases}
+    \]
+    On vérifie que $\gamma$ est un cycle de $\Z$ à support infini ($s(\gamma) = 2\N$). 
+    À l'aide d'une injection $\varphi\colon\N\longrightarrow E$, on construit comme nous l'avons déjà fait une permutation $\overline{\gamma}\in S_E$ en posant
+    \[
+      \overline{\gamma} =
+      \begin{cases}
+        \varphi\circ\tau\circ\varphi^{-1}(x) & \text{ si } x\in\varphi(\N)\\
+        x                           & \text{ si } x\notin\varphi(\N).
+      \end{cases}
+    \]
+    La permutation $\overline{\gamma}$ est un cycle de longueur infinie, elle est donc d'ordre infini.
+\end{enumerate}
+
