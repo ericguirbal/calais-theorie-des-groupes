@@ -7,16 +7,12 @@ D'après l'équation aux classes, nous avons
   \ordre(G) = 1 + \sum_{i = 1}^{k - 1} \card{\Omega_{x_i}}.
 \]
 Comme $\card{\Omega_{x_i}}$ divise $\ordre(G)$ pour tout $i\in\set{1,\dots,k - 1}$, on a $\card{\Omega_{x_i}} \geq p$.
-Par conséquent,
-$
-  \ordre(G) \geq 1 + (k - 1)p.
-$
-On a l'inégalité $\ordre(G) / p < k$ et $p$ divise l'ordre de $G$, d'où $\ordre(G) / p \leq k - 1$, puis 
-$
-  \ordre(G) \leq (k - 1)p.
-$
-L'encadrement 
+Par conséquent, $\ordre(G) \geq 1 + (k - 1)p$, puis
 \[
-  1 + (k - 1)p \leq \ordre(G) \leq (k - 1)p,
+  \frac{\ordre(G)}{p} \geq \frac{1}{p} + k - 1 > k - 1,
 \]
-entraînant $1 \leq 0$, nous en déduisons que $\ZG(G) \neq (e)$.
+d'où la contradiction
+\[
+  \frac{\ordre(G)}{p} \geq k.
+\]
+Nous avons donc bien $\ZG(G) \neq (e)$.
