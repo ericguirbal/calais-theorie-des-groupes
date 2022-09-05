@@ -8,9 +8,13 @@
         = \begin{cases}
             \sigma(j_{k + 1})  & \text{si $1\leq k \leq r - 1$} \\
             \sigma(j_1) & \text{si $k = r$},
-          \end{cases}
+          \end{cases}.
     \]
-    donc $\sigma\circ\gamma\circ\sigma^{-1}$ est le $r$-cycle $(\sigma(j_1), \sigma(j_2), \dots, \sigma(j_r))$.
+    De plus, pour tout entier $k\in\N_n\setminus\set{\sigma(j_1), \sigma(j_2), \dots, \sigma(j_r)}$, il existe un unique entier $j\in\N_n\setminus\set{j_1, j_2, \dots, j_r}$ tel que $k = \sigma(j)$, et on a
+    \[
+      \sigma\circ\gamma\circ\sigma^{-1}(k) = \sigma\circ\gamma(j) = \sigma(j) = k.
+    \]
+    Nous avons prouvé que $\sigma\circ\gamma\circ\sigma^{-1}$ est le $r$-cycle $(\sigma(j_1), \sigma(j_2), \dots, \sigma(j_r))$.
 
   \item
     Pour tout entier $p$ tel que $1\leq p\leq n$, on a
