@@ -1,0 +1,42 @@
+%%% Exercice 3.24
+\begin{enumerate}
+  \item
+    Nous avons $r$ entiers distincts $\sigma(j_1), \sigma(j_2), \dots, \sigma(j_r)$ tels que
+    \[
+      \sigma\circ\gamma\circ\sigma^{-1} (\sigma(j_k))
+        = \sigma\circ\gamma(j_k)
+        = \begin{cases}
+            \sigma(j_{k + 1})  & \text{si $1\leq k \leq r - 1$} \\
+            \sigma(j_1) & \text{si $k = r$},
+          \end{cases}
+    \]
+    donc $\sigma\circ\gamma\circ\sigma^{-1}$ est le $r$-cycle $(\sigma(j_1), \sigma(j_2), \dots, \sigma(j_r))$.
+
+  \item
+    Pour tout entier $p$ tel que $1\leq p\leq n$, on a
+    \[
+      \gamma_1^p =
+        \matrice{
+          1 & 2 & \dots & n - p & n -p + 1 & \dots & n \\
+          p + 1 & p + 2 & \dots & n & 1 & \dots & p
+        }.
+    \]
+    De la question précédente, nous déduisons que $\gamma_1^p\circ\tau_1\circ\gamma_1^{-p}$ est la transposition
+    \[
+        (\gamma_1^p(1), \gamma_1^p(2))
+        = \begin{cases}
+            (p + 1, p + 2) & \text{si $1\leq p\leq n - 2$} \\
+            (1, n) & \text{si $p = n - 1$} \\
+            (1, 2) & \text{si $p = n$}.
+          \end{cases}
+    \]
+
+    Remarquons que
+    \[
+      \set{(i, i + 1)\given 1\leq i\leq n - 1}\subseteq\set{\gamma_1^p\circ\tau_1\circ\gamma_1^{-p}\given 1\leq p\leq n} \subseteq \Gr{\tau_1, \gamma_1}\subseteq\Sym{n}.
+    \]
+    Or l'ensemble des transpositions $(i, i + 1)$ telles que $1\leq i\leq n - 1$ engendrent le groupe $\Sym{n}$ (proposition~3.64), d'où la conclusion:
+    \[
+      \Sym{n} = \Gr{\tau_1, \gamma_1}.
+    \]
+\end{enumerate}
