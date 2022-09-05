@@ -1,0 +1,34 @@
+%%% Exercice 3.25
+À toute permutation $\sigma\in\Sym{n}$ associons l'automorphisme intérieur $f_\sigma$ définie par sur $\Sym{n}$ par $f_\sigma(\gamma) = \sigma\circ\gamma\circ\sigma^{-1}$.
+L'application
+\[
+  f\colon\Sym{n}\to\Int(\Sym{n}), \quad \sigma\mapsto f_\sigma
+\]
+est un homomorphisme de groupes ; en effet, pour tout $(\sigma_1, \sigma_2)\in\Sym{n}^2$, on a
+\begin{align*}
+  f_{\sigma_1\circ\sigma_2}(\gamma)
+    &= (\sigma_1\circ\sigma_2)\circ\gamma\circ(\sigma_1\circ\sigma_2)^{-1} \\
+    &= \sigma_1\circ(\sigma_2\circ\gamma\circ\sigma_2^{-1})\circ\sigma_1^{-1} \\
+    &= (f_{\sigma_1} \circ f_{\sigma_2})(\gamma).
+\end{align*}
+Par définition, l'homorphisme $f$ est surjectif.
+Intéressons-nous à son noyau:
+\begin{align*}
+  \Ker(f)
+    &= \set{\sigma\in\Sym{n}\given f_{\sigma} = \id_{\Sym{n}}} \\
+    &= \set{\sigma\in\Sym{n}\given \sigma\circ\gamma\circ\sigma^{-1} = \gamma} \\
+    &= \set{\sigma\in\Sym{n}\given \sigma\circ\gamma = \gamma\circ\sigma} \\
+    & = \ZG(\Sym{n}).
+\end{align*}
+
+Démontrons par l'absurde que le centre de $\Sym{n}$ pour $n\geq 3$ est trivial.
+Soient $\sigma\in\ZG(\Sym{n})\setminus\set{e}$ et $j\in\supp(\sigma)$.
+Comme $n\geq 3$, il existe $k\in\N_n\setminus\set{j, \sigma(j)}$.
+Notons $\tau$ la transposition $(j, k)$.
+En utilisant le résultat de la question a) de l'exercice précédent, on a
+\[
+  (j, k) = \sigma\circ\tau\circ\sigma^{-1} = (\sigma(j), \sigma(k)).
+\]
+Cela implique que $j = \sigma(j)$ ou $k = \sigma(j)$ ce qui est impossible.
+
+Nous avons montré que $f$ est un isomorphisme de groupes.
