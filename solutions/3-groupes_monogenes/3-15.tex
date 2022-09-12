@@ -1,0 +1,22 @@
+%%% Exercice 3.15
+Soient $g$ un élément de $G$ d'ordre $s$ et $x$ un élément quelconque dont l'ordre est noté $t$.
+Désignons par $\mathcal{P}$ l'ensemble des nombres premiers.
+On définit deux entiers $s'$ et $t'$ par
+\[
+  s' = \prod_{\substack{p\in\mathcal{P}\\ v_p(s) \geq v_p(t)}} p^{v_p(s)}
+  \quad\text{et}\quad
+  t' = \prod_{\substack{p\in\mathcal{P}\\ v_p(t) > v_p(s)}} p^{v_p(t)}
+\]
+où $v_p(n)$ désigne l'exposant du nombre premier $p$ dans la factorisation en produit de nombres premiers de l'entier $n$.
+Il est clair que $s'$ divise $s$ et $t'$ divise $t$.
+Si $p$ est un nombre premier, on ne peut avoir simultanément $v_p(s)\geq v_p(t)$ et $v_p(t) > v_p(s)$, donc $s'$ et $t'$ sont premiers entre eux.
+De plus,
+\[
+  s't' = \prod_{p\in\mathcal{P}} p^{\max(v_p(s), v_p(t))} = \ppcm(s, t).
+\]
+L'élément $g' = g^{s/s'}$ est d'ordre $s'$ (exercice~3.13).
+De même, $x' = x^{t/t'}$ est d'ordre $t'$.
+Considérons $y = x'g'$.
+D'après le résultat de la question~b) de l'exercice~3.14, l'ordre de $y$ est égal $s't' = \ppcm(s, t)$.
+Par définition du plus petit commun multiple, on a $\ppcm(s, t) \geq s$ et, $s$ étant l'ordre maximal d'un élément de $G$, on a également $\ppcm(s, t) \leq s$.
+Il s'ensuit que $\ppcm(s, t) = s$, si bien que $t$ divise $s$, donc $x^s = e$.
