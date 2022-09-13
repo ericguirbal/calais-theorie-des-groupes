@@ -1,0 +1,51 @@
+\begin{enumerate}
+  \item
+    \begin{itemize}
+      \item
+        L'ensemble~$\mathcal{C}(J)$ n'est pas vide (il contient les fonctions constantes) et la différence de deux fonctions continues sur $J$ est une fonction continue sur $J$, donc $\mathcal{C}(J)$ est un sous-groupe de $(\R^J,+)$.
+
+      \item
+        L'ensemble $\Gamma$ est non vide, $\Gamma\subseteq\mathcal{C}(J)$ car les fonctions constantes de $\R^J$ sont continues, et, pour tous réels $a$ et $b$, on a $c_a - c_b = c_{a - b}$, donc $\Gamma$ est bien un sous-groupe de $(\mathcal{C}(J),+)$.
+    \end{itemize}
+
+  \item
+    \emph{$F_1$ est un morphisme de groupes.}
+    En effet, pour tout $(f,g)\in\mathcal{C}(J)$, on a $F_1(f + g) = (f + g)(1) = f(1) + g(1) = F_1(f) + F_1(g)$.
+
+    \emph{$F_2$ n'est pas un morphisme de groupes.}
+    En effet, $F_2(c_{-2} + c_1) = F_2(c_1) = \abs{c_1(0)} = 1$ et $F_2(c_{-2}) + F_2(c_1) = \abs{c_{-2}(0)} + \abs{c_1(0)} = 2 + 1 = 3$.
+
+    \emph{$F_3$ est un morphisme de groupes.}
+    C'est une conséquence de la linéarité de l'intégrale.
+
+    \emph{$F_4$ est un morphisme de groupes.}
+    C'est une conséquence de la linéarité de l'intégrale.
+
+    \emph{$F_5$ n'est pas un morphisme de groupes.}
+    L'élément neutre du groupe $\mathcal{C}(J)$ est $c_0$.
+    Si $F_5$ était un morphisme de groupes, on aurait $F_5(c_0) = 0$ (proposition~1.55), or $F_5(c_0) = 1$.
+
+    Vérifier que $F_1(c_a) = a$, $F_3(c_a) = a$ et $F_4(c_a) = a$ pour tout $a\in\R$ est trivial.
+
+    Pour tout $i\in\set{1,3,4}$, on a $F_i(\mathrm{id}_J - c_{m_i}) = F_i(\mathrm{id}_J) - F_i(c_{m_i}) = F_i(\mathrm{id}_J) - m_i$.
+    Ainsi $m_i = F_i(\mathrm{id}_J)$ est l'unique réel tel que $F_i(\mathrm{id}_J - c_{m_i}) = 0$.
+    On trouve $m_1 = 1$, $m_3 = 1/2$ et $m_4 = 1 + (6\sqrt{3} - 12)/\pi$.
+    Comme $m_1$, $m_3$ et $m_4$ sont deux à deux distincts, ce qui précède permet de conclure que $\ker F_1$, $\ker F_3$ et $\ker F_4$ sont deux à deux distincts.
+
+  \item
+    Soit $F\in\Hom(\mathcal{C}(J),\R)$ tel que $F(c_a) = a$ pour tout $a\in\R$.
+
+    Tout $f\in\mathcal{C}(J)$ peut s'écrire $f = (f - c_{F(f)}) + c_{F(f)}$ où $c_{F(f)}\in\Gamma$ et $f - c_{F(f)}\in\ker F$ car $F(f - c_{F(f)}) = F(f) - F(c_{F(f)} = F(f) - F(f) = 0$.
+    Ainsi $\mathcal{C}(J) = \ker F + \Gamma$.
+
+    Soit $f\in\mathcal{C}(J)\cap\Gamma$.
+    Il existe $a\in\R$ tel que $f = c_a$ et $F(c_a) = 0$.
+    Or $F(c_a) = a$, donc $a = 0$.
+    Il s'ensuit que $\ker F\cap\Gamma = \set{c_0}$, la fonction $c_0$ étant l'élément neutre du groupe $\mathcal{C}(J)$.
+
+    Nous avons démontré que $\mathcal{C}(J) = \ker F\oplus\Gamma$.
+
+    On a $\mathcal{C}(J) = H\oplus\Gamma$ pour tout sous-groupe $H\in\set{\Ker F_1, \Ker F_3, \Ker F_4}$, mais trois choix pour $H$, cela n'est pas assez pour justifier l'usage de l'adjectif \emph{nombreux}.
+    Heureusement, nous allons en construire d'autres en nous inpirant de ceux déjà trouvés.
+    Par exemple, nous pouvons considérer les morphismes $F_\alpha\colon f\mapsto f(\alpha)$ où $\alpha\in\R$ pour lesquels nous avons bien $F_\alpha(c_a) = a$ pour tout $a\in\R$ et $m_\alpha = F_\alpha(\mathrm{id}_J) = \alpha$, donc $\mathcal{H} = \set{\Ker F_\alpha}_{\alpha\in\R}$ est une famille infinie de sous-groupes deux à deux distincts telle que $\mathcal{C}(J) = H\oplus\Gamma$ pour tout $H\in\mathcal{H}$.
+\end{enumerate}
