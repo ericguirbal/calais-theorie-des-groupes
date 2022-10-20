@@ -1,0 +1,37 @@
+# Ceci est un exemple de fichier de configuration pour l'utilitaire Make.
+# Copiez-le vers Makefile.ini et éditez-le selon vos préférences.
+# Celles figurant sur la ligne de commande sont prioritaires sur celles
+# de ce fichier.
+#
+# BUILD_DIR : Le dossier où se passe la compilation
+# Évite de polluer la racine du projet par les nombreux fichiers créés
+# par la compilation (défaut : build).
+#
+# BUILD_DIR = build
+#
+# !PAGER : Un pageur
+#
+# PAGER = less -F
+#
+# PDF_DIR : Le dossier où sont copiés les PDF générés
+# Défaut : pdfs
+#
+# PDF_DIR = pdfs
+#
+# !PDF_VIEWER : Un visionneur de PDF
+# Sous le système d'exploitation GNU/Linux (resp. MacOS), la valeur par
+# défaut est le script xdg-open (resp. open) afin de respecter les
+# préférences de l'utilisateur.
+#
+# PDF_VIEWER = zathura
+#
+# !VERSION_DEV : La version utilisée pour éditer le document
+# Sur la ligne de commande, on peut utiliser l'alias VERSION.
+#
+# VERSION_DEV = a5
+#
+# !VERSIONS_PDF : Les versions dans lesquelles compiler le livre
+# Sur la ligne de commande, on peut utiliser l'alias VERSIONS.
+#
+# VERSIONS_PDF = "a4 a5"
+#
