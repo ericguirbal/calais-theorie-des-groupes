@@ -7,6 +7,35 @@ SHELL         := /bin/bash
 # Voir le modèle Makefile.local.template.
 -include Makefile.ini
 
+# Pour colorer certains messages
+red   := $(shell tput setaf 1)
+green := $(shell tput setaf 2)
+reset := $(shell tput sgr0)
+
+empty :=
+space := $(empty) $(empty)
+comma := ,
+
+# Variable dont l'évaluation produit un retour à la ligne
+define newline
+$(empty)
+$(empty)
+endef
+
+# $(call uppercase,texte)
+uppercase = $(shell echo $1 | tr '[:lower:]' '[:upper:]')
+
+# $(call intercalate,list,separator)
+intercalate = $(subst $(space),$2,$1)
+
+# $(call init,list)
+init = $(wordlist 1,$(shell echo $(words $1) - 1 | bc),$1)
+
+# $(call join-with-conj,list,conjunction)
+define join-with-conj
+$(call intercalate,$(call init,$1),$(comma)$(space))$(space)$2$(space)$(lastword $1)
+endef
+
 # Le visionneur de fichier texte
 ifeq ($(PAGER),less)
     ifeq ($(origin PAGER),environment)
@@ -63,6 +92,30 @@ VERSIONS_PDF ?= $(VERSIONS_ALL)
 VERSIONS     ?= $(VERSIONS_PDF)
 VERSIONS_PDF := $(VERSIONS)
 
+# $(call validate-version,list_of_versions)
+define validate-version
+$(foreach v,$1,\
+	$(if $(filter $v,$(VERSIONS_ALL)),,
+		$(error $(red)Version $v inconnue. \
+			Les versions disponibles sont \
+			$(call join-with-conj,$(VERSIONS_ALL),et)$(reset))))
+endef
+
+define validate-pdf-viewer
+$(if $(shell which $(PDF_VIEWER)),,
+	$(error $(red)Visionneur de PDF non disponible$(reset)))
+endef
+
+ifeq ($(MAKECMDGOALS),pdfs)
+    $(call validate-version,$(VERSIONS_PDF))
+else ifeq ($(MAKECMDGOALS),dev)
+    $(call validate-version,$(VERSION_DEV))
+    $(call validate-pdf-viewer)
+else ifeq ($(MAKECMDGOALS),view)
+    $(call validate-version,$(VERSIONS_PDF))
+    $(validate-pdf-viewer)
+endif
+
 # Nom du fichier maître en fonction de la version
 # $(call source-main,version)
 source-main = $(book)-$1.tex
@@ -87,35 +140,6 @@ TARGETS_DEV_ALL := $(VERSIONS_ALL:%=$(call target-dev,%))
 # Les PDF générés par la cble pdfs
 TARGETS_PDF     := $(VERSIONS_PDF:%=$(call target-pdf,%))
 TARGETS_PDF_ALL := $(VERSIONS_ALL:%=$(call target-pdf,%))
-
-# Pour colorer certains messages
-red   := $(shell tput setaf 1)
-green := $(shell tput setaf 2)
-reset := $(shell tput sgr0)
-
-empty :=
-space := $(empty) $(empty)
-comma := ,
-
-# Variable dont l'évaluation produit un retour à la ligne
-define newline
-$(empty)
-$(empty)
-endef
-
-# $(call uppercase,texte)
-uppercase = $(shell echo $1 | tr '[:lower:]' '[:upper:]')
-
-# $(call intercalate,list,separator)
-intercalate = $(subst $(space),$2,$1)
-
-# $(call init,list)
-init = $(wordlist 1,$(shell echo $(words $1) - 1 | bc),$1)
-
-# $(call join-with-conj,list,conjunction)
-define join-with-conj
-$(call intercalate,$(call init,$1),$(comma)$(space))$(space)$2$(space)$(lastword $1)
-endef
 
 # Largeur de la première colonne de la page d'aide
 help_width := 18
@@ -152,29 +176,10 @@ endef
 
 $(eval $(call make_help_message))
 
-# $(call validate-version,version)
-define validate-version
-$(if $(filter $1,$(VERSIONS_ALL)),,
-	$(error $(red)Version $1 inconnue. \
-		Les versions disponibles sont \
-		$(call join-with-conj,$(VERSIONS_ALL),et)$(reset)))
-endef
-
-
 .SILENT:
 
 .PHONY: FORCE_MAKE
 FORCE_MAKE:
-
-.PHONY: validate/version-dev validate/versions-pdf
-validate/version_dev validate/versions_pdf: validate/%:
-	$(foreach v,$($(call uppercase,$*)),$(call validate-version,$v))
-
-.PHONY: validate/pdf-viewer
-validate/pdf-viewer:
-ifeq ($(shell which $(PDF_VIEWER)),)
-	$(error $(red)Visionneur de PDF non disponible$(reset))
-endif
 
 .PHONY: revision.tex
 .INTERMEDIATE: revision.tex
@@ -194,11 +199,11 @@ $(TARGETS_PDF_ALL): $(call target-pdf,%): $(call target-dev,%) FORCE_MAKE
 ## make pdfs [VERSIONS="$(VERSIONS_PDF)"]
 .PHONY: pdfs
 pdfs: latexmk_opts += -silent
-pdfs: validate/versions_pdf $(TARGETS_PDF)
+pdfs: $(TARGETS_PDF)
 ifeq ($(words $(TARGETS_PDF)),1)
-	echo -e "$(green)Le fichier suivant a été crée avec succès :"
+	echo -e "$(green)Le fichier suivant a été créé avec succès :"
 else
-	echo -e "$(green)Les fichiers suivants ont été crées avec succès :"
+	echo -e "$(green)Les fichiers suivants ont été créés avec succès :"
 endif
 	$(foreach f,$(TARGETS_PDF),(echo -e "  - $f");)
 	printf "$(reset)"
@@ -207,12 +212,12 @@ endif
 ## make dev [VERSION=$(VERSION_DEV)] [PDF_VIEWER=$(PDF_VIEWER)]
 .PHONY: dev
 dev: latexmk_opts += -pvc
-dev: validate/version_dev $(TARGET_DEV)
+dev: $(TARGET_DEV)
 
 ## view : all + ouvre les PDF dans le visionneur
 ## make view [PDF_VIEWER=$(PDF_VIEWER)]
 .PHONY: view
-view: pdfs validate/pdf-viewer
+view: pdfs
 	$(foreach f,$(TARGETS_PDF),($(PDF_VIEWER) $f &);)
 
 ## clean : Supprime le dossier $(BUILD_DIR)/
