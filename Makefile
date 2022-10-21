@@ -4,7 +4,7 @@ SHELL         := /bin/bash
 .ONESHELL:
 
 # Destiné à la personnalisation de certaines variables.
-# Voir le modèle Makefile.local.template.
+# Voir le modèle Makefile.ini.template.
 -include Makefile.ini
 
 # Pour colorer certains messages
@@ -110,7 +110,7 @@ ifeq ($(MAKECMDGOALS),pdfs)
     $(call validate-version,$(VERSIONS_PDF))
 else ifeq ($(MAKECMDGOALS),dev)
     $(call validate-version,$(VERSION_DEV))
-    $(call validate-pdf-viewer)
+    $(validate-pdf-viewer)
 else ifeq ($(MAKECMDGOALS),view)
     $(call validate-version,$(VERSIONS_PDF))
     $(validate-pdf-viewer)
