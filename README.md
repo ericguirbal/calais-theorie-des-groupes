@@ -46,7 +46,7 @@ Créez à la racine du projet le fichier `revision.tex` contenant les lignes sui
     \newcommand{\gitDate}{\today}
 
 À chaque version XXX du livre correspond un fichier maître `ETG-solutions-XXX.tex`.
-Faîtes `ls ETG-solutions-*.tex` pour lister les fichiers mâitres et donc les versions disponibles.
+Faîtes `ls ETG-solutions-*.tex` pour lister les fichiers maîtres et donc les versions disponibles.
 Par exemple, pour imprimer le livre en noir et blanc au format A4, exécutez la commande
 
     latexmk -outdir=build --pdf ETG-solutions-a4.tex
