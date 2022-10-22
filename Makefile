@@ -200,12 +200,12 @@ $(TARGETS_PDF_ALL): $(call target-pdf,%): $(call target-dev,%) FORCE_MAKE
 .PHONY: pdfs
 pdfs: latexmk_opts += -silent
 pdfs: $(TARGETS_PDF)
-ifeq ($(words $(TARGETS_PDF)),1)
+ifeq ($(words $^),1)
 	echo -e "$(green)Le fichier suivant a été créé avec succès :"
 else
 	echo -e "$(green)Les fichiers suivants ont été créés avec succès :"
 endif
-	$(foreach f,$(TARGETS_PDF),(echo -e "  - $f");)
+	$(foreach f,$^,(echo -e "  - $f");)
 	printf "$(reset)"
 
 ## dev : Compile pour éditer
