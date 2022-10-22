@@ -1,0 +1,20 @@
+%%% Exercice 6.5
+\begin{enumerate}
+  \item
+    D'après le second théorème de Sylow, le nombre de $7$-sous-groupes de Sylow est un diviseur de $56$ congru à $1$ modulo 7, donc $n_7$ est égal à $1$ ou $8$.
+
+  \item
+    Supposons que $n_7 = 8$.
+    Tout élément d'ordre~$7$ engendre un $7$-sous-groupe, donc appartient à un $7$-sous-groupe de Sylow d'après le second théorème de Sylow.
+    Comme $\ordre(G) = 2^3\times 7$, les $7$-sous-groupes de Sylow sont d'ordre $7$.
+    Étant donné que $7$ est un nombre premier, l'intersection de deux de ces sous-groupes distincts est trivial (théorème de Lagrange) et chacun de ces sous-groupe de Sylow a exactement $6$ éléments d'ordre $7$ (corollaire~2.10 du théorème de Lagrange).
+    Il s'ensuit que le groupe $G$ comporte $6\times 8 = 48$ éléments d'ordre 7.
+
+    Toujours d'après le second théorème de Sylow, $n_2$ est un diviseur impair de $56$, donc $n_2$ est égal à $1$ ou $7$.
+    Chacun des $2$-sous-groupes de Sylow est d'ordre $8$.
+    Or, nous avons déjà $48$ éléments d'ordre $7$, si bien qu'il ne reste que $8$ éléments pour former ces $2$-sous-groupes de Sylow, donc $n_2 = 1$.
+
+  \item
+    D'après les questions précédentes, nous avons $n_7 = 1$ ou $n_2 = 1$.
+    Le corollaire~6.9 permet de conclure que dans les deux cas le groupe n'est pas simple.
+\end{enumerate}
