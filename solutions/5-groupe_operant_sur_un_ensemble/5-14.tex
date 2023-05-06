@@ -1,0 +1,96 @@
+%%% Exercice 5-14
+\begin{enumerate}
+  \item
+    Les cycles $\gamma_1, \gamma_2,\dots, \gamma_t$ étant disjoints, ils commutent deux à deux (proposition~3.39) ; on peut donc supposer que $1 \leq n_1\leq n_2\leq\dots\leq n_t$.
+    L'unicité de la décomposition à l'ordre des facteurs près permet de conclure que toute permutation de $\Sym{n}$ détermine une partition de l'entier $n$.
+
+  \item
+    \emph{Deux cycles sont conjugués dans $\Sym{n}$ si et seulement si ils ont même longueur.}
+    Soient $\gamma = (j_1, j_2, \dots, j_t)$ et $\gamma' = (j'_1, j'_2, \dots, j'_{t'})$ deux cycles dans $\Sym{n}$.
+
+    Supposons que $\gamma$ et $\gamma'$ sont conjuguées.
+    Alors il existe $\sigma\in\Sym{n}$ telle que
+    \[
+      \gamma' = \sigma\circ\gamma\circ\sigma^{-1}.
+    \]
+    On a montré à l'exercice~3.24 que $\gamma'$ est le $t$-cycle
+    \[
+      (\sigma(j_1), \sigma(j_2), \dots, \sigma(j_t)),
+    \]
+    donc $\longueur\gamma = \longueur\gamma'$.
+
+    Réciproquement, supposons que $\longueur\gamma = \longueur\gamma'$.
+    Il existe une permutation $\sigma\in\Sym{n}$ telle que $\sigma(j_k) = j'_k$ pour tout $k\in\set{1, 2, \dots, t}$.
+    Elle vérifie
+    \[
+      \sigma\circ\gamma\circ\sigma^{-1} = (\sigma(j_1), \sigma(j_2), \dots, \sigma(j_t)) = (j'_1, j'_2, \dots, j'_t) = \gamma',
+    \]
+    donc les cycles $\gamma$ et $\gamma'$ sont conjugués.
+
+    \emph{Deux permutations sont conjuguées dans $\Sym{n}$ si et seulement si elles déterminent la même partition de $n$.}
+    Soient $\sigma$ et $\sigma'$ deux permutations dans $\Sym{n}$.
+    D'après la première question, il existe deux familles de cycles disjoints $(\gamma_i)_{1\leq i\leq t}$ et $(\gamma'_i)_{1\leq i\leq t'}$ telles que
+    \begin{align*}
+      \sigma &= \gamma_1\circ\gamma_2\circ\dots\circ\gamma_t,
+             & & 1\leq n_1 \leq n_2 \leq \dots\leq n_t
+             & \text{et} & & \sum_{i=1}^r n_i &= n \\
+      \sigma' &= \gamma'_1\circ\gamma'_2\circ\dots\circ\gamma'_{t'},
+              & & 1\leq n'_1 \leq n'_2\leq \dots\leq n'_{t'}
+              & \text{et} & & \sum_{i=1}^{r'} n'_i &= n.
+    \end{align*}
+
+    Supposons que $\sigma$ et $\sigma'$ déterminent la même partition de $n$.
+    D'après la première partie de la question, il existe une famille de permutations $(\pi_i)_{1\leq i\leq t}$ dans $\Sym{n}$ telle que
+    \[
+      \gamma'_i = \pi_i\circ\gamma_i\circ\pi_i^{-1}.
+    \]
+    Les cycles $\gamma_1$, $\gamma_2$, \dots, $\gamma_t$ étant disjoints, nous pouvons définir une permutation $\pi$ dans $\Sym{n}$ en posant
+    \[
+      \restr{\pi}{\supp(\gamma_i)} = \pi_i.
+    \]
+    On a alors
+    \[
+      \gamma'_i = \pi\circ\gamma_i\circ\pi^{-1}
+    \]
+    pout tout $i\in\N_t$.
+    Il s'ensuit que
+    \begin{align*}
+      \pi\circ\sigma\circ\pi^{-1}
+        &= \pi\circ(\gamma_1\circ\gamma_2\circ\dots\circ\gamma_t)\circ\pi^{-1} \\
+        &= (\pi\circ\gamma_1\circ\pi^{-1})\circ(\pi\circ\gamma_2\circ\pi^{-1})\circ\dots\circ
+            (\pi\circ\gamma_t\circ\pi^{-1}) \\
+        &= \gamma'_1\circ\gamma'_2\circ\dots\circ\gamma'_t \\
+        &= \sigma',
+    \end{align*}
+    donc les permutations $\sigma$ et $\sigma'$ sont bien conjuguées dans $\Sym{n}$.
+
+    Réciproquement, supposons que $\sigma$ et $\sigma'$ sont conjuguées dans $\Sym{n}$.
+    Alors il existe $\pi\in\Sym{n}$ telle que
+    \[
+      \sigma' = \pi\circ\sigma\circ\pi^{-1}.
+    \]
+    On a alors
+    \[
+      \gamma_1'\circ\gamma_2'\circ\dots\circ\dots\gamma'_{t'}
+        = (\pi\circ\gamma_1\circ\pi^{-1})\circ(\pi\circ\gamma_2\circ\pi^{-1})\circ\dots\circ(\pi\circ\gamma_t\circ\pi^{-1})
+    \]
+    avec, pour tout $i\in\N_t$,
+    \[
+      \longueur(\pi\circ\gamma_i\circ\pi^{-1}) = \longueur \gamma_i.
+    \]
+    L'unicité de la décomposition en cycles disjoints (théorème~3.55) entraîne $t = t'$ et
+    \[
+      (n_1, n_2, \dots, n_t) = (n'_1, n'_2, \dots, n'_t).
+    \]
+    Des permutations conjuguées déterminent donc bien la même partition de $n$.
+
+    \emph{Le nombre de classes de conjuguaison de $\Sym{n}$ est égal à $p(n)$.}
+
+    La question a) définie une application de $\Sym{n}$ vers l'ensemble des partitions de $n$.
+    Comme deux permutations conjuguées déterminent la même partition, elle induit une application $\varphi$ de l'ensemble des classes de conjuguaison de $\Sym{n}$ vers les partitions de $n$.
+    Puisque deux permutations qui déterminent la même partition sont conjuguées, l'application $\varphi$ est injective.
+    Reste à démontrer la surjectivité de $\varphi$.
+    Pour cela considérons une partition $(n_1, n_2, \dots, n_t)$ de $n$.
+    Pour tout $i\in\N_t$, notons $\gamma_i$ le $n_i$-cycles $(s_{i - 1}, s_{i - 1} + 1, \dots, s_i - 1)$ où $s_0 = 1$ et $s_i = \sum_{j=1}^i n_j$ pour tout $\N_t$.
+    La classe conjuguaison de $\gamma_1\gamma_2\dots\gamma_t$ a alors pour image $(n_1, n_2, \dots, n_t)$.
+\end{enumerate}
