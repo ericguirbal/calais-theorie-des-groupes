@@ -166,3 +166,13 @@
 
 % Partie entière
 \DeclarePairedDelimiter{\ent}{[}{]}
+
+% Restriction
+% D'après Enrico Gregorio
+% https://tex.stackexchange.com/questions/22252/how-to-typeset-function-restrictions
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+  #1 % the function
+  \mathchoice{\vphantom{\big|}}{}{}{} % pretend it's a little taller at normal size
+  \right|_{#2} % this is the delimiter
+}}
