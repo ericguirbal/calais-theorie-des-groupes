@@ -1,6 +1,6 @@
+%%% Exercice 5-07
 \begin{enumerate}
-  \item 
-
+  \item
     Soient $(x,y)\in\N_n^2$.
     Étant donné que $G$ opère transitivement sur $\N_n$, il existe une permutation $\pi\in G$ telle que $\pi(x) = y$.
     Soit $\sigma\in H_x$.
@@ -10,20 +10,21 @@
     Par symétrie, l'inégalité opposée est également vraie, donc $\ordre(H_y) = \ordre(H_x)$.
     La conclusion vient du théorème~5.19 et de la proposition~2.15:
     \[
-      \card{\Omega_x} 
-        = \ordre(H)/\ordre(H_x) 
+      \card{\Omega_x}
+        = \ordre(H)/\ordre(H_x)
         = \ordre(H)/\ordre(H_y)
         = \card{\Omega_y}.
     \]
-
   \item
+    L'énoncé de la question n'est pas correct.
+    En effet, si $H = (e)$, alors les $H$-orbites de $N_n$ sont ponctuelles.
+    Puisque $n\geq 2$, nous en déduisons que $H$ est intransitif sur $\N_n$.
+    Dans la suite, nous démontrerons le résultat suivant :
 
-    Supposons que $H = (e)$, ce que l'énoncé n'exclut pas.
-    Les $H$-orbites de $N_n$ sont donc toutes ponctuelles.
-    Puisque $n\geq 2$, nous en déduisons que $H$ n'est pas transitif sur $\N_n$.
+    \emph{Si $H$ est non trivial et que $n$ est un nombre premier, alors $H$ opère transitivement sur $\N_n$.}
 
-    Supposons maintenant que $H \neq (e)$.
     Puisque les $H$-orbites forment une partition de $\N_n$, le nombre d'orbites $r$, leur cardinal $m$ ainsi que $n$ sont liés par la relation $rm = n$.
-    Étant donné que $n$ est premier, on a $r = 1$.
-    Autrement dit, le groupe $H$ opère transitivement sur $N_n$.
+    La primalité de $n$ implique que $r = 1$ ou $r = n$.
+    Le cas $r = n$ est exclu, car toutes les orbites seraient alors ponctuelles, ce qui entraînerait $H = (e)$.
+    Nous en déduisons que $r = 1$ ; autrement dit, le groupe $H$ opère transitivement sur $N_n$.
 \end{enumerate}
