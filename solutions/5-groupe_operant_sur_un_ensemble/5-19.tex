@@ -1,0 +1,54 @@
+%%% Exercice 5-19
+\begin{enumerate}
+  \item % a)
+    Évident.
+
+  \item % b)
+    Supposons que $G$ est $k$-transitif sur $E$.
+    Soient $x\in E$ et deux $(k - 1)$-uplets $(x_1, x_2, \dots, x_{k - 1})$, $(y_1, y_2, \dots, y_{k - 1})$ d'éléments distincts de $E \setminus\set{x}$.
+    Alors $(x, x_1, \dots, x_{k - 1})$ et $(x, y_1, \dots, y_{k - 1})$ sont deux $k$-uplets d'éléments distincts de $E$, donc il existe $g\in G$ tel $g\cdot x = x$ et $g\cdot x_i = y_i$ pour tout $i\in\N_{k - 1}$, ce qui nous permet de conclure que $G_x$ est $(k - 1)$-transitif sur $E\setminus\set{x}$.
+
+    Réciproquement, supposons que pour tout $x\in E$, le groupe $G_x$ est $(k - 1)$-transitif sur $E\setminus\set{x}$.
+    Soient $(x_1, x_2, \dots, x_k)$ et $(y_1, y_2, \dots, y_k)$ deux $k$-uplets d'éléments distncts de $E$.
+    Il existe $(g, h)\in G_{x_k}\times G_{y_{k - 1}}$ tel que $g\cdot x_i = y_i$ pour tout $i\in\N_{k - 1}$, $h\cdot y_i = y_i$ pour tout $i\in\N_{k - 2}$ et $h\cdot x_k = y_k$.
+    On vérifie que
+    \[
+      hg\cdot x_i = h\cdot g\cdot x_i =
+        \begin{cases}
+          h\cdot y_i = y_i & \text{si $i\in\N_{k - 1}$} \\
+          h\cdot x_k = y_k & \text{si $i = k$}.
+        \end{cases}
+    \]
+    Le groupe $G$ est bien $k$-transitif sur $E$.
+
+  \item % c)
+    \begin{itemize}
+      \item
+        D'après la question a), $G$ est transitif sur $E$, donc la formule de Burnside (exercice~5.17) s'écrit
+        \[
+          \card{G} = \sum_{g\in G} \card{F(g)}.
+        \]
+        Soit $x\in E$.
+        Le groupe $G_x$ opère transitivement sur $E\setminus\set{x}$ ; les $G_x$-orbites de $E$ sont donc $E\setminus\set{x}$ et $\set{x}$.
+        La formule établie à l'exercice~18 donne
+        \[
+          2\card{G} = \sum_{g\in G} \card{F(g)}^2.
+        \]
+      \item
+        Notons $E^{(k)}$ l'ensemble de $k$-uplets d'éléments deux à deux distincts de $E$.
+        L'action de $G$ sur $E$ induit une action de $G$ sur $E^{(k)}$ definie par
+        \[
+          g\cdot(x_1, x_2, \dots, x_k) = (g\cdot x_1, g\cdot x_2, \dots, g\cdot x_k)
+        \]
+        pour tout $g\in G$ et $(x_1, x_2, \dots x_k)\in E^{(k)}$.
+        L'action de $G$ sur $E$ étant $k$-transitive, celle de $G$ sur $E^{(k)}$ est transitive.
+        Par conséquent, nous déduisons du théorème~5.19 que
+        \[
+          \card{G} = \card{G_x} \card{E^{(k)}}
+        \]
+        où $x\in E^{(k)}$.
+        Or $\card{E^{(k)}} = n(n - 1)\dots (n - k + 1)$, ce qui prouve que $\card{G}$ est divisible par $n(n - 1)\dots (n - k + 1)$.
+
+    \end{itemize}
+
+\end{enumerate}
