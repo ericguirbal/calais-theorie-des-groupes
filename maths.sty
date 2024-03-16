@@ -21,7 +21,7 @@
 % Cardinal d'un ensemble
 %
 % notation: |E|
-\newcommand*{\card}[1]{\left\lvert#1\right\rvert}
+\DeclarePairedDelimiter{\card}{\lvert}{\rvert}
 % notation: card(E)
 \DeclareMathOperator{\cardinal}{card}
 % Ordre d'un groupe ou d'un élément
@@ -37,9 +37,9 @@
 % Classe d'un élément
 \newcommand*{\cl}[1]{\overline{#1}}
 % Ensemble quotient des classes à gauche
-\newcommand*{\clsg}[2]{\left(\grq{#1}{#2}\right)_\mathrm{g}}
+\DeclarePairedDelimiterXPP{\clsg}[2]{}{\lparen}{\rparen}{_\mathrm{g}}{\grq{#1}{#2}}
 % Ensemble quotient des classes à droite
-\newcommand*{\clsd}[2]{\left(\grq{#1}{#2}\right)_\mathrm{d}}
+\DeclarePairedDelimiterXPP{\clsd}[2]{}{\lparen}{\rparen}{_\mathrm{d}}{\grq{#1}{#2}}
 % Groupe quotient
 \renewcommand*{\grq}[2]{\frac{#1}{#2}}
 % Groupe des entiers modulo n
@@ -148,15 +148,15 @@
 % Divers
 %
 % Groupe engendré par un ensemble
-\newcommand*{\Gr}[1]{\left\langle#1\right\rangle}
+\DeclarePairedDelimiter{\Gr}{\langle}{\rangle}
 % Espace vectoriel engendré par un ensemble de vecteur
 \newcommand*{\Vect}[1]{\operatorname{Vect}\set{#1}}
 % Inverse
 \newcommand*{\inv}[1]{#1^{-1}}
 % Valeur absolue
-\newcommand*{\abs}[1]{\left\lvert#1\right\rvert}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
 % Norme
-\newcommand*{\norme}[1]{\left\lVert#1\right\rVert}
+\DeclarePairedDelimiter{\norme}{\lVert}{\rVert}
 % Inégalités
 \renewcommand{\geq}{\geqslant}
 \renewcommand{\leq}{\leqslant}
