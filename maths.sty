@@ -126,6 +126,10 @@
 \let\tmat\tmatrice
 \newcommand*{\matrice}[1]{\if@display\dmatrice{#1}\else\tmatrice{#1}\fi}
 \let\mat\matrice
+\newcommand*{\transp}[1]{{\vphantom{#1}}^{\mathrm{t}}{#1}}
+
+% Matrice d'une application linéaire
+\DeclareMathOperator{\Mat}{Mat}
 
 % Par défaut, l'environnement pmatrix a au plus 10 colonnes,
 % ce qui est insuffisant pour la saisie de certaines permutations.
@@ -145,6 +149,8 @@
 %
 % Groupe engendré par un ensemble
 \newcommand*{\Gr}[1]{\left\langle#1\right\rangle}
+% Espace vectoriel engendré par un ensemble de vecteur
+\newcommand*{\Vect}[1]{\operatorname{Vect}\set{#1}}
 % Inverse
 \newcommand*{\inv}[1]{#1^{-1}}
 % Valeur absolue

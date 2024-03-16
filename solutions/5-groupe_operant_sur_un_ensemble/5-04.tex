@@ -1,0 +1,165 @@
+%%% Exercice 5-04
+\begin{enumerate}
+  \item
+    On note $I$ la matrice identité du groupe $G$.
+    Pour tout $(x, y)\in\R^2$, on a
+    \[
+      (x, y)\cdot I = (x, y).
+    \]
+    L'égalité
+    \[
+      (x, y)\cdot AB = \bigl((x, y)\cdot A\bigr)\cdot B
+    \]
+    pour tous $(x, y)\in\R^2$ et $(A, B)\in G^2$ est une conséquence de la distributivité de la multiplication matricielle.
+    Ainsi $G$ opère bien à droite sur $\R^2$.
+
+  \item
+    La correspondance
+    %
+    \begin{align*}
+      \mathcal{D}\times G &\to\mathcal{D} \\
+      (\Vect{u}, A) &\mapsto \Vect{u\cdot A}.
+    \end{align*}
+    %
+     est une application ; en effet, si $u$ et $v$ sont deux vecteurs non nuls tels que $\Vect{u} = \Vect{v}$, alors il existe $\lambda\in\R^*$ tel que $v = \lambda u$, donc $v\cdot A = \lambda (u\cdot A)$, si bien que $\Vect{v\cdot A} = \Vect{u\cdot A}$.
+
+    Cette application définit une action à droite de $G$ sur $\mathcal{D}$.
+    Soient $A$ et $B$ deux matrices de $G$ et $u$ un vecteur non nul de $\R^2$.
+    On a
+    \[
+      \Vect{u}\cdot I = \Vect{u\cdot I} = \Vect{u}
+    \]
+    et
+    \begin{align*}
+      \Vect{u}\cdot (AB)
+        &= \Vect{u\cdot (AB)} \\
+        &= \Vect{(u\cdot A)\cdot B} \\
+        &= \Vect{u\cdot A}\cdot B \\
+        &= (\Vect{u}\cdot A)\cdot B
+    \end{align*}
+
+    Déterminons le sous-groupe d'isotropie $G_D$ de la doite $D = \Vect{(2,1)}$.
+
+    \emph{Méthode 1.}
+    On a $\matrice{a & b \\ c & d}\in G_D$ si et seulement si $D\cdot\matrice{a & b \\ c & d} = D$, c'est-à-dire si et seulement si les vecteurs $(2a + c, 2b + d)$ et $(2, 1)$ sont colinéaires, donc
+    \[
+      G_D = \set*{\matrice{a & b \\ c & d}\in G \given 2a - 4b  + c - 2d = 0}.
+    \]
+
+    \emph{Méthode 2.}
+    Soit $A\in G$.
+    Alors $A\in G_D$ si et seulement si il existe $\lambda\in\R$ tel que
+    \[
+      (2, 1)\cdot A = \lambda (2, 1).
+    \]
+    c'est-à-dire, si et seulement si
+    \[
+      \transp{A}\matrice{2 \\ 1} = \lambda\matrice{2 \\ 1},
+    \]
+    où $\matrice{2 \\ 1}$ est la matrice du vecteur $(2, 1)$ dans la base canonique $\mathcal{B} = (e_1, e_2)$.
+    Notons $u$ l'isomorphisme linéaire de $\R^2$ tel que
+    \[
+      \transp{A} = \Mat_{\mathcal{B}}(u).
+    \]
+    Considérons la base $\mathcal{C} = (f_1, f_2)$ où $f_1 = (2, 1)$ et $f_2 = (-1, 2)$.
+    On a
+    \[
+      \Mat_{\mathcal{C}}(u) = \matrice{a & b \\ 0 & c}
+    \]
+    avec $(a, b, c)\in\R^3$ et $ac \neq 0$.
+    La matrice de passage de la base $\mathcal{B}$ à la base $\mathcal{C}$ est
+    \[
+      P_{\mathcal{B}, \mathcal{C}} = \matrice{2 & -1 \\ 1 & 2}.
+    \]
+    Son inverse est
+    \[
+      P_{\mathcal{B}, \mathcal{C}}^{-1} = \frac{1}{5 }\matrice{2 & 1 \\ -1 & 2}.
+    \]
+    Du coup,
+    \begin{align*}
+      \Mat_{\mathcal{B}}(u)
+        &= P_{\mathcal{B}, \mathcal{C}} \Mat_{\mathcal{C}}(u) P_{\mathcal{B}, \mathcal{C}}^{-1} \\
+        &= \frac{1}{5}
+            \matrice{
+              4a - 2b + c & 2a + 4b - 2c \\
+              2a - b - 2c & a + 2b + 4c
+            }.
+    \end{align*}
+    Étant donné que $\lambda M\in G_D$ pour tout $(\lambda, M)\in\R\times G_D$, on conclut que
+    \[
+      G_D = \set[\Bigg]{
+              \matrice{
+                4a - 2b + c & 2a - b - 2c \\
+                2a + 4b - 2c & a + 2b + 4c
+              }
+              \given (a, b, c)\in\R^3, ac \neq 0
+            }.
+    \]
+
+    \emph{Méthode 3.}
+    Soit $E_1 = \Vect{e_1}$ la droite engendrée par le premier vecteur de la base canonique de $\R^2$.
+    Son stabilisateur $G_{E_1}$ est l'ensemble des matrices de $\GL(2, \R)$ telles que
+    \[
+      E_1\cdot\matrice{a & b \\ c & d} = E_1
+    \]
+    soit
+    \[
+      \Vect{(a, b)} = E_1,
+    \]
+    donc
+    \[
+      G_{E_1} = \set[\Bigg]{\matrice{a & 0 \\ c & d } \given ad\neq 0}.
+    \]
+    La matrice $A = \matrice{2 & 1 \\ 0 & 1}$ appartient à $\GL(2, \R)$ et
+    \[
+      D = E_1\cdot A,
+    \]
+    donc, d'après le théorème~5.18 adaptée aux actions à droite, on a
+    \begin{align*}
+      G_D &= A^{-1} G_{E_1} A \\
+          &= \set[\Bigg]{\matrice{4a - 2c & 2a - c - 2d \\ 4c & 2c + 4d} \given (a, c, d)\in\R^3, ad\neq 0}.
+    \end{align*}
+
+    Déterminons l'orbite de la droite $D$.
+    Soient $D_1 = \Vect{(x_1, y_1)}$ et $D_2 = \Vect{(x_2, y_2)}$ deux droites du plan.
+    Du cours d'algèbre linéaire, nous savons qu'il existe une matrice $A\in G$ telle que
+    \[
+      A\matrice{x_1 \\y_1} = \matrice{x_2 \\ y_2}.
+    \]
+    Il s'ensuit que
+    \[
+      (x_1, y_1) \cdot \transp{A} = (x_2, y_2),
+    \]
+    donc
+    \[
+      D_1 \cdot \transp{A} = D_2,
+    \]
+    ce qui prouve que $\Omega_D = \mathcal{D}$.
+    D'après le théorème~5.19, la $H$-orbite de $D$ contient $\card{H}/\card{H_D} = 4$ droites :
+    %
+    \begin{align*}
+      D &= \Vect{(2, 1)},
+        &\quad D\cdot A &= \Vect{(-2, 1)}, \\
+      D\cdot B &= \Vect{(1, -2)},
+        &\quad D\cdot AB &= \Vect{(1, 2)}.
+    \end{align*}
+
+  \item
+    Soient
+    \[
+      A = \matrice{-1 & 0 \\ 0 & 1}
+      \quad\text{et}\quad
+      B = \matrice{0 & -1 \\ 1 & 0}.
+    \]
+    On vérifie facilement que $\ordre(A) = 2$, $\ordre(B) = 4$ et $\ordre(AB) = 2$, donc le sous-groupe $H$ est isomorphe au groupe diédral $D_4$ (proposition~3.74) d'ordre $8$ (proposition~3.71) et on a
+    \[
+      H = \set*{I, A, B, B^2, B^3, AB, AB^2, AB^3}
+    \]
+    où
+    \begin{align*}
+      B^2 &= \matrice{-1 & 0 \\ 0 & -1}, & B^3 &= \matrice{0 & 1 \\ -1 & 0},  & AB &= \matrice{0 & 1 \\ 1 & 0}, \\
+      AB^2 &= \matrice{1 & 0 \\ 0 & -1}, & AB^3 &= \matrice{0 & -1 \\ -1 & 0}.
+    \end{align*}
+
+    Le stabilisateur de la droite $D$ pour l'action de $H$ sur $\mathcal{D}$ est $H_D = G_D\cap H$ (remarque~5.39), donc $H_D = \set{I, B^2}$.
+\end{enumerate}
