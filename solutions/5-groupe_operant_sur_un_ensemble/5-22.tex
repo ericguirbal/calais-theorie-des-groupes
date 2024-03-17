@@ -14,16 +14,15 @@ Considérons l'application
     (x, \alpha) &\to (f(x), f_\sharp(\alpha)).
 \end{align*}
 
-L'application $\varphi$ est un morphisme de groupes ; en effet, quels que soient  $g = (x, \alpha)$ et $h = (y, \beta)$ dans $\Hol(N_1)$, on a
+L'application $\varphi$ est un morphisme de groupes ; en effet, quels que soient  $(x, \alpha)$ et $(y, \beta)$ dans $\Hol(N_1)$, on a
 \begin{align*}
-  \varphi(g)\varphi(h)
+  \varphi(x, \alpha) \varphi(y, \beta)
     &= \bigl( f(x), f_\sharp(\alpha) \bigr) \bigl( f(y), f_\sharp(\beta) \bigr) \\
     &= \bigl( f(x) f_\sharp(\alpha)(f(y)), f_\sharp(\alpha)\circ f_\sharp(\beta) \bigr) \\
-    &= \bigl( f(x) (f(\alpha(y)), f_\sharp(\alpha\circ\beta) \bigr) \\
+    &= \bigl( f(x) f(\alpha(y), f_\sharp(\alpha\circ\beta) \bigr) \\
     &= \bigl( f(x\alpha(y)), f_\sharp(\alpha\circ\beta) \bigr) \\
     &= \varphi(x\alpha(y), \alpha\circ\beta) \\
-    &= \varphi\bigl( (x, \alpha)(y, \beta) \bigr) \\
-    &= \varphi(gh).
+    &= \varphi\bigl( (x, \alpha)(y, \beta) \bigr).
 \end{align*}
 %
 L'application $\varphi$ est bijective, car, $\ker \varphi = \ker f  \times \ker f_\sharp = (e, \id_{N_1})$ et $\im \varphi = \im f \times \im f_\sharp = N_2\times\Aut(N_2)$.
