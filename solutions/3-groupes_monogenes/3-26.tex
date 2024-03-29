@@ -1,0 +1,59 @@
+%% Exercice 3.26
+
+Soient $n\geq 4$ dans $\N$ et $i$, $j$, $k$, $l$ trois entiers distincts dans $\N_n$.
+La décomposition
+\[
+  (i, j, k) = (i, j)(j, k)
+\]
+est triviale.
+Nous en déduisons que
+\[
+  (i, j, k)(j, k, l) = (i, j)(j, k)(j, k)(k, l).
+\]
+Une transposition étant d'ordre~$2$, nous obtenons
+\[
+  (i, j, k)(j, k, l) = (i, j)(k, l).
+\]
+\begin{enumerate}
+  \item % a)
+    Soit $n\geq 3$ un entier.
+    Les $3$-cycles de $S_n$ appartiennent à $A_n$ ;
+    il suffit donc de montrer que toute permutation paire $\sigma\neq e$ de $S_n$ peut s'écrire comme un produit de $3$-cycles.
+    Nous savons déjà que $\sigma$ se décompose en un produit d'un nombre pair de transpositions distinctes (théorèmes~3.60 et~3.65) :
+    \[
+      \gamma = \tau_1\tau_2\dots\tau_{2s} \quad (s\in\N^*).
+    \]
+    Regroupons les deux par deux :
+    \[
+      \gamma = (\tau_1\tau_2)\dots (\tau_{2s - 1}\tau_{2s}).
+    \]
+    Pour tout $k\in\N_s$, si $\supp(\tau_{2k - 1})\cap \supp(\tau_{2k}) = \varnothing$, alors $\tau_{2k - 1}\tau_{2k}$ est un produit de deux $3$-cycles, sinon $\tau_{2k - 1}\tau_{2k}$ est un $3$-cycle.
+
+    On conclut que, pour tout entier $n\geq 3$, l'ensemble des $3$-cycles engendre le groupe alterné $A_n$.
+
+  \item % b)
+    Soient $i$, $j$, $k$ trois entiers distincts dans $\N_n\setminus\set{1}$ où $n\geq 3$.
+    On vérifie aisément que
+    \[
+      (1, i, j) = (1, i)(i, j) = (1, i)(1, i)(1, j)(1, i) = (1, j)(1, i).
+    \]
+    Nous en déduisons la décomposition
+    \begin{align*}
+      (i, j, k)
+        &= (i, j)(j, k) \\
+        &= (1, i)(1, j)(1, i)(1, j)(1, k)(1, j) \\
+        &= (1, j, i)(1, j, i)(1, j, k)
+    \end{align*}
+    qui permet de conclure que l'ensemble des $3$-cycles de la forme $(1, i, j)$ engendrent le groupe alterné $A_n$.
+
+  \item % c)
+    Compte tenu de ce qui précède, il suffit d'écrire un $3$-cycle comme un produit de $3$-cycles de la forme $(1, i, j)$.
+    Or
+    \begin{align*}
+      (1, i, j) &= (1, 2, j)(1, 2, i)^2  \\
+      (2, i, j) &= (1, 2, j)^2 (1, 2, i) \\
+      \shortintertext{et pour tout $k\in\N_n\setminus\set{1, 2}$, }
+      (k, i, j) &= (1, 2, k)(1, 2, j)^2(1, 2, i)(1, 2, k)^2,
+    \end{align*}
+    donc l'ensemble des $3$-cycles de la forme $(1, 2, i)$ engendrent le groupe alterné $A_n$.
+\end{enumerate}
