@@ -1,0 +1,20 @@
+%%% Exercice 3.23
+
+Soit $p\in\set{1, 2, \dots, r - 1}$.
+Sans perte de généralité, posons $\gamma = (1, 2, \dots, r)$.
+Montrons que $\supp(\gamma^p) = \N_r$.
+On sait déjà que $\supp(\gamma^p) \subset \N_r$ (remarque~3.38 3\up{o}).
+Montrons l'inclusion opposée.
+Soit $i\in\N_r$.
+Comme $\gamma^p(i)$ est le reste de la division euclidienne par $r$ de $i + p$, si $\gamma^p(i) = i$ alors $p$ est un multiple de $r$, ce qui contredit la définition de $p$, donc $i\in\supp(\gamma^p)$.
+
+Étant donné que $\gamma^p$ a pour support $\N_r$ et qu'une permutation est un cycle si et seulement si elle a une seule orbite non ponctuelle (proposition~3.53), la permutation $\gamma^p$ est un cycle si et seulement si $\ordre(\gamma^p) = r$ (proposition~3.50).
+Or (exercice~3.13),
+\[
+  \ordre(\gamma^p) = \frac{\ordre(\gamma)}{\pgcd(\ordre(\gamma), p)} = \frac{r}{\pgcd(r, p)}.
+\]
+Il s'ensuit que $\gamma^p$ est un cycle si et seulement si $r$ et $p$ sont premiers entre eux.
+
+\begin{remarque}
+  Un corollaire est que si $r$ est un nombre premier, alors toute puissance d'un $r$-cycle est soit un $r$-cycle, soit l'identité.
+\end{remarque}
