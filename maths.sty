@@ -35,7 +35,8 @@
 % Relation d'équivalence à droite modulo un sous-groupe
 \newcommand*{\Rd}[1]{\operatorname{\mathcal{R}_{#1}^{}}}
 % Classe d'un élément
-\newcommand*{\cl}[1]{\overline{#1}}
+% D'après https://tex.stackexchange.com/questions/22100/the-bar-and-overline-commands/22134#22134
+\newcommand*{\cl}[1]{\mkern 1.5mu\overline{\mkern-1mu#1\mkern-0.5mu}\mkern 1.5mu}
 % Ensemble quotient des classes à gauche
 \DeclarePairedDelimiterXPP{\clsg}[2]{}{\lparen}{\rparen}{_\mathrm{g}}{\grq{#1}{#2}}
 % Ensemble quotient des classes à droite
