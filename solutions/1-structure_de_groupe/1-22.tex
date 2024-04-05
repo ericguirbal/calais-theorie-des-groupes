@@ -7,8 +7,8 @@ Notons $A_x$ la matrice obtenue en permutant les colonnes de $A$, $A_y$ la matri
 \[
   \Gamma = \set*{I, A, I_x, A_x, A_y, A_{xy}}.
 \]
-Comme $\det(A) \neq 0$, et que permuter les lignes ou les colonnes d'une matrice conserve le déterminant au signe près, nous en déduisons que $\Gamma\subset \GL(2,\R)$. 
-Posons $H = \Gr{A} = \set{I, A, A_{xy}}$ et $K = \Gr{A_y} = \set{I, A_y}$. 
+Comme $\det(A) \neq 0$, et que permuter les lignes ou les colonnes d'une matrice conserve le déterminant au signe près, nous en déduisons que $\Gamma\subset \GL(2,\R)$.
+Posons $H = \Gr{A} = \set{I, A, A_{xy}}$ et $K = \Gr{A_y} = \set{I, A_y}$.
 Ce sont deux sous-groupes de $\GL(2,\R)$.
 On vérifie que $A A_y = I_x$, $A_y A = A_x$, $A_{xy} A_y = A_x$ et $A_y A_{xy} = I_x$, d'où $HK = KH = \Gamma$.
 La proposition~1.47 nous permet alors de conclure que $\Gamma$ est un sous-groupe de $\GL(2,\R)$.
@@ -17,10 +17,10 @@ La proposition~1.47 nous permet alors de conclure que $\Gamma$ est un sous-group
 Pour toute matrice $M = \matrice{a & b \\ c & d}\in\Gamma$, notons $\cl{M}$ la matrice $\matrice{\cl{a} & \cl{b} \\ \cl{c} & \cl{d}}$.
 On vérifie que
 \[
-  \det(\cl{M}) 
-    = \cl{a}\;\cl{d} - \cl{b}\;\cl{d} 
-    = \cl{ad - bc} 
-    = \cl{\det(M)} 
+  \det(\cl{M})
+    = \cl{a}\;\cl{d} - \cl{b}\;\cl{d}
+    = \cl{ad - bc}
+    = \cl{\det(M)}
     = \cl{1}
     \neq \cl{0},
 \]
@@ -59,8 +59,8 @@ soit $M = \matrice{a & b \\ c & d}\in\Gamma$, alors $M\in\Ker(\varphi)$ si et se
 
 L'application $\varphi$ est surjective:
 les matrices de $\GL\left(2,\Zn{2}\right)$ sont celles dont les vecteurs colonnes sont $\Zn{2}$-linéairement indépendants.
-Nous trouvons 
-\[ 
+Nous trouvons
+\[
   \GL\left(2,\Zn{2}\right) = \set*{ \matrice{\cl{1} & \cl{0} \\ \cl{0} & \cl{1}},
     \matrice{\cl{0} & \cl{1} \\ \cl{1} & \cl{0}},
     \matrice{\cl{0} & \cl{1} \\ \cl{1} & \cl{1}},
@@ -80,7 +80,7 @@ Les tables de multiplication des groupes $\Gamma$ et $\Sym{3}$ sont écrites ci-
 \begin{center}
   \begin{tabular}{c|cccccc}
     $\times$    &      $I$ &      $A$ & $A_{xy}$ &    $A_x$ &    $I_x$ &    $A_y$ \\
-    \midrule                                                
+    \midrule
             $I$ &      $I$ &      $A$ & $A_{xy}$ &    $A_x$ &    $I_x$ &    $A_y$ \\
             $A$ &      $A$ & $A_{xy}$ &      $I$ &    $A_y$ &    $A_x$ &    $I_x$ \\
        $A_{xy}$ & $A_{xy}$ &      $I$ &      $A$ &    $I_x$ &    $A_y$ &    $A_x$ \\

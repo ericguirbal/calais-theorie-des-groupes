@@ -1,23 +1,23 @@
-Rappelons que la racine carrée d'un entier naturel qui n'est pas un carré parfait est 
+Rappelons que la racine carrée d'un entier naturel qui n'est pas un carré parfait est
 irrationel.
 \footnote{
   Soit $d$ un entier naturel qui n'est pas un carré parfait.
   Supposons que $\sqrt{d}$ soit rationnel, alors l'ensemble $S = \set{k\in\N^* \given k\sqrt{d}\in\N}$ est une partie non vide de $\N^*$.
-  Notons $m$ sont plus petit élément. 
-  Le nombre $l = (\sqrt{d} - \ent{\sqrt{d}})m$ est un entier non nul tel que $l\sqrt{d} = md - \ent{\sqrt{d}}m\sqrt{d}\in\N$, donc $l\in S$. 
+  Notons $m$ sont plus petit élément.
+  Le nombre $l = (\sqrt{d} - \ent{\sqrt{d}})m$ est un entier non nul tel que $l\sqrt{d} = md - \ent{\sqrt{d}}m\sqrt{d}\in\N$, donc $l\in S$.
   Or $l < m$, ce qui contredit la définition de $m$, donc $\sqrt{d}$ est irrationel.
 }
 En particulier, la racine carrée d'un nombre premier est irrationel.
 
 \begin{itemize}
-  \item 
+  \item
     \emph{$G_1 = \set*{a + b\sqrt{\smash[b]{p}} \given (a,b)\in\Z\times\Z}$ est un sous-groupe de $(\R,+)$.}
 
     On a $G_1\subset \R$.
     Soient $a + b\sqrt{\smash[b]{p}}\in G_1$, $a' + b'\sqrt{\smash[b]{p}}\in G_1$. On a
     \[
-      (a + b\sqrt{\smash[b]{p}}) - (a' + b'\sqrt{\smash[b]{p}}) 
-        = (a - a') + (b - b')\sqrt{\smash[b]{p}} 
+      (a + b\sqrt{\smash[b]{p}}) - (a' + b'\sqrt{\smash[b]{p}})
+        = (a - a') + (b - b')\sqrt{\smash[b]{p}}
         \in G_1
     \]
 
@@ -25,7 +25,7 @@ En particulier, la racine carrée d'un nombre premier est irrationel.
     \emph{$G_2 = \set*{a + b\sqrt{\smash[b]{p}} \given (a,b)\in(\Q^2)^*}$ est un sous-groupe de $(\R^*,\times)$.}
 
     Puisque $\sqrt{\smash[b]{p}}$ est irrationel, $G_2\subset\R^*$.
-    Soient $a + b\sqrt{\smash[b]{p}}\in G_2$ et $a' + b'\sqrt{\smash[b]{p}}\in G_2$. 
+    Soient $a + b\sqrt{\smash[b]{p}}\in G_2$ et $a' + b'\sqrt{\smash[b]{p}}\in G_2$.
     En multipliant le dénominateur et le numérateur par le conjugué $a' - b'\sqrt{\smash[b]{p}}$ de $a' + b'\sqrt{\smash[b]{p}}$, nous obtenons
     \[
       (a + b\sqrt{\smash[b]{p}})\times (a' + b'\sqrt{\smash[b]{p}})^{-1}
@@ -37,11 +37,11 @@ En particulier, la racine carrée d'un nombre premier est irrationel.
   \item
     \emph{$G_3 = \set*{a + \I b\sqrt{\smash[b]{p}} \given \Z\times\Z}$ est un sous-groupe de $(\C,+)$.}
 
-    Clairement $G_3\subset \C$. 
+    Clairement $G_3\subset \C$.
     Soient $a + \I b\sqrt{\smash[b]{p}}\in G_3$ et $a' + \I b'\sqrt{\smash[b]{p}}\in G_3$. On a
     \[
       (a + \I b\sqrt{\smash[b]{p}}) - (a' + \I b\sqrt{\smash[b]{p}})
-        = (a - a') + \I (b - b') \sqrt{\smash[b]{p}} 
+        = (a - a') + \I (b - b') \sqrt{\smash[b]{p}}
         \in G_3.
     \]
 
@@ -53,7 +53,7 @@ En particulier, la racine carrée d'un nombre premier est irrationel.
     On vérifie que
     \[
       (a + \I b\sqrt{\smash[b]{p}})\times (a' + \I b'\sqrt{\smash[b]{p}})^{-1}
-        = \frac{aa' - bb'p}{a'^2 + b'^2p} 
+        = \frac{aa' - bb'p}{a'^2 + b'^2p}
           + \I \frac{a'b - ab'}{a'^2 + b'^2p} \sqrt{\smash[b]{p}}
         \in G_4.
     \]

@@ -1,8 +1,8 @@
 \begin{enumerate}
-  \item 
+  \item
     Démontrons que $K_1$ est un sous-groupe de $\GL(2,\R)$.
 
-    Pour tout $(a,b)\in\set{-1,1}^2$, posons 
+    Pour tout $(a,b)\in\set{-1,1}^2$, posons
     \[
       M_{a,b} = \mat{a & 0 \\ 0 & b}
     \]
@@ -12,9 +12,9 @@
     \]
     Soit $(a,a',b,b')\in\set{-1,1}^4$. On a
     \[
-      M_{a,b} M_{a',b'} = M_{aa',bb'}\quad\text{avec}\quad (aa',bb')\in\set{-1,1}^2, 
+      M_{a,b} M_{a',b'} = M_{aa',bb'}\quad\text{avec}\quad (aa',bb')\in\set{-1,1}^2,
     \]
-    donc 
+    donc
     \[
       M_{a,b}M_{a',b'} \in K_1.
     \]
@@ -24,9 +24,9 @@
     \]
     L'ensemble $K_1$ est donc un sous-groupe de $\GL(2,\R)$.
 
-    Démontrons que $K_2$ est un groupe.  
-    
-    Soit $\cl{x}$ et $\cl{y}$ deux éléments de $K_2$ avec $(x,y)\in\set{1,3,5,7}^2$. 
+    Démontrons que $K_2$ est un groupe.
+
+    Soit $\cl{x}$ et $\cl{y}$ deux éléments de $K_2$ avec $(x,y)\in\set{1,3,5,7}^2$.
     Le produit $xy$ est impair et $8$ est pair, donc les représentants de
     $\cl{xy}$ sont impairs. On en déduitt que $\cl{x}\cdot\cl{y} =
     \cl{xy}\in K_2$, donc le produit définit une loi interne sur $K_2$. On sait
@@ -35,11 +35,11 @@
     donc $\cl{x}^{-1} = \cl{x}\in K_2$. Nous avons ainsi démontré que $K_2$ est
     un groupe multiplicatif.
 
-  \item 
+  \item
     Démontrons que les groupes $K_1$ et $K_2$ sont isomorphes.
 
     Écrivons les tables de Cayley des groupes $K_1$ et $K_2$.
-    
+
     \begin{center}
       \begin{tabular}{c|cccc}
         $\times$    & $I_2$       & $M_{1,-1}$  & $M_{-1,1}$  & $M_{-1,-1}$ \\
@@ -64,7 +64,7 @@
     Renommons les éléments de la table de Cayley du groupe $K_1$ à l'aide de la
     bijection $\varphi\colon K_1\to K_2$ définie par
     \[
-      \varphi(I_2) = \cl{1},\quad 
+      \varphi(I_2) = \cl{1},\quad
       \varphi(M_{1,-1}) = \cl{3}, \quad
       \varphi(M_{-1,1}) = \cl{5} \quad\text{et}\quad
       \varphi(M_{-1,-1}) = \cl{7}.
@@ -79,7 +79,7 @@
     $K_2$ est isomorphe au groupe de Klein.  Posons $H_1 = \set{\cl{1},\cl{3}}$
     et $H_2 = \set{\cl{1},\cl{5}}$. Ce sont deux sous-groupes de $K_2$ tel que
     $H_1\iso\Zn{2}$ et $H_2\iso\Zn{2}$.  Comme
-    $\cl{3}\times\cl{5}=\cl{7}$, on a $K_2 = H_1H_2$. 
+    $\cl{3}\times\cl{5}=\cl{7}$, on a $K_2 = H_1H_2$.
     De plus $H_1\cap H_2 = (\cl{1})$. La proposition 1.85 nous permet de
     conclure que
     \[

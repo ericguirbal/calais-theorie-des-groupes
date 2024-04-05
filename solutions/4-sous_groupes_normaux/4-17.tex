@@ -6,7 +6,7 @@
         Pour tout $x\in E$, on a $\sigma(x)\neq x$ si et seulement si $x\neq \sigma^{-1}(x)$, d'où $s(\sigma) = s(\sigma^{-1})$.
 
       \item % a) 2)
-        Soit $x\in s(\sigma\circ\tau)$. Si $x\notin s(\tau)$, alors $(\sigma\circ\tau)(x) \neq x$ devient $\sigma(x)\neq x$, donc $x\in s(\sigma)$. 
+        Soit $x\in s(\sigma\circ\tau)$. Si $x\notin s(\tau)$, alors $(\sigma\circ\tau)(x) \neq x$ devient $\sigma(x)\neq x$, donc $x\in s(\sigma)$.
         Par conséquent, $s(\sigma\circ\tau)\subseteq s(\sigma)\cup s(\tau)$.
 
       \item % a) 3)
@@ -14,11 +14,11 @@
         On a $(\sigma\circ\tau\circ\sigma^{-1})(x) \neq x$ si et seulement si $\tau(\sigma^{-1}(x)) \neq \sigma^{-1}(x)$, d'où $s(\sigma\circ\tau\circ\sigma^{-1}) = \sigma(s(\tau))$.
 
       \item % a) 4)
-        Soit $x\in E$. 
+        Soit $x\in E$.
         Si $x\notin s(\sigma)\cup s(\tau)$, alors $(\sigma\circ\tau)(x) = \sigma(x) = x$ et $(\tau\circ\sigma)(x) = \tau(x) = x$.
         Si $x\in s(\sigma)$ alors $x\notin s(\tau)$ d'où $(\sigma\circ\tau)(x) = \sigma(x)$.
         Remarquons que $\sigma(x)\in s(\sigma)$ car $\sigma(\sigma(x)) \neq \sigma(x)$, donc $(\tau\circ\sigma)(x) = \sigma(x)$.
-        De même, si $x\in s(\tau)$ on a $(\tau\circ\sigma)(x) = (\sigma\circ\tau)(x)$.  
+        De même, si $x\in s(\tau)$ on a $(\tau\circ\sigma)(x) = (\sigma\circ\tau)(x)$.
         Nous concluons que $\sigma\circ\tau = \tau\circ\sigma$.
     \end{enumerate}
 
@@ -26,9 +26,9 @@
     \emph{$S_{(E)}$ est un sous-groupe normal de $S_E$.}
     L'ensemble $S_{(E)}$ est non vide ; en effet, $\mathrm{id_E}\in S_{(E)}$.
     Soient $\sigma$ et $\tau$ deux permutations de $E$ à support fini.
-    D'après les propriétés~1 et~2, on a $s(\sigma\circ\tau^{-1})\subseteq s(\sigma)\cup s(\tau^{-1})=s(\sigma)\cup s(\tau)$. 
-    Nous en déduisons que $\card{s(\sigma\circ\tau^{-1})}\leq \card{s(\sigma)} + \card{s(\tau)} < \infty$, donc $S_{(E)}$ est un sous-groupe de $S_E$.  
-    
+    D'après les propriétés~1 et~2, on a $s(\sigma\circ\tau^{-1})\subseteq s(\sigma)\cup s(\tau^{-1})=s(\sigma)\cup s(\tau)$.
+    Nous en déduisons que $\card{s(\sigma\circ\tau^{-1})}\leq \card{s(\sigma)} + \card{s(\tau)} < \infty$, donc $S_{(E)}$ est un sous-groupe de $S_E$.
+
     De plus, d'après la propriété~3, pour tout $\sigma\in S_{(E)}$ et $\tau\in S_E$, on a $\card{s(\tau\circ\sigma\circ\tau^{-1})} = \card{\tau(s(\sigma))} = \card{s(\sigma)} < \infty$, donc $S_{(E)}\normal S_E$.
 
     \emph{Les groupes $S_E$ et $S_{(E)}$ sont égaux si et seulement si $E$ est fini.}

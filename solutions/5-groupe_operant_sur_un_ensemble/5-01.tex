@@ -1,4 +1,4 @@
-Pour tous nombres réels $a$, $b$ et $c$, notons $M(a,b,c)$ la matrice 
+Pour tous nombres réels $a$, $b$ et $c$, notons $M(a,b,c)$ la matrice
 \[
   \matrice{a & b \\ 0 & c},
 \]
@@ -11,15 +11,15 @@ L'ensemble $G$ est non vide, car il contient la matrice identité $I = M(1,0,1)$
 Soient $M(a,b,c)$ et $M(a',b',c')$ deux matrices de $G$.
 Alors
 \[
-  M(a,b,c)^{-1} 
+  M(a,b,c)^{-1}
     = \frac{1}{ac}\matrice{c & -b \\ 0 & a}
     = M\Bigl( \frac{1}{a}, -\frac{b}{ac}, \frac{1}{c} \Bigr)
     \in G
 \]
 et
 \[
-  M(a,b,c) M(a',b',c') 
-    = \matrice{aa' & ab' + bc' \\ 0 & cc'} 
+  M(a,b,c) M(a',b',c')
+    = \matrice{aa' & ab' + bc' \\ 0 & cc'}
     = M(aa', ab'+bc', cc')
     \in G
 \]
@@ -59,10 +59,10 @@ Le noyau de cette action est le sous-groupe
   \end{split}
 \]
 
-Le stabilisateur de 0 est le sous-groupe 
+Le stabilisateur de 0 est le sous-groupe
 %
 \begin{align*}
-  G_0 
+  G_0
     &= \set[\big]{M(a,b,c)\in G \given M(a,b,c) \cdot 0 = 0 } \\
     &= \set[\big]{M(a,b,c)\in G \given b/c = 0 } \\
     &= \set[\big]{M(a,0,c)\in G},

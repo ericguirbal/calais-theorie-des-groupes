@@ -52,7 +52,7 @@
 \titleformat{\chapter}[display]
   {\filcenter}
   {\textls[150]{\MakeUppercase{Chapitre\,\, \thechapter}}}
-  {0.5pc}  
+  {0.5pc}
   {\LARGE\itshape}
   []
 \titlespacing{\chapter}
@@ -60,7 +60,7 @@
   {0ex}
   {10ex}
 
-\renewcommand{\thechapter}{%                                                    
+\renewcommand{\thechapter}{%
   \ifnum\value{chapter}=1
     premier%
   \else
@@ -162,14 +162,14 @@
     \pgfmathtruncatemacro{\percent}{round(100*\smallquantity/\largequantity}
 
     \fill[\colorint] circle(\radint);
-    \filldraw[even odd rule,fill=\colorext,draw=\colorbrd] 
-      circle(\radext) circle(\radint) 
-      node[\colordonut,scale=4] {$\percent\,\%$} 
+    \filldraw[even odd rule,fill=\colorext,draw=\colorbrd]
+      circle(\radext) circle(\radint)
+      node[\colordonut,scale=4] {$\percent\,\%$}
       node[\colordonut,yshift=-0.85cm,scale=1.2] {$\smallquantity/\largequantity$};
-    
+
     \pgfmathsetmacro{\angle}{3.6*\percent};
-    \fill[\colordonut] (0,\radint) arc (90:90-\angle:\radint) 
-      -- (90-\angle:\radext) arc (90-\angle:90:\radext) 
+    \fill[\colordonut] (0,\radint) arc (90:90-\angle:\radint)
+      -- (90-\angle:\radext) arc (90-\angle:90:\radext)
       -- cycle;
   \end{tikzpicture}
 }
@@ -183,7 +183,7 @@
     \def\colorbg{#5}    % couleur de fond
     \def\colorbd{#6}    % couleur du bord
     \pgfmathsetmacro{\angle}{360*\smallquantity/\largequantity};
-    
+
     \filldraw[fill=\colorbg,draw=\colorbd] circle(\radius);
     \fill[\colorpie] (0,\radius) arc (90:90-\angle:\radius) -- (0,0) -- cycle;
   \end{tikzpicture}%
