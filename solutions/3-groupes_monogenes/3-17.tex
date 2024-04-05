@@ -1,0 +1,72 @@
+%%% Exercice 3.17
+
+\begin{enumerate}
+  \item % a)
+    Soit $\alpha\in\Aut(G)$.
+    On a
+    \[
+      \Gr{\alpha(x)}
+        = \set{\alpha(x)^n\given n\in\Z}
+        = \set{\alpha(x^n)\given n\in\Z}
+        = \alpha(G)
+        = G,
+    \]
+    ce qui prouve que $\alpha(x)$ est un générateur de $G$.
+
+  \item % b)
+    \emph{L'application $\lambda_k$ est un automorphisme de $G$.}
+    Pour tout entier $k$ premier avec $n$, notons $\lambda_k$ l'application notée $\lambda$ dans l'énoncé.
+    Dans le groupe abélien $G$, on a $(ab)^k = a^k b^k$ pour tout $(a, b)\in G^2$ ; par conséquent, l'application $\lambda_k$ est un homomorphisme de groupes.
+
+    Soit $a\in\Ker(\lambda_k)$.
+    Il existe $l\in\Z$ tel que $a = x^l$.
+    Alors $a^k = e$ implique $x^{kl} = e$, d'où $kl\in n\Z$ (proposition~3.6).
+    Comme $k$ et $n$ sont premiers entre eux, on a $l\in n\Z$ (lemme de Gauss), donc $a = e$ (proposition~3.6), prouvant ainsi que l'homomorphisme $\lambda_k$ est injectif.
+    Puisque $G$ est fini, l'homomorphisme $\lambda_k$ est aussi surjectif.
+    Finalement $\lambda_k$ est un automorphisme de $G$.
+
+    \emph{Les groupes $\Aut(G)$ et $G_n$ sont isomorphes.}
+    Montrons que $\lambda_k = \lambda_l$ si et seulement si $\cl{k} = \cl{l}$.
+    Supposons que $\lambda_k = \lambda_l$.
+    Alors $x^k = x^l$, puis $x^{k - l} = e$, donc $k - l\in n\Z$, soit $\cl{k} = \cl{l}$.
+    Réciproquement, si $\cl{k} = \cl{l}$, alors $k - l\in n\Z$, puis $a^{k - l} = e$ (corollaire~2.10), si bien que $a^k = a^l$, c'est-à-dire $\lambda_k = \lambda_l$.
+
+    Ce résultat montre que la correspondance
+    \begin{align*}
+      \psi\colon G_n &\to \Aut(G) \\
+                \cl{k} &\mapsto \lambda_k.
+    \end{align*}
+    définit une application injective.
+    Elle est également surjective ; en effet, si $\lambda\in\Aut(G)$, alors il existe un entier $k$ premier avec $n$ tel que $\lambda(x) = x^k$ (question précédente et théorème~3.18 2\up{o}) et pout tout $i\in\Z$, on a
+    \[
+      \lambda(x^i) = \lambda(x)^i = x^{ki} = (x^i)^k = \lambda_k(x^i),
+    \]
+    donc $\lambda = \psi(\cl{k})$.
+
+    L'application $\psi$ est un homomorphisme de groupes ; en effet, pour tout $(\cl{k}, \cl{l})\in G_n^2$ et tout $a\in G$, on a
+    \[
+      (\lambda_k\circ\lambda_l)(a)
+        = \lambda_k\bigl(\lambda_l(a)\bigr)
+        = \lambda_k(a^l)
+        = a^{kl}
+        = \lambda_{kl}(a),
+    \]
+    c'est-à-dire
+    \[
+      \psi(\cl{k}\cl{l}) = \psi(\cl{k})\circ\psi(\cl{l}).
+    \]
+    On conclut que les groupes $G_n$ et $\Aut(G)$ sont isomorphes.
+    Par conséquent, le groupe $\Aut(G)$ est abélien comme $G_n$ et $\card{\Aut(G)} = \varphi(n)$ (proposition~3.24).
+
+  \item % c)
+    Soit $\lambda\in\Aut(G)$.
+    On sait que $\lambda(x)$ est un générateur de $G$, or les seuls générateurs du groupe monogène $G$ sont $x$ et $x^{-1}$ (théorème~3.18), donc $\Aut(G)$ est un groupe d'ordre~$2$, dont les éléments sont l'identité $\id_G$ et l'application inverse $G\to G$, $a\mapsto a^{-1}$.
+    La proposition~3.9 nous permet de conclure que $\Aut(G)$ est un groupe cyclique.
+
+  \item % d)
+    Soit $p$ un nombre premier.
+    Les groupes $\Z$ et $\Zn{p}$ ne sont pas isomorphes.
+    Cependant, d'après ce qui précède, on a $\Aut(\Z) = 2$ et $\Aut(\Zn{p}) = \varphi(p) = 2$, donc $\Aut(\Z)\iso\Aut(\Zn{p})$.
+
+    De même, si $q$ est nombre premier distinct de $p$, les groupes $\Zn{p}$ et $\Zn{q}$ ne sont pas isomorphes, alors que $\Aut(\Zn{p})$ et $\Aut(\Zn{q})$ le sont.
+\end{enumerate}
