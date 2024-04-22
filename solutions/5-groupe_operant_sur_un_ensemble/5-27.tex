@@ -1,0 +1,87 @@
+%%% Exercice 5.27
+
+\begin{enumerate}[label=\arabic*\up{o}]
+  \item % 1°
+    \begin{enumerate}
+      \item % 1° a)
+        Soit $x\in E$.
+        Étant donné que $\theta$ est un isomorphisme, il nous suffit de démontrer que $\theta(G_x) = G'_{\lambda(x)}$.
+        Quel que soit $g\in G_x$, on a $\theta(g)\cdot\lambda(x) = \lambda(g\cdot x) = \lambda(x)$, donc $\theta(G_x)\subseteq G'_{\lambda(x)}$.
+        Réciproquement, si $g'\in G'_{\lambda(x)}$, il existe $g\in G$ tel que $\theta(g) = g'$.
+        On a alors $\lambda(g\cdot x) = \theta(g)\cdot\lambda(x) = g'\cdot\lambda(x) = \lambda(x)$, si bien que $g\cdot x = x$, donc $G'_{\lambda(x)} \subseteq \theta(G_x$).
+
+      \item % 1° b)
+        \emph{$G \text{ transitif sur } E \iff G' \text{transitif sur } E'$.}
+        Soit $x\in E$.
+        L'orbite de $x$ étant notée $\Omega_x$ et celle de $\lambda(x)$ étant notée $\Omega'_{\lambda(x)}$, on a
+        \begin{align*}
+          \Omega'_{\lambda(x)}
+            &= \set{g'\cdot\lambda(x)\given g'\in G'} \\
+            &= \set{\theta(g)\cdot\lambda(x)\given g\in G} \\
+            &= \set{\lambda(g\cdot x)\given g\in G} \\
+            &= \lambda(\Omega_x).
+        \end{align*}
+        Nous en déduisons immédiatement que $G$ est transitif sur $E$ si et seulement si $G'$ est transitif sur $E'$.
+
+        \emph{$G \text{ transitif sur } E \implies \forall (x, y)\in E\times E', G_x\iso G'_y$.}
+        Soit $(x, y)\in E\times E'$.
+        D'après la question précédente, les sous-groupes $G_x$ et $G'_{\lambda(x)}$ sont isomorphes.
+        Nous venons de démontrer que $G'$ est transitif sur $E'$, donc il existe $g'\in G'$ tel que $y = g'\cdot\lambda(x)$.
+        Il s'ensuit que $G'_y$ et $G'_{\lambda(x)}$ sont isomorphes (théorème~5.18).
+        Finalement, les sous-groupes $G'_y$ et $G_x$ sont isomorphes.
+
+      \item % 1° c)
+        Soient les sous-groupes $H = \cap_{x\in E} G_x$ et $H' = \cap_{x\in E'} G_{x'}$.
+        Remarquons que le groupe $G$ opère fidèlement sur $E$ si et seulement si $H = (e)$.
+        Comme $\theta$ est injective, on a
+        \[
+          \theta(H) = \bigcap_{x\in E} \theta(G_x),
+        \]
+        puis d'après la question~\primo a),
+        \[
+          \theta(H) = \bigcap_{x\in E} G'_{\lambda(x)},
+        \]
+        et enfin, $\lambda$ étant surjective,
+        \[
+          \theta(H) = \bigcap_{x'\in E'} G_{x'} ;
+        \]
+        autrement dit,
+        \[
+          \theta(H) = H'.
+        \]
+        Étant donné que $\theta$ est un monomorphisme, nous en déduisons immédiatement que $G$ opère fidèlement sur $E$ si et seulement si $G'$ opère fidèlement sur $E'$.
+    \end{enumerate}
+  \item % 2°
+    Pour tout $(g, h)\in G^2$, on a
+    \begin{align*}
+      \varphi(gh)
+        &= \lambda\circ\gamma_{gh}\circ\lambda^{-1} \\
+        &= \lambda\circ\gamma_g\circ\gamma_h\circ\lambda^{-1} \\
+        &= \lambda\circ\gamma_g\circ\lambda^{-1}\circ\lambda\circ\gamma_h\lambda^{-1} \\
+        &= \varphi(g)\circ\varphi(h).
+    \end{align*}
+    De plus,
+    \begin{align*}
+      \Ker\varphi
+        &= \set{g\in G\given \lambda\circ\gamma_g\circ\lambda^{-1} = \id_{E'}} \\
+        &= \set{g\in G\given \lambda_g = \lambda^{-1}\circ\id_{E'}\circ\lambda} \\
+        &= \set{g\in G\given \lambda_g = \id_E} \\
+        \shortintertext{et puisque $G$ agit fidèlement sur $E$,}
+        \Ker\varphi &= \set{e}.
+    \end{align*}
+    Nous avons prouvé que $\varphi$ est un monomorphisme de groupes.
+
+    Il s'ensuit que la corestriction de $\varphi$ à $G'$, que nous noterons $\hat{\varphi}$, est un isomorphisme de groupes.
+    Soit $\gamma'$ le morphisme de groupes de $G'$ dans $\Sym{E'}$ associé à l'action naturelle de $G'$ sur $E'$.
+    Il est définie par $\gamma'_{g}(x) = g(x)$ pour tout $(g, x)\in G'\times E'$.
+    Pour tout $(g, x)\in G\times E$, on a
+    \begin{align*}
+      \hat{\varphi}(g)\cdot\lambda(x)
+        &= \hat{\varphi}(g)(\lambda(x)) \\
+        &= (\lambda\circ\gamma_g\circ\lambda^{-1})(\lambda(x)) \\
+        &= \lambda(\gamma_g(x)) \\
+        &= \lambda(g\cdot x),
+    \end{align*}
+    ce qui nous permet de conclure que l'action de $G$ sur $E$ est équivalente à l'action naturelle de $G'$ sur $E'$.
+
+\end{enumerate}
