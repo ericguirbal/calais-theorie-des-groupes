@@ -1,0 +1,43 @@
+%%% Exercice 1.28
+
+\begin{enumerate}
+  \item % a)
+    Raisonnons par récurrence sur l'entier $n$.
+    La propriété est vraie pour $n = 2$ (proposition~1.47).
+    Supposons la propriété vraie pour un entier $n\geq 2$.
+    Soient $\set{H_i}_{1\leq i\leq n + 1}$ une famille de sous-groupes de $G$ telle que $H_i H_j = H_j H_i$ pour tout $(i, j)$ tel que $1\leq i < j \leq n + 1$.
+    D'après l'hypothèse de récurrence, $H_1H_2\dots H_n$ est un sous-groupe de $G$.
+    De plus, on a $(H_1H_2\dots H_n)H_{n + 1} = H_{n + 1}(H_1H_2\dots H_n)$ puisque $H_iH_{n + 1} = H_{n + 1}H_i$ pour tout $1 \leq i \leq n$.
+    La proposition~1.47 nous permet alors de conclure que $H_1H_2\dots H_{n + 1}$ est un sous-groupe de~$G$.
+
+  \item % b)
+    Supposons que $\sum_{i=1}^n H_i$ soit une somme directe.
+    Soient $z\in\sum_{i=1}^n H_i$ et deux familles d'éléments de $G$ presque tous nuls $\set{x_i}_{i\in I}$ et $\set{y_i}_{i\in I}$ telles que $(x_i, y_i)\in H_i^2$ pour tout $i\in I$ et
+    \[
+      z = \sum_{i\in I} x_i = \sum_{i\in I} y_i.
+    \]
+    Pour tout $j\in I$, on a
+    \[
+      x_j - y_j = - \sum_{\substack{i\in I \\ i\neq j}} (x_i - y_i),
+    \]
+    d'où
+    \[
+      x_j - y_j = H_j \cap \sum_{\substack{i\in I \\ i\neq j}} H_i = \set{0},
+    \]
+    donc $x_j = y_j$ et la décomposition de $z$ est unique.
+
+    Réciproquement, supposons que tout $z\in\sum_{i\in I} H_i$ s'écrit de manière unique
+    \[
+      z = \sum_{i\in I} x_i
+    \]
+    où les $x_i\in H_i$ sont presque tous nuls.
+    Soient $j\in J$ et $z\in H_j \cap \sum_{i\in I, i\neq j} H_i$.
+    On peut écrire
+    \[
+      z
+        = \underbrace{z}_{z\in H_j} + \underbrace{0}_{0\in \sum_{i\neq j} H_i}
+        = \underbrace{0}_{0\in H_j} + \underbrace{z}_{z\in \sum_{i\neq j} H_i}.
+    \]
+    L'unicité de la décomposition implique que $z = 0$, d'où $H_j\cap \sum_{i\in I, i\neq j} H_i$.
+\end{enumerate}
+
