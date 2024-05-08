@@ -1,0 +1,25 @@
+%%% Exercice 3.10
+
+\begin{enumerate}
+  \item % a)
+    Les groupes cycliques étant abéliens, on a $(ab)^r = a^r b^r$ pour tout $(a, b)\in C_n^2$, donc $f\in\End(C_n)$.
+    D'après le corollaire~3.7, on a $\ker f = \set{a\in C_n\given\text{$\ordre(a)$ divise $r$}}$.
+    Des équivalences
+    \[
+      x^l\in\ker f
+        \iff rl\in n\Z
+        \iff l\in s\Z,
+    \]
+    nous déduisons que $a\in\ker f$ si et seulement s'il existe un entier $k$ tel que $a = x^{ks}$ ; autrement dit, $\ker f = \set{x^{ks} \given k\in\Z}$.
+    Or, quel que soit $(k, k')\in\Z^2$,
+    \[
+      x^{ks} = x^{k's} \iff ks\equiv k's \pmod{n} \iff k\equiv k' \pmod{r},
+    \]
+    si bien que $\ker f = \set{x^{ks}\given k\in\N_r}$ ; il s'ensuit que $\ordre(\ker f) = r$.
+    À l'aide du 1\ier~théorème d'isomorphisme et de la proposition~2.15, on conclut que $\ordre(\im f) = \ordre(C_n)/\ordre(\ker f) = s$.
+
+  \item % b)
+    Pour tout $a\in C_n$, on a $(h\circ f)(a) = (a^r)^s = a^n = e$, donc $\im f \subseteq\ker h$.
+    De la question précédente, nous déduisons que $\ordre(\ker h) = s$ et  $\ordre(\im f) = s$ ;  il s'ensuit que $\im f = \ker h$.
+    Par symétrie, nous avons également $\im h = \ker f$.
+\end{enumerate}
