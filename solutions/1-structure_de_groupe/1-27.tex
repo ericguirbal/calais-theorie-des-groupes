@@ -1,0 +1,79 @@
+%%% Exercice 1.27
+
+\begin{enumerate}
+  \item % a)
+    Soit $f$ l'homographie de paramètre $(a, b, c, d)$.
+    L'application de paramètre $(d, -b, -c, a)$ est une homographie telle que $f\circ g = g\circ f = \id_{\tilde{\C}}$, donc $f\in \Sym{\tilde{\C}}$.
+
+  \item % b)
+    L'ensemble $\mathcal{H}$ n'est pas vide et comme nous venons de le voir, il est stable par passage à l'inverse.
+    De plus, si $f$ est l'homographie de paramètre $(a, b, c, d)$ et $g$ l'homographie de paramètre $(\alpha, \beta, \gamma, \delta)$, alors
+    \[
+      (f\circ g)(z) = \frac{(a\alpha + b\gamma) z + a\beta + b\delta}{(c\alpha + d\gamma)z + c\beta + d\delta}
+    \]
+    où $(a\alpha + b\gamma)(c\beta + d\delta) - (a\beta + b\delta)(c\alpha + d\gamma) = (ad - bc)(\alpha\delta - \beta\gamma) \neq 0$, ainsi  $\mathcal{H}$ est stable pour la composition.
+    Finalement, $\mathcal{H}$ est un sous-groupe de $\Sym{\tilde{\C}}$.
+
+  \item % c)
+    Les homographies telles que $c = 0$ sont les applications de la forme $z\mapsto az + b$ avec $a\neq 0$.
+    On reconnaît là l'expression complexe d'une similitude directe.
+    Le groupe des similitudes directes du plan complexes, qui inclut les translations,  est donc un sous-groupe de $\mathcal{H}$.
+
+  \item % d)
+    L'égalité
+    \[
+      \frac{1}{z} = \overline{\Bigl(\frac{1}{\overline{z}}\Bigr)}
+    \]
+    montre que l'homographie $z\mapsto 1/z$ est la composée de l'inversion $z\mapsto 1/\overline{z}$ de centre $O$ et de puissance $1$ avec la symétrie $z\mapsto\overline{z}$ par rapport à l'axe $(Ox)$.
+
+  \item % e)
+    Soit l'homographie $f$ de paramètre $(a, b, c, d)$.
+    Si $c = 0$, alors $f$ est une similitude directe, donc elle conserve les angles orientés.
+    Supposons $c\neq 0$.
+    De
+    \[
+      az + b = \frac{a}{c}(cz + d) - \frac{ad - bc}{c}
+    \]
+    on tire
+    \[
+      f(z) = -\frac{ad - bc}{c^2}\frac{1}{z - \frac{d}{c}} + \frac{a}{c}.
+    \]
+    Avec le résultat de la question~c), nous en déduisons la décomposition $f = s\circ r\circ i\circ t$ où $t$ est la translation $z\mapsto z - \frac{d}{c}$, $i$ est l'inversion $z\mapsto \frac{1}{\overline{z}}$, $r$ est la réflexion $z\mapsto\overline{z}$ et $s$ est la similitude directe $z\mapsto -\frac{ad - bc}{c^2} z + \frac{a}{c}$.
+    Les applications $s$, $r$, $i$ et $t$ conservent les angles, $s$ et $t$ préservant l'orientation, $r$ et $i$ changeant l'orientation ; il s'ensuit que les homographies conservent les angles orientés.
+
+  \item % fu)
+    Posons $K = \set{f_1, f_2, f_3, f_4}$.
+    L'homographie $f_1$ est l'identité, $f_i\circ f_i = f_1$ pour tout $i$, $f_2\circ f_3 = f_3\circ f_2 = f_4$, $f_2\circ f_4 = f_4\circ f_2 = f_3$ et $f_3\circ f_4 = f_4\circ f_3 = f_2$.
+    L'ensemble $K$ est stable pour l'inverse et le produit, c'est donc un sous-groupe de $\mathcal{H}$.
+
+    Considérons les sous-groupes $K_1 = \Gr{f_2}$ et $K_2 = \Gr{f_4}$.
+    Alors $K_1 \iso \Zn{2}$, $K_2 \iso \Zn{2}$, $K_1\cap K_2 = \set{f_1}$, $K_1K_2 = K_2K_1$ puisque $K$ est abélien, et $K_1 K_2 = K$.
+    La proposition~1.85 permet d'en déduire que le groupe $K$ est isomorphe au groupe de Klein $\Zn{2}\times\Zn{2}$.
+
+  \item % g)
+    Posons $L = \set{g_1, g_2, g_3, g_4, g_5, g_6}$.
+    Construisons la table de Cayley de l'ensemble $(L, \circ)$.
+    %
+    \begin{center}
+      \begin{tabular}{c|*{6}c}
+        $\circ$ & $g_1$ & $g_2$ & $g_3$ & $g_4$ & $g_5$ & $g_6$ \\
+        \midrule
+          $g_1$ & $g_1$ & $g_2$ & $g_3$ & $g_4$ & $g_5$ & $g_6$ \\
+          $g_2$ & $g_2$ & $g_3$ & $g_1$ & $g_6$ & $g_4$ & $g_5$ \\
+          $g_3$ & $g_3$ & $g_1$ & $g_2$ & $g_5$ & $g_6$ & $g_4$ \\
+          $g_4$ & $g_4$ & $g_5$ & $g_6$ & $g_1$ & $g_2$ & $g_3$ \\
+          $g_5$ & $g_5$ & $g_6$ & $g_4$ & $g_3$ & $g_1$ & $g_2$ \\
+          $g_6$ & $g_6$ & $g_4$ & $g_5$ & $g_2$ & $g_3$ & $g_1$ \\
+      \end{tabular}
+    \end{center}
+    %
+    Elle montre que $L$ est stable pour la composition et le passage à l'inverse, par conséquent $L$ est un sous-groupe de $\mathcal{H}$.
+
+    En identifiant les éléments de $\Sym{3}$ (exemple~1.18) avec ceux de $L$ via la bijection
+    \[
+      e \mapsto g_1, \quad \tau_1 \mapsto g_4, \quad \tau_2 \mapsto g_5,
+      \quad \tau_3 \mapsto g_6, \quad \sigma_1 \mapsto g_2, \quad \sigma_2 \mapsto g_3,
+    \]
+    on constate que les tables de Cayley de $\Sym{3}$ (exemple~1.18) et de $L$ sont identiques.
+    Nous en déduisons que les groupes $\Sym{3}$ et $L$ sont isomorphes.
+\end{enumerate}
