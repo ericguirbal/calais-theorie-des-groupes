@@ -1,0 +1,32 @@
+%%% Exercice 4.15
+
+\begin{enumerate}
+  \item % a)
+    Notons $k$ l'ordre de $\cl{x}$.
+
+    Montrons que $k$ divise $n$.
+    Cela résulte de $\cl{x}^n = \cl{x^n} = \cl{e}$ et du corollaire~3.7.
+
+    Montrons à présent que $n$ divise $k$.
+    On a $x^k\in H$ puisque $\cl{x^k} = \cl{x}^k = \cl{e}$.
+    Il s'ensuit que $\ordre(x^k)$ divise $m$ (corollaire~2.10).
+    Or, nous avons montré à l'exercice~3.13 que $\ordre(x^k) = n/\pgcd(n, k)$.
+    Par conséquent, $\ordre(x^k)$ divise également $n$.
+    Or $n$ et $m$ sont premiers entre, donc $\ordre(x^k) = 1$, si bien que $n$ divise $k$.
+    Finalement, $n = k$ ; autrement dit, on a bien $\ordre(\cl{x}) = n$.
+
+  \item % b)
+    Les entiers $m$ et $n$ étant premiers entre eux, il existe deux entiers $u$ et $v$ tels que $mu + nv = 1$.
+    Nous en déduisons que $x = yh$ où $y = x^{mu}$ et $h =  x^{nv}$.
+    Étant donné que $\ordre(\cl{x}) = n$, on a $x^n\in H$, donc $h\in H$, puis $y\in\cl{x}$.
+    Il nous reste à montrer que $\ordre(y) = n$.
+
+    Notons $p$ l'ordre de $x$ et $k$ l'entier tel que $p = kn$ ($\ordre(\cl{x})$ divise $\ordre(x)$).
+    On a $m = \ordre(H)$, or $\ordre(x^n) = p/\pgcd(p, n) = kn/\pgcd(kn, n) = nk/n = k$.
+    Or $x^n\in H$ implique que $\ordre(x^n)$ divise $m = \ordre(H)$, par conséquent $k$ divise $m$.
+    Soit $l$ l'entier tel que $m = kl$.
+    De  $1 = mu + nv = k(lu) + nv$, on déduit que les entiers $lu$ et $n$ sont premiers entre eux, ce qui nous permet de conclure que
+    \[
+      \ordre(y) = \frac{p}{\pgcd(p, mu)} = \frac{kn}{\pgcd(kn, klu)} = \frac{n}{\pgcd(n, lu)} = n.
+    \]
+\end{enumerate}
