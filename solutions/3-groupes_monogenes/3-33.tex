@@ -1,0 +1,15 @@
+%%% Exercice 3.33
+
+Les seuls éléments de $\Sym{2}$ sont l'identité et la transposition $(1, 2)$ ; la propriété à démontrer est donc trivialement vraie pour $n = 2$.
+
+Supposons à présent la propriété vraie pour un entier $n \geq 2$ fixé et considérons une permutation $\sigma\in\Sym{n + 1}$.
+Distinguons deux cas :
+
+\emph{Cas $\sigma(n) = n$.}
+On a alors $\restr{\sigma}{\N_n}\in\Sym{n}$.
+Par hypothèse de récurrence, $\restr{\sigma}{\N_n}$ est un produit de transpositions ; il en est de même de $\sigma$.
+
+\emph{Cas $\sigma(n) \neq n$.}
+Posons $k = \sigma(n)$ et $\tau = (k, n)$.
+On vérifie que $\tau\circ\sigma(n) = n$, ce qui nous ramène au cas précédent ; ainsi $\tau\circ\sigma$ est un produit de transpositions.
+Nous en déduisons que $\sigma = \tau\circ(\tau\circ\sigma)$ est aussi un produit de transpositions.
