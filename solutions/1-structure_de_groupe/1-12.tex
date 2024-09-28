@@ -1,5 +1,25 @@
-Soit $(z,w)\in\Gamma^2_\infty$. Il existe $(n,m)\in\N^2$ tel que $z^n = 1$ et
-$w^m = 1$. On a $w \neq 0$ et $(zw^{-1})^{nm} = (z^n)^m (w^m)^{-n} = 1$ donc
-$zw^{-1}\in\Gamma_\infty$ : $\Gamma_\infty$ est un sous-groupe de
-$(\C^{\ast},\times)$.
+L'énoncé comporte une petite erreur de frappe.
+La définition correcte de l'ensemble $\Gamma_\infty$ est
+\[
+  \Gamma_\infty = \set{z\in\C\given\exists n\in\N^*, z^n = 1}.
+\]
+Il est clair que $\Gamma_\infty$ est une partie non vide ($1\in\Gamma_\infty$) de $\C^*$.
+Soit $(z,w)\in\Gamma^2_\infty$.
+Il existe $(n,m)\in\N^{*2}$ tel que $z^n = 1$ et $w^m = 1$.
+On a alors $nm\neq 0$ et $(zw^{-1})^{nm} = (z^n)^m (w^m)^{-n} = 1$, donc $zw^{-1}\in\Gamma_\infty$.
+Le théorème~1.24 permet de conclure que $\Gamma_\infty$ est un sous-groupe de $(\C^*,\times)$.
+
+\begin{remarque}
+  Notons que $\Gamma_\infty = \bigcup_{n \geq 1} U_n$ où $U_n$ est le sous-groupe des racines $n$-ième de l'unité (exemple~1.30).
+  Or nous savons que l'union d'une famille de sous-groupes n'est, en général, pas un sous-groupe (exemple~1.26).
+  La famille $\set{U_n}_{n\geq 1}$ n'étant pas totalement ordonnée pour l'inclusion (par exemple, $U_2$ et $U_3$ ne sont pas comparables), la proposition~1.27 n'est pas applicable.
+  En revanche, on vérifie facilement que pour tous entiers $n\geq 1$ et $m\geq 1$, on a $U_n\subseteq U_{mn}$ et $U_m\subseteq U_{mn}$.
+  On dit que l'ensemble ordonné $(\set{U_n}_{n\geq 1},\subseteq)$ est \emph{filtrant à droite}.
+  Cet exemple suggère une extension de la proposition~1.27 :
+
+  \begin{proposition}
+    Soient $G$ un groupe et $\set{H_i}_{i\in I}$ une famille de sous-groupes de $G$ ordonnée par l'inclusion.
+    Si pour tout $(i, j)\in I^2$, il existe $k\in I$ tel que $H_i\subseteq H_k$ et $H_j\subseteq H_k$, alors $\bigcup_{i\in I} H_i$ est un sous-groupe de $G$.
+  \end{proposition}
+\end{remarque}
 
