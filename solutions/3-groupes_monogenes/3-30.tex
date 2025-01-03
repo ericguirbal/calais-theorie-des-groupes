@@ -1,0 +1,56 @@
+%%% Exercice 3.30
+
+\begin{enumerate}
+  \item % a)
+    Soit $u$ un élément de $U$.
+    Par définition de l'ordre d'un élément, $\card{\Gr{u}} = \ordre(u) = 2$, donc d'après le théorème de Lagrange $\card{\Gr{u}}$ divise $\card{G}$ ;
+    il s'ensuit que $G$ est d'ordre pair.
+
+  \item % b)
+    De $u^2 = e$, on déduit que $u = u^{-1}$.
+    De même $v = v^{-1}$.
+
+    Étant donné que $u^2 = v^2 = e$, $u^{-1} = u$, $v^{-1} = v$, les éléments de $\Gr{u, v}$ distincts de $e$ s'écrivent
+    \[
+      x_1x_2\dots x_n
+    \]
+    où $n\in\N^*$, $x_i\in\set{u, v}$ pour tout $i\in\set{1, 2, \dots, n}$ et $x_i\neq x_{i + 1}$ pour tout $i\in\set{1, \dots, n - 1}$.
+
+    Distinguons deux cas selon la parité de $n > 0$.
+    \begin{itemize}
+      \item
+        \emph{Cas $n$ pair.}
+        Soit $k\in N^*$ tel que $n = 2k$.
+        Si $x_1 = u$, alors $x_n = v$ et $x_1x_2\dots x_n = (uv)^k$.
+        Si $x_1 = v$, alors $x_n = u$ et $x_1x_2\dots x_n = (vu)^k = (uv)^{-k}$ puisque $vu = v^{-1}u^{-1} = (uv)^{-1}$.
+
+      \item
+        \emph{Cas $n$ impair.}
+        Soit $k$ tel que $n = 2k + 1$.
+        Si $x_1 = u$, alors $x_1x_2\dots x_n = u(vu)^k = u(uv)^{-k}$.
+        Si $x_1 = v$, alors $x_1x_2\dots x_n = v(uv)^k$.
+    \end{itemize}
+
+    Finalement,
+    \[
+      \Gr{u, v} = \set{(uv)^n, u(uv)^m, v(uv)^p \given (m, n, p)\in\Z\times\Z_-\times\N},
+    \]
+    À fortiori,
+    \[
+      \Gr{u, v} = \set{e, u, v, (uv)^m, u(uv)^n, v(uv)^p \given (m, n, p)\in\Z^3}.
+    \]
+
+    \item % c)
+      Posons $H = \set{t, \dots, t^{k - 1}, e, u, ut, \dots, ut^{k - 1}}$.
+      Bien entendu, $H\subseteq\Gr{u, v}$.
+      De plus, pour tout $m\in\Z$, on a
+      \[
+        (uv)^m = t^m, \quad u(uv)^m = ut^m \quad\text{et}\quad v(uv)^m = u^{-1}t t^m = ut^{m + 1},
+      \]
+      ce qui prouve l'inclusion inverse.
+      On a donc $\Gr{u, v} = H$.
+
+      On a $(ut)^2 = (u^2v)^2 = v^2 = e$.
+
+      Si on admet que $u\neq v$, alors $\Gr{u, v}$ est engendré par deux éléments $u$ et $t$ tels que $\ordre(u) = 2$, $\ordre(t) = k \geq 2$ et $\ordre(ut) = 2$, donc les groupes $\Gr{u, v}$ et $D_k$ sont isomorphes (remarque (30') et proposition~3.74).
+  \end{enumerate}
